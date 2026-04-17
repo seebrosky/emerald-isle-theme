@@ -1,1 +1,89 @@
 @import "tailwindcss";
+
+:root {
+    --base-font-size: clamp(16px, 2vw, 20px);
+
+    --h1-size: clamp(2.5rem, 5vw, 3.5rem);
+    --h2-size: clamp(2rem, 4vw, 3rem);
+    --h3-size: clamp(1.75rem, 3vw, 2.5rem);
+    --h4-size: clamp(1.5rem, 2.5vw, 2rem);
+    --h5-size: clamp(1.25rem, 2vw, 1.75rem);
+    --h6-size: clamp(1rem, 1.5vw, 1.5rem);
+
+    --color-text: #333333;
+    --color-text-dark-bg: #ffffff;
+    --color-background: #ffffff;
+    --color-primary: rgb(63 195 128);
+    --color-secondary: rgb(255 180 102);
+    --color-tertiary: rgb(115 183 206);
+    --color-header-bg: rgb(24 38 53);
+    --color-footer-bg: rgb(24 38 53);
+}
+
+@theme {
+    --color-brand-primary: var(--color-primary);
+    --color-brand-secondary: var(--color-secondary);
+    --color-brand-tertiary: var(--color-tertiary);
+
+    --color-site-text: var(--color-text);
+    --color-site-text-dark: var(--color-text-dark-bg);
+    --color-site-bg: var(--color-background);
+    --color-site-header: var(--color-header-bg);
+    --color-site-footer: var(--color-footer-bg);
+
+    --text-base-fluid: var(--base-font-size);
+    --text-h1: var(--h1-size);
+    --text-h2: var(--h2-size);
+    --text-h3: var(--h3-size);
+    --text-h4: var(--h4-size);
+    --text-h5: var(--h5-size);
+    --text-h6: var(--h6-size);
+}
+
+@layer base {
+    html {
+        font-size: var(--base-font-size);
+    }
+
+    body {
+        @apply bg-site-bg text-site-text;
+    }
+
+    h1 {
+        font-size: var(--h1-size);
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: var(--h2-size);
+        font-weight: 700;
+    }
+
+    h3 {
+        font-size: var(--h3-size);
+        font-weight: 700;
+    }
+
+    h4 {
+        font-size: var(--h4-size);
+        font-weight: 700;
+    }
+
+    h5 {
+        font-size: var(--h5-size);
+        font-weight: 700;
+    }
+
+    h6 {
+        font-size: var(--h6-size);
+        font-weight: 700;
+    }
+
+    .entry-content {
+        @apply leading-relaxed;
+    }
+
+    .entry-content > * + * {
+        @apply mt-3.5;
+    }
+}

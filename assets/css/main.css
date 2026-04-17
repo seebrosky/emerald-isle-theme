@@ -9,11 +9,11 @@
       "Courier New", monospace;
     --color-green-600: oklch(62.7% 0.194 149.214);
     --color-slate-200: oklch(92.9% 0.013 255.508);
-    --color-slate-500: oklch(55.4% 0.046 257.417);
-    --color-slate-700: oklch(37.2% 0.044 257.287);
     --color-slate-800: oklch(27.9% 0.041 260.031);
     --color-white: #fff;
     --spacing: 0.25rem;
+    --container-2xl: 42rem;
+    --container-4xl: 56rem;
     --container-6xl: 72rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
@@ -24,8 +24,15 @@
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
     --font-weight-bold: 700;
+    --leading-relaxed: 1.625;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-brand-primary: var(--color-primary);
+    --color-site-text: var(--color-text);
+    --color-site-text-dark: var(--color-text-dark-bg);
+    --color-site-bg: var(--color-background);
+    --color-site-header: var(--color-header-bg);
+    --color-site-footer: var(--color-footer-bg);
   }
 }
 @layer base {
@@ -180,9 +187,6 @@
   .mx-auto {
     margin-inline: auto;
   }
-  .mt-4 {
-    margin-top: calc(var(--spacing) * 4);
-  }
   .mt-6 {
     margin-top: calc(var(--spacing) * 6);
   }
@@ -191,6 +195,12 @@
   }
   .flex {
     display: flex;
+  }
+  .max-w-2xl {
+    max-width: var(--container-2xl);
+  }
+  .max-w-4xl {
+    max-width: var(--container-4xl);
   }
   .max-w-6xl {
     max-width: var(--container-6xl);
@@ -214,6 +224,12 @@
   }
   .border-slate-200 {
     border-color: var(--color-slate-200);
+  }
+  .bg-site-footer {
+    background-color: var(--color-site-footer);
+  }
+  .bg-site-header {
+    background-color: var(--color-site-header);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -250,17 +266,74 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .text-brand-primary {
+    color: var(--color-brand-primary);
+  }
   .text-green-600 {
     color: var(--color-green-600);
   }
-  .text-slate-500 {
-    color: var(--color-slate-500);
-  }
-  .text-slate-700 {
-    color: var(--color-slate-700);
+  .text-site-text-dark {
+    color: var(--color-site-text-dark);
   }
   .text-slate-800 {
     color: var(--color-slate-800);
+  }
+}
+:root {
+  --base-font-size: clamp(16px, 2vw, 20px);
+  --h1-size: clamp(2.5rem, 5vw, 3.5rem);
+  --h2-size: clamp(2rem, 4vw, 3rem);
+  --h3-size: clamp(1.75rem, 3vw, 2.5rem);
+  --h4-size: clamp(1.5rem, 2.5vw, 2rem);
+  --h5-size: clamp(1.25rem, 2vw, 1.75rem);
+  --h6-size: clamp(1rem, 1.5vw, 1.5rem);
+  --color-text: #333333;
+  --color-text-dark-bg: #ffffff;
+  --color-background: #ffffff;
+  --color-primary: rgb(63 195 128);
+  --color-secondary: rgb(255 180 102);
+  --color-tertiary: rgb(115 183 206);
+  --color-header-bg: rgb(24 38 53);
+  --color-footer-bg: rgb(24 38 53);
+}
+@layer base {
+  html {
+    font-size: var(--base-font-size);
+  }
+  body {
+    background-color: var(--color-site-bg);
+    color: var(--color-site-text);
+  }
+  h1 {
+    font-size: var(--h1-size);
+    font-weight: 700;
+  }
+  h2 {
+    font-size: var(--h2-size);
+    font-weight: 700;
+  }
+  h3 {
+    font-size: var(--h3-size);
+    font-weight: 700;
+  }
+  h4 {
+    font-size: var(--h4-size);
+    font-weight: 700;
+  }
+  h5 {
+    font-size: var(--h5-size);
+    font-weight: 700;
+  }
+  h6 {
+    font-size: var(--h6-size);
+    font-weight: 700;
+  }
+  .entry-content {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
+  .entry-content > * + * {
+    margin-top: calc(var(--spacing) * 3.5);
   }
 }
 @property --tw-border-style {
@@ -272,11 +345,16 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
       --tw-font-weight: initial;
+      --tw-leading: initial;
     }
   }
 }
