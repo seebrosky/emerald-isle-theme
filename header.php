@@ -20,44 +20,8 @@
                     <?php endif; ?>
                 </div>
 
-                <button
-                    class="mobile-nav-toggle inline-flex h-11 w-11 items-center justify-center rounded-md text-site-text-dark lg:hidden"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="mobile-menu"
-                    data-mobile-nav-toggle
-                >
-                    <span class="sr-only"><?php esc_html_e('Toggle navigation', 'emerald-isle'); ?></span>
-                    <span class="mobile-nav-toggle-icon"></span>
-                </button>
-
-                <nav class="site-nav hidden lg:block" aria-label="<?php esc_attr_e('Primary navigation', 'emerald-isle'); ?>">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location' => 'primary',
-                        'container'      => false,
-                        'menu_class'     => 'menu',
-                        'fallback_cb'    => false,
-                    ));
-                    ?>
-                </nav>
-            </div>
-
-            <div
-                id="mobile-menu"
-                class="mobile-nav-panel lg:hidden"
-                data-mobile-nav-panel
-                hidden
-            >
-                <nav aria-label="<?php esc_attr_e('Mobile navigation', 'emerald-isle'); ?>">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location' => 'primary',
-                        'container'      => false,
-                        'menu_class'     => 'mobile-menu',
-                        'fallback_cb'    => false,
-                    ));
-                    ?>
-                </nav>
+                <?php get_template_part('template-parts/navigation/primary-nav'); ?>
             </div>
         </header>
+
+        <?php get_template_part('template-parts/navigation/mobile-nav'); ?>

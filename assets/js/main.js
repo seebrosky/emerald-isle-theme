@@ -40,4 +40,38 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    /* mobile submenu toggles */
+    const mobileParentLinks = document.querySelectorAll('.mobile-menu .menu-item-has-children');
+
+    mobileParentLinks.forEach((menuItem, index) => {
+        const link = menuItem.querySelector(':scope > a');
+        const subMenu = menuItem.querySelector(':scope > .sub-menu');
+
+        if (!link || !subMenu) return;
+
+        const submenuId = `mobile-submenu-${index + 1}`;
+
+        subMenu.id = submenuId;
+        subMenu.hidden = false;
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'mobile-submenu-toggle';
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-controls', submenuId);
+        button.innerHTML = `
+            <span class="sr-only">Toggle submenu</span>
+            <span class="mobile-submenu-toggle-icon"></span>
+        `;
+
+        link.insertAdjacentElement('afterend', button);
+
+        button.addEventListener('click', function () {
+            const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+            button.setAttribute('aria-expanded', String(!isOpen));
+            menuItem.classList.toggle('is-submenu-open', !isOpen);
+        });
+    });
 });
