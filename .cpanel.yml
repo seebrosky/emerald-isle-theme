@@ -1,0 +1,12 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/chrisbr1/public_html/emerald.chrisbrosky.com/wp-content/themes/emerald-isle
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/find $DEPLOYPATH -mindepth 1 -maxdepth 1 ! -name '.git' -exec /bin/rm -rf {} +
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/mkdir -p $DEPLOYPATH/inc
+    - /bin/cp -R inc/* $DEPLOYPATH/inc
+    - /bin/cp *.php $DEPLOYPATH
+    - /bin/cp style.css $DEPLOYPATH
+    - /bin/cp screenshot.png $DEPLOYPATH
