@@ -778,6 +778,13 @@
   .mobile-menu .current-menu-item > a, .mobile-menu .current_page_item > a {
     color: var(--color-brand-primary);
   }
+  @media (hover: none) and (pointer: coarse) {
+    .mobile-menu .menu-item-has-children:not(.is-submenu-open) > a, .mobile-menu .menu-item-has-children:not(.is-submenu-open) > a:hover, .mobile-menu .menu-item-has-children:not(.is-submenu-open) > a:focus, .mobile-menu .menu-item-has-children:not(.is-submenu-open) > a:focus-visible {
+      color: var(--color-site-text-dark);
+      background-color: rgb(255 255 255 / 0.06);
+      box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.1), inset -1px 0 0 rgb(255 255 255 / 0.1);
+    }
+  }
   .mobile-menu .menu-item-has-children > a {
     position: relative;
     display: block;
@@ -801,9 +808,6 @@
   }
   .mobile-menu .menu-item-has-children.is-submenu-open > a::before {
     transform: translateY(-50%) rotate(180deg);
-  }
-  .mobile-menu .menu-item-has-children:not(.is-submenu-open):not(.current-menu-item):not(.current_page_item) > a:not(:hover):not(:focus):not(:focus-visible) {
-    color: var(--color-site-text-dark);
   }
   .mobile-menu .sub-menu {
     margin-top: 0;
