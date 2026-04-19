@@ -79,17 +79,17 @@
     }
 
     @media (hover: none) and (pointer: coarse) {
-        .mobile-menu .menu-item-has-children:not(.is-submenu-open) > a,
-        .mobile-menu .menu-item-has-children:not(.is-submenu-open) > a:hover,
-        .mobile-menu .menu-item-has-children:not(.is-submenu-open) > a:focus,
-        .mobile-menu .menu-item-has-children:not(.is-submenu-open) > a:focus-visible {
+        .mobile-menu > .menu-item-has-children:not(.is-submenu-open) > a,
+        .mobile-menu > .menu-item-has-children:not(.is-submenu-open) > a:hover,
+        .mobile-menu > .menu-item-has-children:not(.is-submenu-open) > a:focus,
+        .mobile-menu > .menu-item-has-children:not(.is-submenu-open) > a:focus-visible {
             color: var(--color-site-text-dark);
             background-color: rgb(255 255 255 / 0.06);
             box-shadow:
                 inset 0 1px 0 rgb(255 255 255 / 0.1),
                 inset -1px 0 0 rgb(255 255 255 / 0.1);
         }
-    }   
+    } 
 
     .mobile-menu .menu-item-has-children > a {
         position: relative;
