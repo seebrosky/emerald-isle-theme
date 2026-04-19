@@ -396,12 +396,18 @@
     }
     transition: background-color 220ms ease, color 220ms ease;
   }
-  .mobile-nav-toggle:hover, .mobile-nav-toggle:focus-visible {
+  .mobile-nav-toggle:hover, .mobile-nav-toggle:focus-visible, .site-header.mobile-nav-open .mobile-nav-toggle {
     background-color: color-mix(in srgb, #fff 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
     }
     color: var(--color-site-text-dark);
+  }
+  .mobile-nav-toggle:focus {
+    outline: none;
+  }
+  .site-header:not(.mobile-nav-open) .mobile-nav-toggle:not(:hover) {
+    background-color: transparent;
   }
   .mobile-nav-toggle-icon {
     display: block;

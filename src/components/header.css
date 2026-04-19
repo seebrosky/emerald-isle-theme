@@ -55,9 +55,18 @@
     }
 
     .mobile-nav-toggle:hover,
-    .mobile-nav-toggle:focus-visible {
+    .mobile-nav-toggle:focus-visible,
+    .site-header.mobile-nav-open .mobile-nav-toggle {
         @apply bg-white/10 text-site-text-dark;
     }
+
+    .mobile-nav-toggle:focus {
+        outline: none;
+    }
+
+    .site-header:not(.mobile-nav-open) .mobile-nav-toggle:not(:hover) {
+        background-color: transparent;
+    }  
 
     .mobile-nav-toggle-icon {
         display: block;

@@ -32,6 +32,10 @@ document.addEventListener('DOMContentLoaded', function () {
             toggle.setAttribute('aria-expanded', String(!isOpen));
             header.classList.toggle('mobile-nav-open', !isOpen);
             panel.classList.toggle('is-open', !isOpen);
+
+            if (isOpen) {
+                toggle.blur();
+            }
         });
     }
 
