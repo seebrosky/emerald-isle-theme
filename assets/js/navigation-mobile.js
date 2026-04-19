@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
             panel.classList.toggle('is-open', !isOpen);
 
             if (isOpen) {
-                toggle.blur();
+                window.requestAnimationFrame(() => {
+                    toggle.blur();
+                });
             }
         });
     }
