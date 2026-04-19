@@ -1,0 +1,104 @@
+@layer components {
+
+    .site-header {
+        @apply shadow-sm;
+    }
+
+    .site-header-inner {
+        height: 120px;
+        transition: height 220ms ease;
+    }
+
+    .site-header.is-scrolled .site-header-inner {
+        height: 90px;
+    }
+
+    .site-branding {
+        @apply flex items-center py-1.5;
+        height: 100%;
+        max-width: 260px;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .site-header .custom-logo-link {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
+        max-height: 100%;
+        line-height: 0;
+    }
+
+    .site-header .custom-logo {
+        display: block;
+        height: 100%;
+        max-height: 100%;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    .site-title-link {
+        font-size: 2rem;
+        line-height: 1;
+        transition: font-size 220ms ease;
+    }
+
+    .site-header.is-scrolled .site-title-link {
+        font-size: 1.5rem;
+    }
+
+    .mobile-nav-toggle {
+        @apply inline-flex h-11 w-11 items-center justify-center rounded-md text-site-text-dark lg:hidden;
+        transition: background-color 220ms ease, color 220ms ease;
+    }
+
+    .mobile-nav-toggle:hover,
+    .mobile-nav-toggle:focus-visible {
+        @apply bg-white/10 text-site-text-dark;
+    }
+
+    .mobile-nav-toggle-icon {
+        display: block;
+        position: relative;
+        width: 24px;
+        height: 2px;
+        background-color: currentColor;
+        transition: background-color 220ms ease;
+    }
+
+    .mobile-nav-toggle-icon::before,
+    .mobile-nav-toggle-icon::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 24px;
+        height: 2px;
+        background-color: currentColor;
+        transition: transform 220ms ease, top 220ms ease, opacity 220ms ease;
+    }
+
+    .mobile-nav-toggle-icon::before {
+        top: -7px;
+    }
+
+    .mobile-nav-toggle-icon::after {
+        top: 7px;
+    }
+
+    .site-header.mobile-nav-open .mobile-nav-toggle-icon {
+        background-color: transparent;
+    }
+
+    .site-header.mobile-nav-open .mobile-nav-toggle-icon::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .site-header.mobile-nav-open .mobile-nav-toggle-icon::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+}
