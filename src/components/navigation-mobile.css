@@ -74,9 +74,7 @@
     }
 
     .mobile-menu .current-menu-item > a,
-    .mobile-menu .current_page_item > a,
-    .mobile-menu .current-menu-ancestor > a,
-    .mobile-menu .current-menu-parent > a {
+    .mobile-menu .current_page_item > a {
         color: var(--color-brand-primary);
     }
 
@@ -106,6 +104,10 @@
     .mobile-menu .menu-item-has-children.is-submenu-open > a::before {
         transform: translateY(-50%) rotate(180deg);
     }
+
+    .mobile-menu .menu-item-has-children:not(.is-submenu-open):not(.current-menu-item):not(.current_page_item) > a {
+        color: var(--color-site-text-dark);
+    } 
 
     .mobile-menu .sub-menu {
         margin-top: 0;
