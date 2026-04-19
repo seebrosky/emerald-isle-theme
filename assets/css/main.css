@@ -816,7 +816,7 @@
     border-left: 1px solid rgb(255 255 255 / 0.1);
     height: 0;
     overflow: hidden;
-    transition: height 260ms cubic-bezier(0.22, 1, 0.36, 1), margin-top 220ms ease;
+    transition: height 260ms cubic-bezier(0.22, 1, 0.36, 1);
   }
   .mobile-menu .menu-item.is-submenu-open > .sub-menu {
     margin-top: 0.5rem;
