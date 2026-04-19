@@ -2,12 +2,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('[data-site-header]');
     const toggle = document.querySelector('[data-mobile-nav-toggle]');
     const panel = document.querySelector('[data-mobile-nav-panel]');
+    const mobileParentItems = document.querySelectorAll('.mobile-menu .menu-item-has-children');
+
+    function isDesktopNavMode() {
+        return window.innerWidth >= 1024;
+    }
+
+    function getDirectSubMenu(menuItem) {
+        return menuItem.querySelector(':scope > .sub-menu');
+    }
+
+    function getParentMenuItem(menuItem) {
+        return menuItem.parentElement?.closest('.menu-item-has-children') || null;
+    }
 
     function updateMobileMenuTop() {
         if (!header || !panel) return;
-
-        const headerHeight = header.offsetHeight;
-        document.documentElement.style.setProperty('--mobile-menu-top', `${headerHeight}px`);
+        document.documentElement.style.setProperty('--mobile-menu-top', `${header.offsetHeight}px`);
     }
 
     function closeMobileMenu() {
@@ -18,9 +29,40 @@ document.addEventListener('DOMContentLoaded', function () {
         panel.classList.remove('is-open');
     }
 
+    function syncOpenAncestorHeights(menuItem) {
+        let current = getParentMenuItem(menuItem);
+
+        while (current) {
+            const subMenu = getDirectSubMenu(current);
+
+            if (subMenu && current.classList.contains('is-submenu-open')) {
+                subMenu.style.height = `${subMenu.scrollHeight}px`;
+            }
+
+            current = getParentMenuItem(current);
+        }
+    }
+
+    function setSubMenuState(menuItem, link, subMenu, shouldOpen) {
+        if (shouldOpen) {
+            menuItem.classList.add('is-submenu-open');
+            link.setAttribute('aria-expanded', 'true');
+            subMenu.style.height = `${subMenu.scrollHeight}px`;
+        } else {
+            subMenu.style.height = `${subMenu.scrollHeight}px`;
+            void subMenu.offsetHeight;
+
+            menuItem.classList.remove('is-submenu-open');
+            link.setAttribute('aria-expanded', 'false');
+            subMenu.style.height = '0px';
+            link.blur();
+        }
+
+        syncOpenAncestorHeights(menuItem);
+    }
+
     if (header && panel) {
         updateMobileMenuTop();
-
         window.addEventListener('scroll', updateMobileMenuTop, { passive: true });
         window.addEventListener('resize', updateMobileMenuTop);
     }
@@ -34,57 +76,9 @@ document.addEventListener('DOMContentLoaded', function () {
             panel.classList.toggle('is-open', !isOpen);
 
             if (isOpen) {
-                window.requestAnimationFrame(() => {
-                    toggle.blur();
-                });
+                window.requestAnimationFrame(() => toggle.blur());
             }
         });
-    }
-
-    // Sub-menu logic
-    const mobileParentItems = document.querySelectorAll('.mobile-menu .menu-item-has-children');
-
-    function getDirectSubMenu(menuItem) {
-        return menuItem.querySelector(':scope > .sub-menu');
-    }
-
-    function getParentMenuItem(menuItem) {
-        return menuItem.parentElement ? menuItem.parentElement.closest('.menu-item-has-children') : null;
-    }
-
-    function syncOpenAncestorHeights(menuItem) {
-        let current = getParentMenuItem(menuItem);
-
-        while (current) {
-            const currentSubMenu = getDirectSubMenu(current);
-            if (currentSubMenu && current.classList.contains('is-submenu-open')) {
-                currentSubMenu.style.height = `${currentSubMenu.scrollHeight}px`;
-            }
-            current = getParentMenuItem(current);
-        }
-    }
-
-    function openSubMenu(menuItem, link, subMenu) {
-        menuItem.classList.add('is-submenu-open');
-        link.setAttribute('aria-expanded', 'true');
-
-        const targetHeight = subMenu.scrollHeight;
-        subMenu.style.height = `${targetHeight}px`;
-
-        syncOpenAncestorHeights(menuItem);
-    }
-
-    function closeSubMenu(menuItem, link, subMenu) {
-        const currentHeight = subMenu.scrollHeight;
-        subMenu.style.height = `${currentHeight}px`;
-        void subMenu.offsetHeight;
-
-        menuItem.classList.remove('is-submenu-open');
-        link.setAttribute('aria-expanded', 'false');
-        subMenu.style.height = '0px';
-
-        syncOpenAncestorHeights(menuItem);
-        link.blur();
     }
 
     mobileParentItems.forEach((menuItem) => {
@@ -97,33 +91,30 @@ document.addEventListener('DOMContentLoaded', function () {
         subMenu.style.height = '0px';
 
         link.addEventListener('click', function (event) {
-            if (window.innerWidth >= 1024) return;
+            if (isDesktopNavMode()) return;
 
             event.preventDefault();
-
-            const isOpen = menuItem.classList.contains('is-submenu-open');
-
-            if (isOpen) {
-                closeSubMenu(menuItem, link, subMenu);
-            } else {
-                openSubMenu(menuItem, link, subMenu);
-            }
+            setSubMenuState(
+                menuItem,
+                link,
+                subMenu,
+                !menuItem.classList.contains('is-submenu-open')
+            );
         });
 
         subMenu.addEventListener('transitionend', function (event) {
             if (event.propertyName !== 'height') return;
+            if (!menuItem.classList.contains('is-submenu-open')) return;
 
-            if (menuItem.classList.contains('is-submenu-open')) {
-                subMenu.style.height = `${subMenu.scrollHeight}px`;
-                syncOpenAncestorHeights(menuItem);
-            }
+            subMenu.style.height = `${subMenu.scrollHeight}px`;
+            syncOpenAncestorHeights(menuItem);
         });
 
         const observer = new ResizeObserver(() => {
-            if (menuItem.classList.contains('is-submenu-open')) {
-                subMenu.style.height = `${subMenu.scrollHeight}px`;
-                syncOpenAncestorHeights(menuItem);
-            }
+            if (!menuItem.classList.contains('is-submenu-open')) return;
+
+            subMenu.style.height = `${subMenu.scrollHeight}px`;
+            syncOpenAncestorHeights(menuItem);
         });
 
         observer.observe(subMenu);
@@ -134,25 +125,21 @@ document.addEventListener('DOMContentLoaded', function () {
             const subMenu = getDirectSubMenu(menuItem);
             if (!subMenu) return;
 
-            if (menuItem.classList.contains('is-submenu-open')) {
-                subMenu.style.height = `${subMenu.scrollHeight}px`;
-            } else {
-                subMenu.style.height = '0px';
-            }
+            subMenu.style.height = menuItem.classList.contains('is-submenu-open')
+                ? `${subMenu.scrollHeight}px`
+                : '0px';
         });
     });
 
-    // Escape the mobile nav on click or by using ESC key
     document.addEventListener('keydown', function (event) {
-        if (!panel || event.key !== 'Escape') return;
-        if (!panel.classList.contains('is-open')) return;
+        if (!panel || !panel.classList.contains('is-open')) return;
+        if (event.key !== 'Escape') return;
 
         closeMobileMenu();
     });
 
     document.addEventListener('click', function (event) {
-        if (!panel || !toggle) return;
-        if (!panel.classList.contains('is-open')) return;
+        if (!panel || !toggle || !panel.classList.contains('is-open')) return;
 
         const isClickInsidePanel = panel.contains(event.target);
         const isClickOnToggle = toggle.contains(event.target);
