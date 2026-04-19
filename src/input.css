@@ -474,7 +474,7 @@
 
     /* Mobile nav panel */
     .mobile-nav-panel {
-        @apply lg:hidden border-t border-white/5 bg-site-header;
+        @apply lg:hidden border-t border-white/10 bg-site-header;
         position: fixed;
         top: var(--mobile-menu-top, 120px);
         left: 0;
@@ -510,11 +510,10 @@
         @apply relative;
     }
 
-.mobile-menu > .menu-item > a {
-    @apply block text-base font-medium text-site-text-dark no-underline;
-    padding: 0.25rem 0;
-    transition: color 220ms ease, opacity 220ms ease;
-}
+    .mobile-menu > .menu-item > a {
+        @apply block rounded-lg border border-white/10 px-4 py-3 text-lg font-semibold text-site-text-dark no-underline;
+        transition: color 220ms ease, opacity 220ms ease, border-color 220ms ease, background-color 220ms ease;
+    }
 
     .mobile-menu > .menu-item > a:hover,
     .mobile-menu > .menu-item > a:focus-visible,
@@ -523,6 +522,8 @@
     .mobile-menu .current-menu-ancestor > a,
     .mobile-menu .current-menu-parent > a {
         color: var(--color-brand-primary);
+        border-color: rgb(255 255 255 / 0.18);
+        background-color: rgb(255 255 255 / 0.03);
     }
 
     /* Parent rows own the caret */
@@ -530,7 +531,7 @@
         position: relative;
         display: block;
         min-width: 0;
-        padding-right: 2rem;
+        padding-right: 2.75rem;
     }
 
     /* Caret lives inside the full row link */
@@ -538,7 +539,7 @@
         content: "";
         position: absolute;
         top: 50%;
-        right: 0.1rem;
+        right: 1rem;
         width: 0.9rem;
         height: 0.9rem;
         background-color: currentColor;

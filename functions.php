@@ -30,8 +30,10 @@ function emerald_isle_theme_setup() {
 add_action('after_setup_theme', 'emerald_isle_theme_setup');
 
 function emerald_isle_enqueue_assets() {
-    $css_file = get_template_directory() . '/assets/css/main.css';
-    $js_file  = get_template_directory() . '/assets/js/main.js';
+    $css_file            = get_template_directory() . '/assets/css/main.css';
+    $main_js_file        = get_template_directory() . '/assets/js/main.js';
+    $desktop_js_file     = get_template_directory() . '/assets/js/navigation-desktop.js';
+    $mobile_js_file      = get_template_directory() . '/assets/js/navigation-mobile.js';
 
     wp_enqueue_style(
         'emerald-isle-style',
@@ -44,7 +46,23 @@ function emerald_isle_enqueue_assets() {
         'emerald-isle-main',
         get_template_directory_uri() . '/assets/js/main.js',
         array(),
-        file_exists($js_file) ? filemtime($js_file) : '1.0',
+        file_exists($main_js_file) ? filemtime($main_js_file) : '1.0',
+        true
+    );
+
+    wp_enqueue_script(
+        'emerald-isle-navigation-desktop',
+        get_template_directory_uri() . '/assets/js/navigation-desktop.js',
+        array('emerald-isle-main'),
+        file_exists($desktop_js_file) ? filemtime($desktop_js_file) : '1.0',
+        true
+    );
+
+    wp_enqueue_script(
+        'emerald-isle-navigation-mobile',
+        get_template_directory_uri() . '/assets/js/navigation-mobile.js',
+        array('emerald-isle-main'),
+        file_exists($mobile_js_file) ? filemtime($mobile_js_file) : '1.0',
         true
     );
 }
