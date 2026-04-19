@@ -802,7 +802,7 @@
   .mobile-menu .menu-item-has-children.is-submenu-open > a::before {
     transform: translateY(-50%) rotate(180deg);
   }
-  .mobile-menu .menu-item-has-children:not(.is-submenu-open):not(.current-menu-item):not(.current_page_item) > a:not(:hover):not(:focus-visible) {
+  .mobile-menu .menu-item-has-children:not(.is-submenu-open):not(.current-menu-item):not(.current_page_item) > a:not(:hover):not(:focus):not(:focus-visible) {
     color: var(--color-site-text-dark);
   }
   .mobile-menu .sub-menu {
