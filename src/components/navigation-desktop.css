@@ -142,6 +142,11 @@
         color: var(--color-brand-primary);
     }
 
+    .site-nav .sub-menu a:hover,
+    .site-nav .sub-menu a:focus-visible {
+        color: var(--color-brand-primary);
+    }   
+
     /* Level 2 items that have children */
     .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children {
         position: relative;
@@ -238,6 +243,34 @@
             pointer-events: auto;
             transform: translateX(0) scaleX(1) scaleY(1);
         }
+    }
+
+    /* Touch-open state for desktop-width touch devices */
+    .site-nav > .menu > .menu-item.is-touch-open > a::after {
+        transform: scaleX(1);
+    }
+
+    .site-nav > .menu > .menu-item.is-touch-open > a::before {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .site-nav > .menu > .menu-item.is-touch-open > .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0) scale(1);
+    }
+
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children.is-touch-open > .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(0) scaleX(1) scaleY(1);
+    }
+
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children.is-touch-open > a {
+        @apply bg-white/5;
+        color: var(--color-brand-primary);
     }
 
 }
