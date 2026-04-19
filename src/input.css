@@ -203,11 +203,7 @@
     .site-nav > .menu > .menu-item:hover > a::after,
     .site-nav > .menu > .menu-item:focus-within > a::after,
     .site-nav > .menu > .menu-item > a:hover::after,
-    .site-nav > .menu > .menu-item > a:focus-visible::after,
-    .site-nav > .menu > .current-menu-item > a::after,
-    .site-nav > .menu > .current_page_item > a::after,
-    .site-nav > .menu > .current-menu-ancestor > a::after,
-    .site-nav > .menu > .current-menu-parent > a::after {
+    .site-nav > .menu > .menu-item > a:focus-visible::after {
         transform: scaleX(1);
     }
 
@@ -256,8 +252,12 @@
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transform: translateY(8px);
-        transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+        transform: translateY(4px) scale(0.92);
+        transform-origin: top left;
+        transition:
+            opacity 180ms ease,
+            transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+            visibility 180ms ease;
         z-index: 60;
     }
 
@@ -266,7 +266,7 @@
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 
     .site-nav > .menu > .menu-item > .sub-menu > .menu-item {
@@ -295,9 +295,127 @@
         color: var(--color-brand-primary);
     }
 
+    /* Level 2 items that have children */
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children {
+        position: relative;
+    }
 
+    /* Level 3 flyout panel */
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children > .sub-menu {
+        @apply rounded-xl border border-white/10 bg-site-header p-3 shadow-xl;
+        min-width: 220px;
+        position: absolute;
+        top: 0;
+        left: calc(100% + 0.35rem);
+        margin: 0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateX(6px) scaleX(0.94) scaleY(0.9);
+        transform-origin: top left;
+        transition:
+            opacity 180ms ease,
+            transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+            visibility 180ms ease;
+        z-index: 70;
+    }
 
+    /* Open level 3 on hover/focus */
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children:hover > .sub-menu,
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children:focus-within > .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(0) scaleX(1) scaleY(1);
+    }
 
+    /* Make level 3 items look like panel links too */
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children > .sub-menu .menu-item + .menu-item {
+        margin-top: 0.25rem;
+    }
+
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children > .sub-menu a {
+        @apply block rounded-md px-3 py-2 text-sm font-medium text-site-text-dark no-underline;
+        white-space: nowrap;
+        transition: background-color 220ms ease, color 220ms ease;
+    }
+
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children > .sub-menu a:hover,
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children > .sub-menu a:focus-visible,
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children > .sub-menu .current-menu-item > a,
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children > .sub-menu .current_page_item > a {
+        @apply bg-white/5;
+        color: var(--color-brand-primary);
+    }
+
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children > a {
+        position: relative;
+        padding-right: 1.25rem;
+    }
+
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children > a::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0.1rem;
+        width: 0.75rem;
+        height: 0.75rem;
+        background-color: currentColor;
+        transform: translateY(-50%);
+        pointer-events: none;
+
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M4.5 2.25 8.25 6 4.5 9.75' fill='none' stroke='black' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M4.5 2.25 8.25 6 4.5 9.75' fill='none' stroke='black' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+    
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 0.6rem;
+        height: 100%;
+        background: transparent;
+    }   
+
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children:hover > a,
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children:focus-within > a {
+        @apply bg-white/5;
+        color: var(--color-brand-primary);
+    }
+
+    /* Flip first-level dropdown left when needed */
+    .site-nav > .menu > .menu-item.opens-left > .sub-menu {
+        left: auto;
+        right: 0;
+        transform-origin: top right;
+    }
+
+    .site-nav > .menu > .menu-item.opens-left > .sub-menu::before {
+        left: auto;
+        right: 22px;
+    }
+
+    /* Flip 3rd-level flyout left when needed */
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children.opens-left > .sub-menu {
+        left: auto;
+        right: calc(100% + 0.08rem);
+        transform-origin: top right;
+    }
+
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children.opens-left::after {
+        left: auto;
+        right: 100%;
+    }
+
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children.opens-left > .sub-menu::before {
+        right: auto;
+        left: 100%;
+        border-top: 7px solid transparent;
+        border-right: 0;
+        border-bottom: 7px solid transparent;
+        border-left: 7px solid rgb(24 38 53);
+    }   
 
 
 
