@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 menuItem.classList.remove('is-submenu-open');
                 link.setAttribute('aria-expanded', 'false');
+                link.blur();
             }
         });
     });
