@@ -53,13 +53,20 @@
         transition: transform 220ms ease;
     }
 
-    .site-nav > .menu > .menu-item > a:hover,
-    .site-nav > .menu > .menu-item > a:focus-visible,
+    /* Always highlight actual current page */
     .site-nav > .menu > .current-menu-item > a,
-    .site-nav > .menu > .current_page_item > a,
-    .site-nav > .menu > .current-menu-ancestor > a,
-    .site-nav > .menu > .current-menu-parent > a {
+    .site-nav > .menu > .current_page_item > a {
         color: var(--color-brand-primary);
+    }
+
+    /* Only highlight parent/ancestor on real hover devices */
+    @media (hover: hover) and (pointer: fine) {
+        .site-nav > .menu > .menu-item > a:hover,
+        .site-nav > .menu > .menu-item > a:focus-visible,
+        .site-nav > .menu > .current-menu-ancestor > a,
+        .site-nav > .menu > .current-menu-parent > a {
+            color: var(--color-brand-primary);
+        }
     }
 
     /* desktop caret */
