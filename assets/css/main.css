@@ -243,6 +243,9 @@
   .hidden {
     display: none;
   }
+  .w-full {
+    width: 100%;
+  }
   .max-w-2xl {
     max-width: var(--container-2xl);
   }
@@ -321,6 +324,11 @@
   .text-site-text-dark {
     color: var(--color-site-text-dark);
   }
+  .lg\:mx-auto {
+    @media (width >= 64rem) {
+      margin-inline: auto;
+    }
+  }
   .lg\:block {
     @media (width >= 64rem) {
       display: block;
@@ -329,6 +337,11 @@
   .lg\:hidden {
     @media (width >= 64rem) {
       display: none;
+    }
+  }
+  .lg\:max-w-6xl {
+    @media (width >= 64rem) {
+      max-width: var(--container-6xl);
     }
   }
   .lg\:border-0 {
