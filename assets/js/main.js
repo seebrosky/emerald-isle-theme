@@ -13,6 +13,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function updateMobileMenuTop() {
+        if (!header || !panel) return;
+
+        const headerHeight = header.offsetHeight;
+        document.documentElement.style.setProperty('--mobile-menu-top', `${headerHeight}px`);
+    }
+
     function updateDesktopSubmenuDirections() {
         if (window.innerWidth < 1024) return;
 
@@ -52,68 +59,57 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (header) {
         handleScroll();
-        window.addEventListener('scroll', handleScroll, { passive: true });
+        updateMobileMenuTop();
+
+        window.addEventListener('scroll', function () {
+            handleScroll();
+            updateMobileMenuTop();
+        }, { passive: true });
+
+        window.addEventListener('resize', function () {
+            updateMobileMenuTop();
+            updateDesktopSubmenuDirections();
+        });
     }
 
-    if (toggle && panel) {
+    if (toggle && panel && header) {
         toggle.addEventListener('click', function () {
             const isOpen = toggle.getAttribute('aria-expanded') === 'true';
 
             toggle.setAttribute('aria-expanded', String(!isOpen));
             header.classList.toggle('mobile-nav-open', !isOpen);
-
-            if (isOpen) {
-                panel.classList.remove('is-open');
-
-                window.setTimeout(() => {
-                    panel.hidden = true;
-                }, 220);
-            } else {
-                panel.hidden = false;
-
-                window.requestAnimationFrame(() => {
-                    panel.classList.add('is-open');
-                });
-            }
+            panel.classList.toggle('is-open', !isOpen);
         });
     }
 
     /* mobile submenu toggles */
-    const mobileParentLinks = document.querySelectorAll('.mobile-menu .menu-item-has-children');
+    const mobileParentItems = document.querySelectorAll('.mobile-menu .menu-item-has-children');
 
-    mobileParentLinks.forEach((menuItem, index) => {
+    mobileParentItems.forEach((menuItem) => {
         const link = menuItem.querySelector(':scope > a');
         const subMenu = menuItem.querySelector(':scope > .sub-menu');
 
         if (!link || !subMenu) return;
 
-        const submenuId = `mobile-submenu-${index + 1}`;
+        link.setAttribute('aria-expanded', 'false');
 
-        subMenu.id = submenuId;
-        subMenu.hidden = false;
+        link.addEventListener('click', function (event) {
+            if (window.innerWidth >= 1024) return;
 
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'mobile-submenu-toggle';
-        button.setAttribute('aria-expanded', 'false');
-        button.setAttribute('aria-controls', submenuId);
-        button.innerHTML = `
-            <span class="sr-only">Toggle submenu</span>
-            <span class="mobile-submenu-toggle-icon"></span>
-        `;
+            const isOpen = menuItem.classList.contains('is-submenu-open');
 
-        link.insertAdjacentElement('afterend', button);
-
-        button.addEventListener('click', function () {
-            const isOpen = button.getAttribute('aria-expanded') === 'true';
-
-            button.setAttribute('aria-expanded', String(!isOpen));
-            menuItem.classList.toggle('is-submenu-open', !isOpen);
+            if (!isOpen) {
+                event.preventDefault();
+                menuItem.classList.add('is-submenu-open');
+                link.setAttribute('aria-expanded', 'true');
+            } else {
+                menuItem.classList.remove('is-submenu-open');
+                link.setAttribute('aria-expanded', 'false');
+            }
         });
     });
 
     updateDesktopSubmenuDirections();
-    window.addEventListener('resize', updateDesktopSubmenuDirections);
 
     const desktopTriggers = document.querySelectorAll('.site-nav .menu-item-has-children');
     desktopTriggers.forEach((item) => {

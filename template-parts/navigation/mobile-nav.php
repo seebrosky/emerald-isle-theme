@@ -11,9 +11,8 @@
 
 <div
     id="mobile-menu"
-    class="mobile-nav-panel lg:hidden"
+    class="mobile-nav-panel"
     data-mobile-nav-panel
-    hidden
 >
     <div class="mobile-nav-panel-inner">
         <nav aria-label="<?php esc_attr_e('Mobile navigation', 'emerald-isle'); ?>">
