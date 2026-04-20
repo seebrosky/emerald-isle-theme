@@ -117,7 +117,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
 
                     if (descendantSubMenu) {
+                        descendantSubMenu.style.transition = 'none';
                         descendantSubMenu.style.height = '0px';
+                        descendantSubMenu.offsetHeight;
+                        descendantSubMenu.style.transition = '';
                     }
                 });
 
