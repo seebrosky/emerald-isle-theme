@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function handleScroll() {
         if (!header) return;
 
+        if (header.classList.contains('mobile-nav-open')) {
+            return;
+        }
+
         if (window.scrollY > 80) {
             header.classList.add('is-scrolled');
         } else {
