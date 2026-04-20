@@ -104,6 +104,23 @@ document.addEventListener('DOMContentLoaded', function () {
             const isOpen = menuItem.classList.contains('is-submenu-open');
 
             if (isOpen) {
+                const openDescendants = menuItem.querySelectorAll('.menu-item-has-children.is-submenu-open');
+
+                openDescendants.forEach((descendant) => {
+                    descendant.classList.remove('is-submenu-open');
+
+                    const descendantLink = descendant.querySelector(':scope > a');
+                    const descendantSubMenu = descendant.querySelector(':scope > .sub-menu');
+
+                    if (descendantLink) {
+                        descendantLink.setAttribute('aria-expanded', 'false');
+                    }
+
+                    if (descendantSubMenu) {
+                        descendantSubMenu.style.height = '0px';
+                    }
+                });
+
                 const startHeight = subMenu.scrollHeight;
 
                 subMenu.style.height = `${startHeight}px`;
