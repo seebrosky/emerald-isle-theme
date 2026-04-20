@@ -47,10 +47,16 @@ document.addEventListener('DOMContentLoaded', function () {
         if (shouldOpen) {
             menuItem.classList.add('is-submenu-open');
             link.setAttribute('aria-expanded', 'true');
-            subMenu.style.height = `${subMenu.scrollHeight}px`;
+
+            subMenu.style.height = 'auto';
+            const targetHeight = subMenu.scrollHeight;
+            subMenu.style.height = '0px';
+            subMenu.offsetHeight;
+            subMenu.style.height = `${targetHeight}px`;
         } else {
-            subMenu.style.height = `${subMenu.scrollHeight}px`;
-            void subMenu.offsetHeight;
+            const currentHeight = subMenu.scrollHeight;
+            subMenu.style.height = `${currentHeight}px`;
+            subMenu.offsetHeight;
 
             menuItem.classList.remove('is-submenu-open');
             link.setAttribute('aria-expanded', 'false');
@@ -83,51 +89,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
     mobileParentItems.forEach((menuItem) => {
         const link = menuItem.querySelector(':scope > a');
-        const subMenu = getDirectSubMenu(menuItem);
+        const subMenu = menuItem.querySelector(':scope > .sub-menu');
 
         if (!link || !subMenu) return;
 
         link.setAttribute('aria-expanded', 'false');
         subMenu.style.height = '0px';
+        subMenu.style.overflow = 'hidden';
 
         link.addEventListener('click', function (event) {
-            if (isDesktopNavMode()) return;
-
+            if (window.innerWidth >= 1024) return;
             event.preventDefault();
-            setSubMenuState(
-                menuItem,
-                link,
-                subMenu,
-                !menuItem.classList.contains('is-submenu-open')
-            );
+
+            const isOpen = menuItem.classList.contains('is-submenu-open');
+
+            if (isOpen) {
+                const startHeight = subMenu.scrollHeight;
+
+                subMenu.style.height = `${startHeight}px`;
+                subMenu.offsetHeight;
+
+                menuItem.classList.remove('is-submenu-open');
+                link.setAttribute('aria-expanded', 'false');
+                subMenu.style.height = '0px';
+                link.blur();
+            } else {
+                menuItem.classList.add('is-submenu-open');
+                link.setAttribute('aria-expanded', 'true');
+
+                subMenu.style.height = 'auto';
+                const targetHeight = subMenu.scrollHeight;
+
+                subMenu.style.height = '0px';
+                subMenu.offsetHeight;
+
+                subMenu.style.height = `${targetHeight}px`;
+            }
         });
 
         subMenu.addEventListener('transitionend', function (event) {
             if (event.propertyName !== 'height') return;
-            if (!menuItem.classList.contains('is-submenu-open')) return;
 
-            subMenu.style.height = `${subMenu.scrollHeight}px`;
-            syncOpenAncestorHeights(menuItem);
-        });
-
-        const observer = new ResizeObserver(() => {
-            if (!menuItem.classList.contains('is-submenu-open')) return;
-
-            subMenu.style.height = `${subMenu.scrollHeight}px`;
-            syncOpenAncestorHeights(menuItem);
-        });
-
-        observer.observe(subMenu);
-    });
-
-    window.addEventListener('resize', function () {
-        mobileParentItems.forEach((menuItem) => {
-            const subMenu = getDirectSubMenu(menuItem);
-            if (!subMenu) return;
-
-            subMenu.style.height = menuItem.classList.contains('is-submenu-open')
-                ? `${subMenu.scrollHeight}px`
-                : '0px';
+            if (menuItem.classList.contains('is-submenu-open')) {
+                subMenu.style.height = 'auto';
+            }
         });
     });
 
