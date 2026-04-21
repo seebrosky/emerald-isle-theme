@@ -1,4 +1,4 @@
-        <footer class="mt-16 border-t border-slate-200 bg-site-footer">
+        <footer class="<?php echo is_front_page() ? 'mt-0 bg-site-footer' : 'mt-16 border-t border-slate-200 bg-site-footer'; ?>">
             <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-site-text-dark">
                 <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
             </div>

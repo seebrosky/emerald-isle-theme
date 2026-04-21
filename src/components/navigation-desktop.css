@@ -160,7 +160,12 @@
         width: 0.6rem;
         height: 100%;
         background: transparent;
-    }    
+    }
+    
+    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children.opens-left::after {
+        left: auto;
+        right: 100%;
+    }   
 
     /* Level 3 flyout panel */
     .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children > .sub-menu {
