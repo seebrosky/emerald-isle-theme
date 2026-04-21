@@ -22,7 +22,8 @@
     --color-background: #ffffff;
     --color-background-soft: #f4f2ee;
 
-    --color-primary: #c99c57;
+    /* --color-primary: #c99c57; */
+    --color-primary: #B5886C;
     --color-primary-hover: #d8ad6f;
     --color-primary-muted: #a88247;
     --color-primary-subtle: rgba(201, 156, 87, 0.15);

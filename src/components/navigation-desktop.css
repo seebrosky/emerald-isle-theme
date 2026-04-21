@@ -53,19 +53,23 @@
         transition: transform 220ms ease;
     }
 
-    /* Always highlight actual current page */
+    /* Actual current page */
     .site-nav > .menu > .current-menu-item > a,
-    .site-nav > .menu > .current_page_item > a {
-        color: var(--color-brand-primary);
+    .site-nav > .menu > .current_page_item > a,
+    .site-nav > .menu > .current-menu-ancestor > a {
+        color: var(--color-site-text-dark);
     }
 
     /* Only highlight parent/ancestor on real hover devices */
     @media (hover: hover) and (pointer: fine) {
         .site-nav > .menu > .menu-item > a:hover,
-        .site-nav > .menu > .menu-item > a:focus-visible,
+        .site-nav > .menu > .menu-item > a:focus-visible {
+            color: var(--color-site-text-dark) !important;
+        }
+
         .site-nav > .menu > .current-menu-ancestor > a,
         .site-nav > .menu > .current-menu-parent > a {
-            color: var(--color-brand-primary);
+            color: var(--color-brand-primary); /* keep active states */
         }
     }
 
@@ -145,7 +149,7 @@
     .site-nav > .menu > .menu-item > .sub-menu .current-menu-item > a,
     .site-nav > .menu > .menu-item > .sub-menu .current_page_item > a {
         @apply bg-white/5;
-        color: var(--color-brand-primary);
+        color: var(--color-site-text-dark);
     }
 
     .site-nav .sub-menu a:hover,
@@ -260,6 +264,12 @@
             transform: translateX(0) scaleX(1) scaleY(1);
         }
     }
+
+    .site-nav > .menu > .current-menu-item > a::after,
+    .site-nav > .menu > .current_page_item > a::after,
+    .site-nav > .menu > .current-menu-ancestor > a::after {
+        transform: scaleX(1);
+    }   
 
     /* Touch-open state for desktop-width touch devices */
     .site-nav > .menu > .menu-item.is-touch-open > a::after {
