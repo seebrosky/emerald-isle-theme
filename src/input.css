@@ -14,14 +14,32 @@
     --h5-size: clamp(1.25rem, 2vw, 1.75rem);
     --h6-size: clamp(var(--base-font-size), 1.5vw, 1.5rem);
 
-    --color-text: #333333;
-    --color-text-dark-bg: #ffffff;
+    --color-text: #1f2933;
+    --color-text-muted: #6b7280;
+    --color-text-dark-bg: #e5e7eb;
+    --color-text-muted-dark: #9ca3af;
+
     --color-background: #ffffff;
-    --color-primary: rgb(63 195 128);
-    --color-secondary: rgb(255 180 102);
-    --color-tertiary: rgb(115 183 206);
-    --color-header-bg: rgb(24 38 53);
-    --color-footer-bg: rgb(24 38 53);
+    --color-background-soft: #f4f2ee;
+
+    --color-primary: #c99c57;
+    --color-primary-hover: #d8ad6f;
+    --color-primary-muted: #a88247;
+    --color-primary-subtle: rgba(201, 156, 87, 0.15);
+
+    --color-secondary: #ffb466;
+    --color-tertiary: #73b7ce;
+
+    --color-header-bg: #08090d;
+    --color-footer-bg: #08090d;
+
+    --color-surface-1: #0f1116;
+    --color-surface-2: #161a20;
+
+    --color-border-dark: rgba(255,255,255,0.08);
+    --color-border-light: #e5e7eb;
+
+    --color-accent: #4a6fa5;
 }
 
 @theme {
@@ -66,5 +84,51 @@
 
     .entry-content > * + * {
         @apply mt-3.5;
+    }
+}
+
+.hero {
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(8, 9, 13, 0.2) 0%,
+            rgba(8, 9, 13, 0.4) 20%,
+            rgba(8, 9, 13, 0.75) 45%,
+            rgba(8, 9, 13, 0.92) 70%,
+            rgba(8, 9, 13, 1) 100%
+        ),
+        linear-gradient(
+            to right,
+            rgba(8, 9, 13, 0.95) 0%,
+            rgba(8, 9, 13, 0.85) 30%,
+            rgba(8, 9, 13, 0.5) 55%,
+            rgba(8, 9, 13, 0.15) 75%,
+            rgba(8, 9, 13, 0) 90%
+        ),
+        url('/wp-content/uploads/hero-image-01.webp');
+
+    background-size: cover;
+    background-position: 70% center; /* pushes image right on mobile */
+    background-repeat: no-repeat;
+}
+
+
+/* Desktop override (restore your original cleaner look) */
+@media (min-width: 1024px) {
+    .hero {
+        background:
+            linear-gradient(
+                to right,
+                #08090d 0%,
+                rgba(8, 9, 13, 0.9) 25%,
+                rgba(8, 9, 13, 0.6) 45%,
+                rgba(8, 9, 13, 0.25) 65%,
+                rgba(8, 9, 13, 0) 80%
+            ),
+            url('/wp-content/uploads/hero-image-01.webp');
+
+        background-size: cover;
+        background-position: right center;
+        background-repeat: no-repeat;
     }
 }

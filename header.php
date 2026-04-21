@@ -8,7 +8,7 @@
 
     <body <?php body_class(); ?>>
 
-        <header data-site-header class="site-header sticky top-0 z-50 bg-site-header border-b border-black/50 lg:border-0">
+        <header data-site-header class="site-header sticky top-0 z-50 bg-site-header border-b border-black/50 lg:border-b-0">
             <div class="site-header-inner flex w-full items-center justify-between px-6 lg:mx-auto lg:max-w-6xl">
                 <div class="site-branding flex items-center">
                     <?php if (has_custom_logo()) : ?>

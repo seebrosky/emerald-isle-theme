@@ -98,23 +98,28 @@
         list-style: none;
     }
 
-    .site-nav > .menu > .menu-item > .sub-menu {
-        @apply rounded-xl border border-white/10 bg-site-header p-3;
-        min-width: 220px;
-        position: absolute;
-        top: calc(100% + 0.12rem);
-        left: 0;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transform: translateY(4px) scale(0.92);
-        transform-origin: top left;
-        transition:
-            opacity 180ms ease,
-            transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
-            visibility 180ms ease;
-        z-index: 60;
-    }
+.site-nav > .menu > .menu-item > .sub-menu {
+    @apply rounded-xl p-3;
+    background-color: var(--color-surface-2);
+    border: 1px solid var(--color-border-dark);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.02);
+    min-width: 220px;
+    position: absolute;
+    top: calc(100% + 0.12rem);
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(4px) scale(0.92);
+    transform-origin: top left;
+    transition:
+        opacity 180ms ease,
+        transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 180ms ease;
+    z-index: 60;
+}
 
     .site-nav > .menu > .menu-item > .sub-menu > .menu-item {
         @apply w-full;
@@ -125,7 +130,8 @@
     }
 
     .site-nav > .menu > .menu-item > .sub-menu a {
-        @apply block rounded-md px-3 py-2 text-sm font-medium text-site-text-dark no-underline;
+        @apply block rounded-md px-3 py-2 text-sm font-medium no-underline;
+        color: var(--color-text-dark-bg);
         white-space: nowrap;
         transition: background-color 220ms ease, color 220ms ease;
     }
@@ -168,24 +174,29 @@
     }   
 
     /* Level 3 flyout panel */
-    .site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children > .sub-menu {
-        @apply rounded-xl border border-white/10 bg-site-header p-3 shadow-xl;
-        min-width: 220px;
-        position: absolute;
-        top: 0;
-        left: calc(100% + 0.35rem);
-        margin: 0;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transform: translateX(6px) scaleX(0.94) scaleY(0.9);
-        transform-origin: top left;
-        transition:
-            opacity 180ms ease,
-            transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
-            visibility 180ms ease;
-        z-index: 70;
-    }
+.site-nav > .menu > .menu-item > .sub-menu .menu-item-has-children > .sub-menu {
+    @apply rounded-xl p-3;
+    background-color: var(--color-surface-2);
+    border: 1px solid var(--color-border-dark);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.02);
+    min-width: 220px;
+    position: absolute;
+    top: 0;
+    left: calc(100% + 0.35rem);
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(6px) scaleX(0.94) scaleY(0.9);
+    transform-origin: top left;
+    transition:
+        opacity 180ms ease,
+        transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 180ms ease;
+    z-index: 70;
+}
 
     .site-nav > .menu > .menu-item.opens-left > .sub-menu {
         left: auto;

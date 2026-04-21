@@ -2,38 +2,41 @@
 
 <main>
 
-    <section class="bg-site-header text-white">
-        <div class="mx-auto max-w-6xl px-6 py-24 lg:flex lg:items-center lg:gap-16 lg:py-32">
+    <section class="hero relative text-white">
+
+        <div class="relative z-10 mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:flex lg:items-center lg:gap-12 lg:py-28">
             
+            <!-- Left Content -->
             <div class="flex-1">
-                <p class="mb-4 text-sm uppercase tracking-[0.2em] text-white/60">
+                <p class="mb-3 text-[0.2rem] uppercase tracking-[0.14em] text-[var(--color-primary)]/85 sm:mb-4 sm:text-[0.8rem] sm:tracking-[0.18em] lg:text-sm">
                     Design • Development • Performance
                 </p>
 
-                <h1 class="mb-6 max-w-xl text-5xl font-bold leading-tight lg:text-7xl">
-                    I build modern websites <span class="text-brand-primary">that drive results.</span>
+                <h1 class="mb-5 max-w-[10ch] text-4xl font-bold leading-[0.95] sm:text-5xl lg:max-w-none lg:text-7xl lg:leading-tight">
+                    I build modern websites 
+                    <span class="text-[var(--color-primary)]">that drive results.</span>
                 </h1>
 
-                <p class="mb-8 max-w-xl text-lg text-white/70">
+                <p class="mb-8 max-w-[22rem] text-base leading-8 text-white/78 sm:text-lg lg:max-w-xl lg:text-white/70">
                     Custom WordPress themes, performance-first builds, and clean UI systems that scale.
                 </p>
 
-                <div class="flex flex-wrap gap-4">
-                    <a href="#" class="rounded-md bg-brand-primary px-6 py-3 font-semibold text-black transition hover:opacity-90">
+                <div class="flex flex-wrap gap-3 sm:gap-4">
+                    <a href="#" class="rounded-md bg-[var(--color-primary)] px-6 py-3 font-semibold text-[#08090d]">
                         View My Work
                     </a>
 
-                    <a href="#" class="rounded-md border border-white/20 px-6 py-3 font-semibold text-white transition hover:bg-white/5">
+                    <a href="#" class="rounded-md border border-white/20 px-6 py-3 font-semibold text-white">
                         Let’s Work Together
                     </a>
                 </div>
             </div>
 
-            <div class="mt-12 flex-1 lg:mt-0">
-                <div class="aspect-[4/3] w-full rounded-2xl bg-white/5 ring-1 ring-white/10 shadow-2xl"></div>
-            </div>
+            <!-- Right side stays empty (image will be background) -->
+            <div class="hidden lg:block flex-1"></div>
 
         </div>
+
     </section>
 
     <section class="bg-[#f5f5f3] py-20">
