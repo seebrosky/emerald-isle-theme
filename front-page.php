@@ -8,7 +8,7 @@
             
             <!-- Left Content -->
             <div class="flex-1">
-                <p class="mb-3 text-[0.2rem] uppercase tracking-[0.14em] text-[var(--color-primary)]/85 sm:mb-4 sm:text-[0.8rem] sm:tracking-[0.18em] lg:text-sm">
+                <p class="mb-3 text-[0.7rem] uppercase tracking-[0.14em] text-[var(--color-primary)]/85 sm:mb-4 sm:text-[0.8rem] sm:tracking-[0.18em] lg:text-sm">
                     Design • Development • Performance
                 </p>
 

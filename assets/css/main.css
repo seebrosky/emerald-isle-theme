@@ -536,6 +536,9 @@
   .text-\[0\.2rem\] {
     font-size: 0.2rem;
   }
+  .text-\[0\.7rem\] {
+    font-size: 0.7rem;
+  }
   .leading-7 {
     --tw-leading: calc(var(--spacing) * 7);
     line-height: calc(var(--spacing) * 7);
