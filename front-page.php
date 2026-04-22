@@ -40,11 +40,11 @@
     </section>
 
     <?php
-    $about_image       = get_field('about_image');
-    $about_eyebrow     = get_field('about_eyebrow');
-    $about_heading     = get_field('about_heading');
-    $about_description = get_field('about_description');
-    $about_cta         = get_field('about_cta');
+        $about_image       = get_field('about_image');
+        $about_eyebrow     = get_field('about_eyebrow');
+        $about_heading     = get_field('about_heading');
+        $about_description = get_field('about_description');
+        $about_cta         = get_field('about_cta');
     ?>
 
     <section class="bg-[#f1f1f1] py-20">
@@ -90,10 +90,32 @@
 
                     <?php if (have_rows('about_features')) : ?>
                         <div class="mb-8 grid gap-4 sm:grid-cols-3">
-                            <?php while (have_rows('about_features')) : the_row(); ?>
-                                <?php $feature_title = get_sub_field('title'); ?>
+                            <?php
+                            $feature_index = 0;
+                            while (have_rows('about_features')) : the_row();
+                                $feature_index++;
+                                $feature_title = get_sub_field('title');
+                            ?>
                                 <div class="flex items-start gap-3 rounded-lg bg-white/70 p-4">
-                                    <div class="mt-1 h-5 w-5 rounded-sm bg-brand-primary/15"></div>
+                                    <div class="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-brand-primary/15 text-brand-primary">
+                                        <?php if ($feature_index === 1) : ?>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true" class="h-5 w-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 2L4 13h6l-1 9 11-13h-6l1-7z"/>
+                                            </svg>
+                                        <?php elseif ($feature_index === 2) : ?>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true" class="h-5 w-5">
+                                                <rect x="3" y="4" width="18" height="11" rx="2"/>
+                                                <path stroke-linecap="round" d="M9 20h6"/>
+                                                <path stroke-linecap="round" d="M12 15v5"/>
+                                            </svg>
+                                        <?php else : ?>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true" class="h-5 w-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l5-5 4 4 7-8"/>
+                                                <path stroke-linecap="round" d="M4 20h16"/>
+                                            </svg>
+                                        <?php endif; ?>
+                                    </div>
+
                                     <div>
                                         <h3 class="text-sm font-semibold text-slate-900">
                                             <?php echo esc_html($feature_title); ?>
