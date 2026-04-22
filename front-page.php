@@ -39,71 +39,86 @@
 
     </section>
 
+    <?php
+    $about_image       = get_field('about_image');
+    $about_eyebrow     = get_field('about_eyebrow');
+    $about_heading     = get_field('about_heading');
+    $about_description = get_field('about_description');
+    $about_cta         = get_field('about_cta');
+    ?>
+
     <section class="bg-[#f1f1f1] py-20">
         <div class="mx-auto max-w-6xl px-6">
             <div class="grid gap-12 lg:grid-cols-[460px_1fr] lg:items-center">
 
                 <div class="flex justify-center lg:justify-start">
                     <div class="relative w-full max-w-[460px]">
-                        <?php
-                        $about_image_id = get_field('about_image');
-
-                        if ($about_image_id) {
-                            echo wp_get_attachment_image($about_image_id, 'full', false, [
-                                'class' => 'block h-auto w-full',
-                                'sizes' => '(min-width: 1024px) 460px, 100vw',
-                            ]);
-                        }
-                        ?>
+                        <?php if ($about_image) : ?>
+                            <?php
+                            echo wp_get_attachment_image(
+                                $about_image,
+                                'full',
+                                false,
+                                [
+                                    'class' => 'block h-auto w-full',
+                                    'sizes' => '(min-width: 1024px) 460px, 100vw',
+                                ]
+                            );
+                            ?>
+                        <?php endif; ?>
                     </div>
                 </div>
 
                 <div>
-                    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-brand-primary/80">
-                        About Me
-                    </p>
+                    <?php if ($about_eyebrow) : ?>
+                        <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-brand-primary/80">
+                            <?php echo esc_html($about_eyebrow); ?>
+                        </p>
+                    <?php endif; ?>
 
-                    <h2 class="mb-5 max-w-xl text-4xl font-bold leading-tight text-slate-900">
-                        Strategy. Design.<br>Development. Done right.
-                    </h2>
+                    <?php if ($about_heading) : ?>
+                        <h2 class="mb-5 max-w-xl text-4xl font-bold leading-tight text-slate-900">
+                            <?php echo nl2br(esc_html($about_heading)); ?>
+                        </h2>
+                    <?php endif; ?>
 
-                    <p class="mb-8 max-w-2xl text-base leading-7 text-slate-600">
-                        I partner with businesses and agencies to create websites that are not only beautiful,
-                        but built for performance, SEO, and conversions.
-                    </p>
-
-                    <div class="mb-8 grid gap-4 sm:grid-cols-3">
-                        <div class="flex items-start gap-3 rounded-lg bg-white/70 p-4">
-                            <div class="mt-1 h-5 w-5 rounded-sm bg-brand-primary/15"></div>
-                            <div>
-                                <h3 class="text-sm font-semibold text-slate-900">Performance Focused</h3>
-                            </div>
+                    <?php if ($about_description) : ?>
+                        <div class="mb-8 max-w-2xl text-base leading-7 text-slate-600">
+                            <?php echo wp_kses_post($about_description); ?>
                         </div>
+                    <?php endif; ?>
 
-                        <div class="flex items-start gap-3 rounded-lg bg-white/70 p-4">
-                            <div class="mt-1 h-5 w-5 rounded-sm bg-brand-primary/15"></div>
-                            <div>
-                                <h3 class="text-sm font-semibold text-slate-900">Responsive by Design</h3>
-                            </div>
+                    <?php if (have_rows('about_features')) : ?>
+                        <div class="mb-8 grid gap-4 sm:grid-cols-3">
+                            <?php while (have_rows('about_features')) : the_row(); ?>
+                                <?php $feature_title = get_sub_field('title'); ?>
+                                <div class="flex items-start gap-3 rounded-lg bg-white/70 p-4">
+                                    <div class="mt-1 h-5 w-5 rounded-sm bg-brand-primary/15"></div>
+                                    <div>
+                                        <h3 class="text-sm font-semibold text-slate-900">
+                                            <?php echo esc_html($feature_title); ?>
+                                        </h3>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
                         </div>
+                    <?php endif; ?>
 
-                        <div class="flex items-start gap-3 rounded-lg bg-white/70 p-4">
-                            <div class="mt-1 h-5 w-5 rounded-sm bg-brand-primary/15"></div>
-                            <div>
-                                <h3 class="text-sm font-semibold text-slate-900">Results Driven</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition hover:text-brand-primary">
-                        More About Me
-                        <span aria-hidden="true">→</span>
-                    </a>
+                    <?php if ($about_cta) : ?>
+                        <a
+                            href="<?php echo esc_url($about_cta['url']); ?>"
+                            target="<?php echo esc_attr($about_cta['target'] ?: '_self'); ?>"
+                            class="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition hover:text-brand-primary"
+                        >
+                            <?php echo esc_html($about_cta['title']); ?>
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    <?php endif; ?>
                 </div>
 
             </div>
         </div>
-    </section>   
+    </section>
 
     <section class="bg-white py-24">
         <div class="mx-auto max-w-6xl px-6">
