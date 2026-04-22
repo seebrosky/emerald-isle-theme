@@ -96,8 +96,8 @@
                                 $feature_index++;
                                 $feature_title = get_sub_field('title');
                             ?>
-                                <div class="flex items-start gap-3 rounded-lg bg-white/70 p-4">
-                                    <div class="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-brand-primary/15 text-brand-primary">
+                                <div class="flex min-h-[84px] items-center gap-3 rounded-lg bg-white/70 p-4">
+                                    <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-brand-primary/15 text-brand-primary">
                                         <?php if ($feature_index === 1) : ?>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true" class="h-5 w-5">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 2L4 13h6l-1 9 11-13h-6l1-7z"/>
@@ -117,7 +117,7 @@
                                     </div>
 
                                     <div>
-                                        <h3 class="text-sm font-semibold text-slate-900">
+                                        <h3 class="text-sm font-semibold leading-snug text-slate-900 sm:max-w-[140px]">
                                             <?php echo esc_html($feature_title); ?>
                                         </h3>
                                     </div>
