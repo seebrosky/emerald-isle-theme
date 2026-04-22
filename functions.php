@@ -2,6 +2,15 @@
 
 require_once get_template_directory() . '/inc/image-helper.php';
 
+add_filter('acf/settings/save_json', function () {
+    return get_stylesheet_directory() . '/acf-json';
+});
+
+add_filter('acf/settings/load_json', function ($paths) {
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    return $paths;
+});
+
 function emerald_isle_theme_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');

@@ -39,64 +39,71 @@
 
     </section>
 
-    <section class="bg-[#f5f5f3] py-20">
-        <div class="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+    <section class="bg-[#f1f1f1] py-20">
+        <div class="mx-auto max-w-6xl px-6">
+            <div class="grid gap-12 lg:grid-cols-[460px_1fr] lg:items-center">
 
-            <div class="relative">
-                <div class="absolute -left-4 -top-4 h-20 w-20 border-l-4 border-t-4 border-black/10"></div>
-                <div class="max-w-sm overflow-hidden rounded-sm bg-white shadow-sm">
-                    <div class="aspect-[4/5] w-full bg-gray-300"></div>
+                <div class="flex justify-center lg:justify-start">
+                    <div class="relative w-full max-w-[460px]">
+                        <?php
+                        $about_image_id = get_field('about_image');
+
+                        if ($about_image_id) {
+                            echo wp_get_attachment_image($about_image_id, 'full', false, [
+                                'class' => 'block h-auto w-full',
+                                'sizes' => '(min-width: 1024px) 460px, 100vw',
+                            ]);
+                        }
+                        ?>
+                    </div>
                 </div>
-                <div class="absolute -bottom-4 right-6 text-2xl italic text-brand-primary/70">
-                    Chris Brosky
+
+                <div>
+                    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-brand-primary/80">
+                        About Me
+                    </p>
+
+                    <h2 class="mb-5 max-w-xl text-4xl font-bold leading-tight text-slate-900">
+                        Strategy. Design.<br>Development. Done right.
+                    </h2>
+
+                    <p class="mb-8 max-w-2xl text-base leading-7 text-slate-600">
+                        I partner with businesses and agencies to create websites that are not only beautiful,
+                        but built for performance, SEO, and conversions.
+                    </p>
+
+                    <div class="mb-8 grid gap-4 sm:grid-cols-3">
+                        <div class="flex items-start gap-3 rounded-lg bg-white/70 p-4">
+                            <div class="mt-1 h-5 w-5 rounded-sm bg-brand-primary/15"></div>
+                            <div>
+                                <h3 class="text-sm font-semibold text-slate-900">Performance Focused</h3>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 rounded-lg bg-white/70 p-4">
+                            <div class="mt-1 h-5 w-5 rounded-sm bg-brand-primary/15"></div>
+                            <div>
+                                <h3 class="text-sm font-semibold text-slate-900">Responsive by Design</h3>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 rounded-lg bg-white/70 p-4">
+                            <div class="mt-1 h-5 w-5 rounded-sm bg-brand-primary/15"></div>
+                            <div>
+                                <h3 class="text-sm font-semibold text-slate-900">Results Driven</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition hover:text-brand-primary">
+                        More About Me
+                        <span aria-hidden="true">→</span>
+                    </a>
                 </div>
+
             </div>
-
-            <div>
-                <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-brand-primary/80">
-                    About Me
-                </p>
-
-                <h2 class="mb-5 max-w-xl text-4xl font-bold leading-tight text-slate-900">
-                    Strategy. Design.<br>Development. Done right.
-                </h2>
-
-                <p class="mb-8 max-w-2xl text-base leading-7 text-slate-600">
-                    I partner with businesses and agencies to create websites that are not only beautiful,
-                    but built for performance, SEO, and conversions.
-                </p>
-
-                <div class="mb-8 grid gap-4 sm:grid-cols-3">
-                    <div class="flex items-start gap-3 rounded-lg bg-white/70 p-4">
-                        <div class="mt-1 h-5 w-5 rounded-sm bg-brand-primary/15"></div>
-                        <div>
-                            <h3 class="text-sm font-semibold text-slate-900">Performance Focused</h3>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-3 rounded-lg bg-white/70 p-4">
-                        <div class="mt-1 h-5 w-5 rounded-sm bg-brand-primary/15"></div>
-                        <div>
-                            <h3 class="text-sm font-semibold text-slate-900">Responsive by Design</h3>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-3 rounded-lg bg-white/70 p-4">
-                        <div class="mt-1 h-5 w-5 rounded-sm bg-brand-primary/15"></div>
-                        <div>
-                            <h3 class="text-sm font-semibold text-slate-900">Results Driven</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition hover:text-brand-primary">
-                    More About Me
-                    <span aria-hidden="true">→</span>
-                </a>
-            </div>
-
         </div>
-    </section>    
+    </section>   
 
     <section class="bg-white py-24">
         <div class="mx-auto max-w-6xl px-6">
