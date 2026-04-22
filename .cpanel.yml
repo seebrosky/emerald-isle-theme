@@ -5,6 +5,7 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/find $DEPLOYPATH -mindepth 1 -maxdepth 1 ! -name '.git' -exec /bin/rm -rf {} +
     - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R acf-json $DEPLOYPATH
     - /bin/mkdir -p $DEPLOYPATH/inc
     - /bin/cp -R inc/* $DEPLOYPATH/inc
     - /bin/cp -R template-parts $DEPLOYPATH
