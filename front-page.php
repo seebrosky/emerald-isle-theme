@@ -49,9 +49,9 @@
 
     <section class="bg-[#f1f1f1] py-20">
         <div class="mx-auto max-w-6xl px-6">
-            <div class="grid gap-12 lg:grid-cols-[460px_1fr] lg:items-center">
+            <div class="grid gap-12 xl:grid-cols-[460px_1fr] xl:items-center">
 
-                <div class="flex justify-center lg:justify-start">
+                <div class="flex justify-center sm:justify-start">
                     <div class="relative w-full max-w-[460px]">
                         <?php if ($about_image) : ?>
                             <?php
@@ -89,7 +89,7 @@
                     <?php endif; ?>
 
                     <?php if (have_rows('about_features')) : ?>
-                        <div class="mb-8 grid gap-4 sm:grid-cols-3">
+                        <div class="mb-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                             <?php
                             $feature_index = 0;
                             while (have_rows('about_features')) : the_row();
@@ -117,7 +117,7 @@
                                     </div>
 
                                     <div>
-                                        <h3 class="text-sm font-semibold leading-snug text-slate-900 sm:max-w-[140px]">
+                                        <h3 class="text-sm font-semibold leading-snug text-slate-900 whitespace-nowrap xl:whitespace-normal">
                                             <?php echo esc_html($feature_title); ?>
                                         </h3>
                                     </div>
@@ -126,14 +126,30 @@
                         </div>
                     <?php endif; ?>
 
+                    <?php
+                        $url    = $about_cta['url'] ?? home_url('/about');
+                        $title  = $about_cta['title'] ?? 'About Me';
+                        $target = $about_cta['target'] ?? '_self';
+                    ?>                    
+
                     <?php if ($about_cta) : ?>
                         <a
-                            href="<?php echo esc_url($about_cta['url']); ?>"
-                            target="<?php echo esc_attr($about_cta['target'] ?: '_self'); ?>"
-                            class="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition hover:text-brand-primary"
+                            href="<?php echo esc_url($url); ?>"
+                            target="<?php echo esc_attr($target); ?>"
+                            class="btn-about-reveal"
                         >
-                            <?php echo esc_html($about_cta['title']); ?>
-                            <span aria-hidden="true">→</span>
+                            <span class="btn-about-reveal__bg" aria-hidden="true"></span>
+
+                            <span class="btn-about-reveal__label">
+                                <?php echo esc_html($title); ?>
+                            </span>
+
+                            <span class="btn-about-reveal__icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" class="h-5 w-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 6l6 6-6 6"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 6l6 6-6 6"/>
+                                </svg>
+                            </span>
                         </a>
                     <?php endif; ?>
                 </div>
