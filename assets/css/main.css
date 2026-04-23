@@ -1272,7 +1272,7 @@
   --color-text-muted-dark: #9ca3af;
   --color-background: #ffffff;
   --color-background-soft: #f4f2ee;
-  --color-primary: #B5886C;
+  --color-primary: #C18866;
   --color-primary-hover: #d8ad6f;
   --color-primary-muted: #a88247;
   --color-primary-subtle: rgba(201, 156, 87, 0.15);
@@ -1394,7 +1394,7 @@
 }
 .btn-about-reveal__icon {
   position: absolute;
-  top: calc(50% - 10px);
+  top: calc(50% - 9px);
   right: 14px;
   display: inline-flex;
   align-items: center;

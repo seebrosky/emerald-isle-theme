@@ -22,8 +22,7 @@
     --color-background: #ffffff;
     --color-background-soft: #f4f2ee;
 
-    /* --color-primary: #c99c57; */
-    --color-primary: #B5886C;
+    --color-primary: #C18866;
     --color-primary-hover: #d8ad6f;
     --color-primary-muted: #a88247;
     --color-primary-subtle: rgba(201, 156, 87, 0.15);
@@ -144,7 +143,6 @@
     padding: 0 22px;
     overflow: hidden;
     isolation: isolate;
-
     border: 1px solid var(--color-primary);
     border-radius: 9999px;
     background: rgb(255 255 255 / 0.82);
@@ -154,7 +152,6 @@
     font-weight: 600;
     line-height: 1;
     white-space: nowrap;
-
     box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
 }
 
@@ -199,7 +196,7 @@
 
 .btn-about-reveal__icon {
     position: absolute;
-    top: calc(50% - 10px);
+    top: calc(50% - 9px);
     right: 14px;
     display: inline-flex;
     align-items: center;
