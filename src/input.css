@@ -112,8 +112,6 @@
     background-repeat: no-repeat;
 }
 
-
-/* Desktop override (restore your original cleaner look) */
 @media (min-width: 1024px) {
     .hero {
         background:

@@ -1,6 +1,6 @@
 {
     "key": "group_69e80d73d666e",
-    "title": "Front Page",
+    "title": "About Me Section",
     "fields": [
         {
             "key": "field_69e80d73ec532",
@@ -158,9 +158,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_type",
                 "operator": "==",
-                "value": "5"
+                "value": "front_page"
             }
         ]
     ],
@@ -176,5 +176,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1776826146
+    "modified": 1776986210
 }

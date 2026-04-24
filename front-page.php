@@ -158,39 +158,154 @@
         </div>
     </section>
 
-    <section class="bg-white py-24">
+    <!-- Featured Projects Section -->
+    <?php if (have_rows('featured_projects')) : ?>
+        <section class="bg-white py-24">
+            <div class="mx-auto max-w-6xl px-6">
+                <h2 class="mb-3 text-center text-sm font-semibold uppercase tracking-[0.18em] text-brand-primary/80">
+                    Featured Work
+                </h2>
+
+                <h3 class="mb-12 text-center text-4xl font-bold text-slate-900">
+                    Selected Projects
+                </h3>
+
+                <div class="grid gap-8 md:grid-cols-3">
+                    <?php while (have_rows('featured_projects')) : the_row(); ?>
+                        <?php
+                        $project_image    = get_sub_field('project_image');
+                        $project_title    = get_sub_field('project_title');
+                        $project_category = get_sub_field('project_category');
+                        $project_link     = get_sub_field('project_link');
+
+                        $project_url    = $project_link['url'] ?? '#';
+                        $project_target = $project_link['target'] ?? '_self';
+                        ?>
+
+                        <article class="group">
+                            <?php if ($project_url) : ?>
+                                <a href="<?php echo esc_url($project_url); ?>" target="<?php echo esc_attr($project_target); ?>" class="block no-underline">
+                            <?php endif; ?>
+
+                                <div class="mb-4 overflow-hidden rounded-xl bg-gray-200 shadow-sm">
+                                    <?php if ($project_image) : ?>
+                                        <?php
+                                        echo wp_get_attachment_image(
+                                            $project_image,
+                                            'large',
+                                            false,
+                                            [
+                                                'class' => 'aspect-[16/9] h-full w-full object-cover transition duration-300 group-hover:scale-105',
+                                                'sizes' => '(min-width: 768px) 33vw, 100vw',
+                                            ]
+                                        );
+                                        ?>
+                                    <?php else : ?>
+                                        <div class="aspect-[16/9] w-full bg-gray-200"></div>
+                                    <?php endif; ?>
+                                </div>
+
+                                <?php if ($project_title) : ?>
+                                    <h4 class="text-lg font-semibold text-slate-900">
+                                        <?php echo esc_html($project_title); ?>
+                                    </h4>
+                                <?php endif; ?>
+
+                                <?php if ($project_category) : ?>
+                                    <p class="text-sm text-gray-500">
+                                        <?php echo esc_html($project_category); ?>
+                                    </p>
+                                <?php endif; ?>
+
+                                <p class="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-900 transition group-hover:text-brand-primary">
+                                    <?php echo esc_html($project_link['title'] ?? 'View Project'); ?>
+                                    <span aria-hidden="true">→</span>
+                                </p>
+
+                            <?php if ($project_url) : ?>
+                                </a>
+                            <?php endif; ?>
+                        </article>
+                    <?php endwhile; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
+
+    <!-- Services Section -->
+    <section class="bg-[#08090d] py-20 text-white">
         <div class="mx-auto max-w-6xl px-6">
-            <h2 class="mb-3 text-center text-sm font-semibold uppercase tracking-[0.18em] text-gray-500">
-                Featured Work
-            </h2>
+            <div class="mb-12 text-center">
+                <p class="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-brand-primary">
+                    What I Do
+                </p>
 
-            <h3 class="mb-12 text-center text-4xl font-bold text-slate-900">
-                Selected Projects
-            </h3>
+                <h2 class="text-3xl font-bold sm:text-4xl">
+                    Solutions that help you grow
+                </h2>
+            </div>
 
-            <div class="grid gap-8 md:grid-cols-3">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <div class="border-white/10 lg:border-r lg:pr-8">
+                    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-lg border border-brand-primary/30 bg-brand-primary/10 text-brand-primary">
+                        <!-- icon -->
+                    </div>
 
-                <div class="group">
-                    <div class="mb-4 aspect-[4/3] rounded-xl bg-gray-200 shadow-sm transition duration-300 group-hover:-translate-y-1"></div>
-                    <h4 class="text-lg font-semibold text-slate-900">Project One</h4>
-                    <p class="text-sm text-gray-500">Custom WordPress theme</p>
+                    <h3 class="mb-2 text-lg font-semibold">
+                        Web Design
+                    </h3>
+
+                    <p class="text-sm leading-6 text-white/60">
+                        Clean, modern designs that reflect your brand and support your business goals.
+                    </p>
                 </div>
 
-                <div class="group">
-                    <div class="mb-4 aspect-[4/3] rounded-xl bg-gray-200 shadow-sm transition duration-300 group-hover:-translate-y-1"></div>
-                    <h4 class="text-lg font-semibold text-slate-900">Project Two</h4>
-                    <p class="text-sm text-gray-500">Performance-focused build</p>
+                <div class="border-white/10 lg:border-r lg:pr-8">
+                    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-lg border border-brand-primary/30 bg-brand-primary/10 text-brand-primary">
+                        <!-- icon -->
+                    </div>
+
+                    <h3 class="mb-2 text-lg font-semibold">
+                        Web Development
+                    </h3>
+
+                    <p class="text-sm leading-6 text-white/60">
+                        Fast, responsive WordPress builds with clean structure and scalable code.
+                    </p>
                 </div>
 
-                <div class="group">
-                    <div class="mb-4 aspect-[4/3] rounded-xl bg-gray-200 shadow-sm transition duration-300 group-hover:-translate-y-1"></div>
-                    <h4 class="text-lg font-semibold text-slate-900">Project Three</h4>
-                    <p class="text-sm text-gray-500">UI/UX system</p>
+                <div class="border-white/10 lg:border-r lg:pr-8">
+                    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-lg border border-brand-primary/30 bg-brand-primary/10 text-brand-primary">
+                        <!-- icon -->
+                    </div>
+
+                    <h3 class="mb-2 text-lg font-semibold">
+                        SEO Optimization
+                    </h3>
+
+                    <p class="text-sm leading-6 text-white/60">
+                        Improve visibility with performance-minded structure and technical SEO basics.
+                    </p>
                 </div>
 
+                <div>
+                    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-lg border border-brand-primary/30 bg-brand-primary/10 text-brand-primary">
+                        <!-- icon -->
+                    </div>
+
+                    <h3 class="mb-2 text-lg font-semibold">
+                        Performance
+                    </h3>
+
+                    <p class="text-sm leading-6 text-white/60">
+                        Speed-focused builds that load quickly and deliver a smoother user experience.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
+
+
 
     <section class="bg-site-header py-24 text-white">
         <div class="mx-auto max-w-6xl px-6 text-center">
