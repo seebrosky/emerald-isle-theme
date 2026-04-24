@@ -112,6 +112,21 @@
     background-repeat: no-repeat;
 }
 
+.testimonial-cta {
+    position: relative;
+    background:
+        linear-gradient(
+            to right,
+            rgba(8, 9, 13, 0.75),
+            rgba(8, 9, 13, 0.45)
+        ),
+        url('/wp-content/uploads/mountain-cta-bg.webp');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 @media (min-width: 1024px) {
     .hero {
         background:
