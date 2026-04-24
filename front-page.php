@@ -247,7 +247,7 @@
 
             <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                 <div class="border-white/10 lg:border-r lg:pr-8">
-                    <div class="mb-2.5 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-primary/10 text-brand-primary">
+                    <div class="mb-2.5 flex h-12 w-12 items-center justify-center rounded-lg text-brand-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.25V18a2.25 2.25 0 0 0 2.25 2.25h13.5A2.25 2.25 0 0 0 21 18V8.25m-18 0V6a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6ZM7.5 6h.008v.008H7.5V6Zm2.25 0h.008v.008H9.75V6Z" />
                         </svg>
@@ -263,7 +263,7 @@
                 </div>
 
                 <div class="border-white/10 lg:border-r lg:pr-8">
-                    <div class="mb-2.5 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-primary/10 text-brand-primary">
+                    <div class="mb-2.5 flex h-12 w-12 items-center justify-center rounded-lg text-brand-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-9">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
                         </svg>
@@ -279,7 +279,7 @@
                 </div>
 
                 <div class="border-white/10 lg:border-r lg:pr-8">
-                    <div class="mb-2.5 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-primary/10 text-brand-primary">
+                    <div class="mb-2.5 flex h-12 w-12 items-center justify-center rounded-lg text-brand-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
@@ -295,7 +295,7 @@
                 </div>
 
                 <div>
-                    <div class="mb-2.5 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-primary/10 text-brand-primary">
+                    <div class="mb-2.5 flex h-12 w-12 items-center justify-center rounded-lg text-brand-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605" />
                         </svg>
