@@ -26,8 +26,8 @@
                         View My Work
                     </a>
 
-                    <a href="#" class="rounded-md border border-white/20 px-6 py-3 font-semibold text-white">
-                        Let’s Work Together
+                    <a href="/contact/" class="rounded-md border border-white/20 px-6 py-3 font-semibold text-white">
+                        Let's Work Together
                     </a>
                 </div>
             </div>
@@ -330,13 +330,13 @@
         $testimonials_eyebrow = get_field('testimonials_eyebrow') ?: 'Clients Say';
         $testimonials_heading = get_field('testimonials_heading') ?: 'Kind Words';
 
-        $cta_heading = get_field('testimonial_cta_heading') ?: 'Have a project in mind?';
-        $cta_text    = get_field('testimonial_cta_text') ?: "Let's build something great together.";
-        $cta_link    = get_field('testimonial_cta_link');
+        // $cta_heading = get_field('testimonial_cta_heading') ?: 'Have a project in mind?';
+        // $cta_text    = get_field('testimonial_cta_text') ?: "Let's build something great together.";
+        // $cta_link    = get_field('testimonial_cta_link');
 
-        $cta_url    = $cta_link['url'] ?? home_url('/contact');
-        $cta_title  = $cta_link['title'] ?? 'Get in Touch';
-        $cta_target = $cta_link['target'] ?? '_self';
+        // $cta_url    = $cta_link['url'] ?? home_url('/contact');
+        // $cta_title  = $cta_link['title'] ?? 'Get in Touch';
+        // $cta_target = $cta_link['target'] ?? '_self';
     ?>
 
     <section class="bg-[#f1f1f1] py-24">
@@ -400,7 +400,7 @@
             <div class="testimonial-cta overflow-hidden rounded-lg border border-black/20 px-6 py-10 text-white shadow-sm md:px-12 md:py-14">
                 <div class="relative z-10 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
                     <div class="flex flex-col gap-5 sm:flex-row sm:items-center">
-                        <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-brand-primary text-brand-primary">
+                        <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-3 border-brand-primary text-brand-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-11 w-11">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                             </svg>
@@ -408,29 +408,26 @@
 
                         <div>
                             <h3 class="mb-2 text-3xl font-bold leading-tight text-white">
-                                <?php echo esc_html($cta_heading); ?>
+                                Have a project in mind?
                             </h3>
 
                             <p class="text-base text-white/75">
-                                <?php echo esc_html($cta_text); ?>
+                                Let's build something great together.
                             </p>
                         </div>
                     </div>
 
                     <a
-                        href="<?php echo esc_url($cta_url); ?>"
-                        target="<?php echo esc_attr($cta_target); ?>"
+                        href="<?php echo esc_url(home_url('/contact/')); ?>"
                         class="inline-flex items-center justify-center rounded-sm bg-brand-primary px-8 py-4 text-sm font-bold uppercase tracking-wide text-black transition hover:bg-[var(--color-primary-hover)]"
                     >
-                        <?php echo esc_html($cta_title); ?>
+                        Get in Touch
                     </a>
                 </div>
             </div>
 
         </div>
     </section>
-
-
 
 
     <!-- <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
