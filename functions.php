@@ -33,7 +33,8 @@ function emerald_isle_theme_setup() {
     ));
 
     register_nav_menus(array(
-        'primary' => __('Primary Menu', 'emerald-isle'),
+        'primary'           => __('Primary Menu', 'emerald-isle'),
+        'footer_navigation' => __('Footer Navigation', 'emerald-isle'),
     ));
 }
 add_action('after_setup_theme', 'emerald_isle_theme_setup');

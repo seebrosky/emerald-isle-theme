@@ -127,6 +127,10 @@
     background-repeat: no-repeat;
 }
 
+.footer-menu a {
+    @apply transition hover:text-brand-primary;
+}
+
 @media (min-width: 1024px) {
     .hero {
         background:
