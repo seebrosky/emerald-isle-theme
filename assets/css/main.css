@@ -382,6 +382,12 @@
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
+  .h-9\.5 {
+    height: calc(var(--spacing) * 9.5);
+  }
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
   .h-11 {
     height: calc(var(--spacing) * 11);
   }
@@ -426,6 +432,12 @@
   }
   .w-8 {
     width: calc(var(--spacing) * 8);
+  }
+  .w-9\.5 {
+    width: calc(var(--spacing) * 9.5);
+  }
+  .w-10 {
+    width: calc(var(--spacing) * 10);
   }
   .w-11 {
     width: calc(var(--spacing) * 11);
