@@ -233,7 +233,7 @@
     <?php endif; ?>
 
     <!-- Solutions Section -->
-    <section class="bg-[#08090d] py-20 text-white">
+    <section class="bg-[#08090d] pt-20 pb-8 text-white">
         <div class="mx-auto max-w-6xl px-6">
             <div class="mb-12 text-center">
                 <p class="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-brand-primary">
@@ -313,7 +313,7 @@
         </div>
     </section>
 
-    <section class="bg-site-header py-24 text-white">
+    <section class="bg-site-header pt-12 pb-24 text-white">
         <div class="mx-auto max-w-6xl px-6 text-center">
             <h2 class="mb-6 text-4xl font-bold">
                 Ready to build something great?
