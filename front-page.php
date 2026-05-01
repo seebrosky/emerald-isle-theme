@@ -2,22 +2,22 @@
 
 <main>
 
-    <section class="hero relative text-white">
+    <section class="hero relative text-site-text">
 
         <div class="relative z-10 mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:flex lg:items-center lg:gap-12 lg:py-28">
             
             <!-- Left Content -->
             <div class="flex-1">
-                <p class="mb-3 text-[0.7rem] uppercase tracking-[0.14em] text-[var(--color-primary)]/85 sm:mb-4 sm:text-[0.8rem] sm:tracking-[0.18em] lg:text-sm">
+                <p class="mb-3 text-[0.7rem] uppercase tracking-[0.14em] text-brand-primary sm:mb-4 sm:text-[0.8rem] sm:tracking-[0.18em] lg:text-sm">
                     Design • Development • Performance
                 </p>
 
-                <h1 class="mb-5 max-w-[10ch] text-4xl font-bold leading-[0.95] sm:text-5xl lg:max-w-none lg:text-7xl lg:leading-tight">
+                <h1 class="mb-5 max-w-[10ch] text-4xl font-bold leading-[0.95] text-site-text sm:text-5xl lg:max-w-none lg:text-7xl lg:leading-tight">
                     I build modern websites 
-                    <span class="text-[var(--color-primary)]">that drive results.</span>
+                    <span class="text-brand-primary">that drive results.</span>
                 </h1>
 
-                <p class="mb-8 max-w-[22rem] text-base leading-8 text-white/78 sm:text-lg lg:max-w-xl lg:text-white/70">
+                <p class="mb-8 max-w-[22rem] text-base leading-8 text-site-text-muted sm:text-lg lg:max-w-xl">
                     Custom WordPress themes, performance-first builds, and clean UI systems that scale.
                 </p>
 
@@ -26,7 +26,7 @@
                         View My Work
                     </a>
 
-                    <a href="/contact/" class="btn btn-outline">
+                    <a href="/contact/" class="btn btn-outline-dark">
                         Let's Work Together
                     </a>
                 </div>
@@ -48,7 +48,7 @@
     ?>
 
     <!-- About Section -->
-    <section class="bg-[#f1f1f1] py-20">
+    <section class="bg-site-bg-soft py-20">
         <div class="mx-auto max-w-6xl px-6">
             <div class="grid gap-12 xl:grid-cols-[460px_1fr] xl:items-center">
 
@@ -78,13 +78,13 @@
                     <?php endif; ?>
 
                     <?php if ($about_heading) : ?>
-                        <h2 class="mb-5 max-w-xl text-4xl font-bold leading-tight text-slate-900">
+                        <h2 class="mb-5 max-w-xl text-4xl font-bold leading-tight text-site-text">
                             <?php echo nl2br(esc_html($about_heading)); ?>
                         </h2>
                     <?php endif; ?>
 
                     <?php if ($about_description) : ?>
-                        <div class="mb-8 max-w-2xl text-base leading-7 text-slate-600">
+                        <div class="mb-8 max-w-2xl text-base leading-7 text-site-text-muted">
                             <?php echo wp_kses_post($about_description); ?>
                         </div>
                     <?php endif; ?>
@@ -118,7 +118,7 @@
                                     </div>
 
                                     <div>
-                                        <h3 class="text-sm font-semibold leading-snug text-slate-900 whitespace-nowrap xl:whitespace-normal">
+                                        <h3 class="text-sm font-semibold leading-snug text-site-text whitespace-nowrap xl:whitespace-normal">
                                             <?php echo esc_html($feature_title); ?>
                                         </h3>
                                     </div>
@@ -161,7 +161,7 @@
                     Featured Work
                 </h2>
 
-                <h3 class="mb-12 text-center text-4xl font-bold text-slate-900">
+                <h3 class="mb-12 text-center text-4xl font-bold text-site-text">
                     Selected Projects
                 </h3>
 
@@ -201,13 +201,13 @@
                                 </div>
 
                                 <?php if ($project_title) : ?>
-                                    <h4 class="text-lg font-semibold text-slate-900">
+                                    <h4 class="text-lg font-semibold text-site-text">
                                         <?php echo esc_html($project_title); ?>
                                     </h4>
                                 <?php endif; ?>
 
                                 <?php if ($project_category) : ?>
-                                    <p class="text-sm text-gray-500">
+                                    <p class="text-sm text-site-text-muted">
                                         <?php echo esc_html($project_category); ?>
                                     </p>
                                 <?php endif; ?>
@@ -232,7 +232,7 @@
     <?php endif; ?>
 
     <!-- Solutions Section -->
-    <section class="bg-[#08090d] pt-20 pb-8 text-white">
+    <section class="bg-site-bg-soft pt-20 pb-8 text-site-text">
         <div class="mx-auto max-w-6xl px-6">
             <div class="mb-12 text-center">
                 <p class="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-brand-primary">
@@ -245,66 +245,66 @@
             </div>
 
             <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                <div class="border-white/10 lg:border-r lg:pr-8 text-center">
-                    <div class="mb-2.5 flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-primary text-brand-primary mx-auto">
+                <div class="text-center lg:border-r lg:border-brand-tertiary lg:pr-8">
+                    <div class="mx-auto mb-2.5 flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-tertiary bg-white text-brand-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.25V18a2.25 2.25 0 0 0 2.25 2.25h13.5A2.25 2.25 0 0 0 21 18V8.25m-18 0V6a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6ZM7.5 6h.008v.008H7.5V6Zm2.25 0h.008v.008H9.75V6Z" />
-                        </svg>                   
+                        </svg>
                     </div>
 
-                    <h3 class="mb-2 text-lg font-semibold">
+                    <h3 class="mb-2 text-lg font-semibold text-site-text">
                         Web Design
                     </h3>
 
-                    <p class="text-sm leading-6 text-white/60">
+                    <p class="text-sm leading-6 text-site-text-muted">
                         Clean, modern designs that reflect your brand and support your business goals.
                     </p>
                 </div>
 
-                <div class="border-white/10 lg:border-r lg:pr-8 text-center">
-                    <div class="mb-2.5 flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-primary text-brand-primary mx-auto">
+                <div class="text-center lg:border-r lg:border-brand-tertiary lg:pr-8">
+                    <div class="mx-auto mb-2.5 flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-tertiary bg-white text-brand-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
                         </svg>
                     </div>
 
-                    <h3 class="mb-2 text-lg font-semibold">
+                    <h3 class="mb-2 text-lg font-semibold text-site-text">
                         Web Development
                     </h3>
 
-                    <p class="text-sm leading-6 text-white/60">
+                    <p class="text-sm leading-6 text-site-text-muted">
                         Fast, responsive WordPress builds with clean structure and scalable code.
                     </p>
                 </div>
 
-                <div class="border-white/10 lg:border-r lg:pr-8 text-center">
-                    <div class="mb-2.5 flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-primary text-brand-primary mx-auto">
+                <div class="text-center lg:border-r lg:border-brand-tertiary lg:pr-8">
+                    <div class="mx-auto mb-2.5 flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-tertiary bg-white text-brand-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
                     </div>
 
-                    <h3 class="mb-2 text-lg font-semibold">
+                    <h3 class="mb-2 text-lg font-semibold text-site-text">
                         SEO Optimization
                     </h3>
 
-                    <p class="text-sm leading-6 text-white/60">
+                    <p class="text-sm leading-6 text-site-text-muted">
                         Improve visibility with performance-minded structure and technical SEO basics.
                     </p>
                 </div>
 
                 <div class="text-center lg:pr-8">
-                    <div class="mb-2.5 flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-primary text-brand-primary mx-auto">
+                    <div class="mx-auto mb-2.5 flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-tertiary bg-white text-brand-primary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
-                        </svg>                        
+                        </svg>
                     </div>
 
-                    <h3 class="mb-2 text-lg font-semibold">
+                    <h3 class="mb-2 text-lg font-semibold text-site-text">
                         Performance
                     </h3>
 
-                    <p class="text-sm leading-6 text-white/60">
+                    <p class="text-sm leading-6 text-site-text-muted">
                         Speed-focused builds that load quickly and deliver a smoother user experience.
                     </p>
                 </div>
@@ -312,15 +312,17 @@
         </div>
     </section>
 
-    <section class="bg-site-header pt-12 pb-24 text-white">
-        <div class="mx-auto max-w-6xl px-6 text-center">
-            <h2 class="mb-6 text-4xl font-bold">
+    <section class="bg-brand-primary py-20 text-center text-white">
+        <div class="mx-auto max-w-4xl px-6">
+            <h2 class="text-3xl font-bold sm:text-4xl">
                 Ready to build something great?
             </h2>
 
-            <a href="#" class="btn btn-primary">
-                Start a Project
-            </a>
+            <div class="mt-8">
+                <a href="#" class="btn btn-light">
+                    Start a Project
+                </a>
+            </div>
         </div>
     </section>
     
@@ -338,7 +340,7 @@
         // $cta_target = $cta_link['target'] ?? '_self';
     ?>
 
-    <section class="bg-[#f1f1f1] py-24">
+    <section class="bg-site-bg-soft py-24">
         <div class="mx-auto max-w-6xl px-6">
 
             <div class="mb-10 text-center">
@@ -346,7 +348,7 @@
                     <?php echo esc_html($testimonials_eyebrow); ?>
                 </p>
 
-                <h2 class="mb-4 text-4xl font-bold text-slate-900 sm:text-5xl">
+                <h2 class="mb-4 text-4xl font-bold text-site-text sm:text-5xl">
                     <?php echo esc_html($testimonials_heading); ?>
                 </h2>
 
@@ -365,7 +367,7 @@
                         $company = get_sub_field('company');
                         ?>
 
-                        <article class="px-6 text-center md:border-r md:border-slate-300/70 last:md:border-r-0">
+                        <article class="px-6 text-center md:border-r md:border-[var(--color-border-light)] last:md:border-r-0">
                             <div class="mb-6 flex justify-center gap-1 text-brand-primary">
                                 <?php for ($i = 0; $i < 5; $i++) : ?>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
@@ -375,15 +377,15 @@
                             </div>
 
                             <?php if ($quote) : ?>
-                                <blockquote class="mx-auto mb-6 max-w-sm text-base leading-7 text-slate-700">
+                                <blockquote class="mx-auto mb-6 max-w-sm text-base leading-7 text-site-text-muted">
                                     “<?php echo esc_html($quote); ?>”
                                 </blockquote>
                             <?php endif; ?>
 
                             <?php if ($name || $company) : ?>
-                                <p class="text-sm text-slate-700">
+                                <p class="text-sm text-site-text-muted">
                                     <?php if ($name) : ?>
-                                        <span class="font-bold text-slate-900">– <?php echo esc_html($name); ?></span>
+                                        <span class="font-bold text-site-text">– <?php echo esc_html($name); ?></span>
                                     <?php endif; ?>
 
                                     <?php if ($company) : ?>
@@ -396,27 +398,25 @@
                 </div>
             <?php endif; ?>
 
-            <div class="testimonial-cta overflow-hidden rounded-lg border border-black/20 px-6 py-10 text-white shadow-sm md:px-12 md:py-14">
+            <div class="testimonial-cta overflow-hidden rounded-lg border border-brand-tertiary px-6 py-10 text-site-text shadow-sm md:px-12 md:py-14">
                 <div class="relative z-10 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
                     <div class="flex flex-col gap-5 sm:flex-row sm:items-center">
-                        <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-3 border-brand-primary text-brand-primary">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-11 w-11">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                            </svg>
+                        <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-3 border-brand-primary bg-white/55 text-brand-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-11 w-11"> <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /> </svg>
                         </div>
 
                         <div>
-                            <h3 class="mb-2 text-3xl font-bold leading-tight text-white">
+                            <h3 class="mb-2 text-3xl font-bold leading-tight text-site-text">
                                 Have a project in mind?
                             </h3>
 
-                            <p class="text-base text-white/75">
+                            <p class="text-base text-site-text-muted">
                                 Let's build something great together.
                             </p>
                         </div>
                     </div>
 
-                    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn btn-primary">
+                    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn btn-light">
                         Get in Touch
                     </a>
                 </div>

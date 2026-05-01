@@ -27,6 +27,25 @@ document.addEventListener('DOMContentLoaded', function () {
         toggle.setAttribute('aria-expanded', 'false');
         header.classList.remove('mobile-nav-open');
         panel.classList.remove('is-open');
+
+        mobileParentItems.forEach((menuItem) => {
+            const link = menuItem.querySelector(':scope > a');
+            const subMenu = getDirectSubMenu(menuItem);
+
+            menuItem.classList.remove('is-submenu-open');
+
+            if (link) {
+                link.setAttribute('aria-expanded', 'false');
+                link.blur();
+            }
+
+            if (subMenu) {
+                subMenu.style.transition = 'none';
+                subMenu.style.height = '0px';
+                subMenu.offsetHeight;
+                subMenu.style.transition = '';
+            }
+        });
     }
 
     function syncOpenAncestorHeights(menuItem) {
@@ -77,13 +96,15 @@ document.addEventListener('DOMContentLoaded', function () {
         toggle.addEventListener('click', function () {
             const isOpen = toggle.getAttribute('aria-expanded') === 'true';
 
-            toggle.setAttribute('aria-expanded', String(!isOpen));
-            header.classList.toggle('mobile-nav-open', !isOpen);
-            panel.classList.toggle('is-open', !isOpen);
-
             if (isOpen) {
+                closeMobileMenu();
                 window.requestAnimationFrame(() => toggle.blur());
+                return;
             }
+
+            toggle.setAttribute('aria-expanded', 'true');
+            header.classList.add('mobile-nav-open');
+            panel.classList.add('is-open');
         });
     }
 
