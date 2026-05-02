@@ -2,7 +2,9 @@
 
 require_once get_template_directory() . '/inc/image-helper.php';
 
-// require get_template_directory() . '/admin/styleguide.php';
+if ( is_admin() ) {
+    require_once get_template_directory() . '/admin/styleguide.php';
+}
 
 add_filter('acf/settings/save_json', function () {
     return get_stylesheet_directory() . '/acf-json';
