@@ -544,9 +544,6 @@
       background-color: color-mix(in oklab, var(--color-brand-primary) 15%, transparent);
     }
   }
-  .bg-brand-tertiary {
-    background-color: var(--color-brand-tertiary);
-  }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
   }
@@ -1849,6 +1846,15 @@
 .copyright {
   font-size: 14px !important;
   line-height: 1 !important;
+}
+.brand-gradient {
+  background: radial-gradient( 900px 400px at 15% -10%, rgba(255,255,255,0.18), transparent 60% ), radial-gradient( 1000px 500px at 85% 120%, rgba(0,0,0,0.35), transparent 70% ), linear-gradient( 135deg, #0f5c3f 0%, #084d37 100% );
+}
+.brand-stripes {
+  background: linear-gradient( 165deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.035) 20%, transparent 20%, transparent 40%, rgba(255,255,255,0.02) 40%, rgba(255,255,255,0.02) 60%, transparent 60%, transparent 100% ), var(--color-brand-primary);
+}
+.footer-gradient {
+  background: radial-gradient( 900px 350px at 0% 0%, rgba(255,255,255,0.45), transparent 60% ), radial-gradient( 900px 450px at 100% 100%, rgba(9,89,65,0.14), transparent 70% ), linear-gradient( 180deg, #d6e4de 0%, #bdd4ca 100% );
 }
 @property --tw-rotate-x {
   syntax: "*";

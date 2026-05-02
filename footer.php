@@ -1,4 +1,4 @@
-        <footer class="mt-0 bg-brand-tertiary text-site-text">
+        <footer class="mt-0 footer-gradient text-site-text">
 
             <div class="mx-auto max-w-6xl px-6 py-16">
                 <div class="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">

@@ -312,7 +312,7 @@
         </div>
     </section>
 
-    <section class="bg-brand-primary py-20 text-center text-white">
+    <section class="brand-gradient py-20 text-center text-white">
         <div class="mx-auto max-w-4xl px-6">
             <h2 class="text-3xl font-bold sm:text-4xl">
                 Ready to build something great?
