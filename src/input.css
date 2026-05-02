@@ -67,6 +67,20 @@
 }
 
 @theme {
+    --color-emerald-900: #095941;
+    --color-emerald-700: #074833;
+    --color-emerald-500: #609982;
+    --color-emerald-100: #d6e4de;
+
+    --color-neutral-tan-100: #f7f3ec;
+    --color-neutral-tan-200: #f3efe7;
+    --color-neutral-tan-300: #e7dfd2;
+    --color-neutral-tan-400: #d6cbbb;
+
+    --color-neutral-900: #1f2a26;
+    --color-neutral-600: #5f6f68;
+    --color-neutral-100: #f6faf8;
+
     --color-brand-primary: var(--color-primary);
     --color-brand-secondary: var(--color-secondary);
     --color-brand-tertiary: var(--color-tertiary);
@@ -78,6 +92,15 @@
     --color-site-bg-soft: var(--color-background-soft);
     --color-site-header: var(--color-header-bg);
     --color-site-footer: var(--color-footer-bg);
+
+    --color-surface-1: var(--color-surface-1);
+    --color-surface-2: var(--color-surface-2);
+    --color-surface-3: var(--color-surface-3);
+
+    --color-accent: var(--color-accent);
+    --color-accent-hover: var(--color-accent-hover);
+
+    --color-border-light: var(--color-border-light);
 
     --text-base-fluid: var(--base-font-size);
     --text-h1: var(--h1-size);
@@ -122,7 +145,9 @@
 
 @layer components {
     .btn {
-        @apply inline-flex items-center justify-center gap-2 rounded px-6 py-3 text-sm font-semibold leading-none transition;
+        @apply inline-flex items-center justify-center gap-2 rounded px-6 py-3 text-sm font-semibold leading-none transition cursor-pointer;
+        text-decoration: none;
+        color: inherit;
     }
 
     .btn-primary {
@@ -151,6 +176,56 @@
 
     .btn-text {
         @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-site-text transition hover:text-brand-primary;
+    }
+
+    button.btn {
+        cursor: pointer;
+    }
+
+    a.btn {
+        cursor: pointer;
+    }
+
+    a.btn,
+    a.btn:link,
+    a.btn:visited,
+    a.btn:hover,
+    a.btn:focus {
+        text-decoration: none !important;
+    }
+
+    a.btn-primary,
+    a.btn-primary:link,
+    a.btn-primary:visited {
+        color: #ffffff !important;
+    }
+
+    a.btn-outline,
+    a.btn-outline:link,
+    a.btn-outline:visited {
+        color: var(--color-primary) !important;
+    }
+
+    a.btn-outline:hover,
+    a.btn-outline:focus {
+        color: #ffffff !important;
+    }
+
+    a.btn-light,
+    a.btn-light:link,
+    a.btn-light:visited {
+        color: var(--color-primary) !important;
+    }
+
+    a.btn-outline-light,
+    a.btn-outline-light:link,
+    a.btn-outline-light:visited {
+        color: #ffffff !important;
+    }
+
+    a.btn-outline-light:hover,
+    a.btn-outline-light:focus {
+        color: var(--color-primary) !important;
     }
 }
 
