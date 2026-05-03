@@ -1883,9 +1883,6 @@
     line-height: 1;
     --tw-font-weight: var(--font-weight-semibold) !important;
     font-weight: var(--font-weight-semibold) !important;
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
     text-decoration: none;
     cursor: pointer;
     transition: color 220ms ease, background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
@@ -1893,7 +1890,7 @@
   .btn-primary, .btn-secondary, .btn-outline, .btn-light, .btn-soft {
     box-shadow: 0 1px 2px rgb(31 42 38 / 0.08);
   }
-  .btn-primary:hover, .btn-secondary:hover, .btn-outline:hover, .btn-light:hover, .btn-soft:hover {
+  .btn-primary:hover, .btn-secondary:hover, .btn-outline:hover, .btn-outline-dark:hover, .btn-outline-light:hover, .btn-light:hover, .btn-soft:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgb(31 42 38 / 0.16);
   }
@@ -2020,11 +2017,19 @@
   }
   .btn, button.btn, a.btn, a.btn:link, a.btn:visited {
     font-size: 16px !important;
-    font-weight: 700;
+    font-weight: 700 !important;
     line-height: 1;
   }
   a.btn-outline-dark:hover, a.btn-outline-dark:focus-visible {
     color: #ffffff !important;
+  }
+  .btn, button.btn, a.btn, a.btn:link, a.btn:visited {
+    transition-property: color, background-color, border-color, box-shadow, transform !important;
+    transition-duration: 220ms !important;
+    transition-timing-function: ease !important;
+  }
+  .btn-primary:hover, .btn-secondary:hover, .btn-outline:hover, .btn-outline-dark:hover, .btn-outline-light:hover, .btn-light:hover, .btn-soft:hover, a.btn-primary:hover, a.btn-secondary:hover, a.btn-outline:hover, a.btn-outline-dark:hover, a.btn-outline-light:hover, a.btn-light:hover, a.btn-soft:hover {
+    transform: translateY(-2px);
   }
 }
 .hero {

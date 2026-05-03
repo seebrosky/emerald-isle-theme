@@ -149,7 +149,7 @@
 @layer components {
 
     .btn {
-        @apply inline-flex items-center justify-center gap-2 rounded px-6 py-3 text-sm !font-semibold leading-none transition;
+        @apply inline-flex items-center justify-center gap-2 rounded px-6 py-3 text-sm !font-semibold leading-none;
         text-decoration: none;
         cursor: pointer;
         transition:
@@ -171,11 +171,13 @@
     .btn-primary:hover,
     .btn-secondary:hover,
     .btn-outline:hover,
+    .btn-outline-dark:hover,
+    .btn-outline-light:hover,
     .btn-light:hover,
     .btn-soft:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 14px rgb(31 42 38 / 0.16);
-    }   
+    }  
 
     /* ============================= */
     /* PRIMARY = ACTION (ACCENT)     */
@@ -331,14 +333,44 @@
     a.btn:link,
     a.btn:visited {
         font-size: 16px !important;
-        font-weight: 700;
+        font-weight: 700 !important;
         line-height: 1;
     }
     
     a.btn-outline-dark:hover,
     a.btn-outline-dark:focus-visible {
         color: #ffffff !important;
-    }    
+    }
+    
+    /* ============================= */
+    /* FINAL BUTTON INTERACTION LOCK */
+    /* ============================= */
+    .btn,
+    button.btn,
+    a.btn,
+    a.btn:link,
+    a.btn:visited {
+        transition-property: color, background-color, border-color, box-shadow, transform !important;
+        transition-duration: 220ms !important;
+        transition-timing-function: ease !important;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .btn-outline:hover,
+    .btn-outline-dark:hover,
+    .btn-outline-light:hover,
+    .btn-light:hover,
+    .btn-soft:hover,
+    a.btn-primary:hover,
+    a.btn-secondary:hover,
+    a.btn-outline:hover,
+    a.btn-outline-dark:hover,
+    a.btn-outline-light:hover,
+    a.btn-light:hover,
+    a.btn-soft:hover {
+        transform: translateY(-2px);
+    }   
 }
 
 .hero {
