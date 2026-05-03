@@ -11,8 +11,9 @@
     --color-green-600: oklch(62.7% 0.194 149.214);
     --color-emerald-100: #d6e4de;
     --color-emerald-500: #609982;
-    --color-emerald-700: #074833;
-    --color-emerald-900: #095941;
+    --color-emerald-600: #0f6a4d;
+    --color-emerald-700: #095941;
+    --color-emerald-900: #074833;
     --color-slate-900: oklch(20.8% 0.042 265.755);
     --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-neutral-100: #f6faf8;
@@ -349,6 +350,9 @@
   }
   .hidden {
     display: none;
+  }
+  .inline {
+    display: inline;
   }
   .inline-flex {
     display: inline-flex;

@@ -67,8 +67,9 @@
 }
 
 @theme {
-    --color-emerald-900: #095941;
-    --color-emerald-700: #074833;
+    --color-emerald-900: #074833;
+    --color-emerald-700: #095941;
+    --color-emerald-600: #0f6a4d;
     --color-emerald-500: #609982;
     --color-emerald-100: #d6e4de;
 

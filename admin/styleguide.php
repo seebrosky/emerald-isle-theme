@@ -83,14 +83,18 @@ function emerald_isle_render_styleguide_page() {
 
                         /**
                          * Palette entries:
-                         * - Use 'css' for CSS variables (defined in tailwind.css), e.g. --color-neutral-900
-                         * - Use 'tw' for Tailwind utility swatches, e.g. bg-amber-500
-                         * - 'token' is what we copy + display in the code pill (single source of truth)
+                         * - 'css' references a CSS variable (design token), e.g. --color-emerald-900
+                         * - Swatches are rendered using that variable via inline style
+                         * - 'token' is the source of truth (copied + displayed in UI)
+                         *
+                         * Note:
+                         * Tailwind utility swatches (e.g. bg-*) are supported but not used here.
                          */
                         $colors = [
-                            // Emerald
+                            // Emerald (dark → light)
                             ['label' => 'Emerald 900', 'css' => '--color-emerald-900', 'token' => '--color-emerald-900'],
                             ['label' => 'Emerald 700', 'css' => '--color-emerald-700', 'token' => '--color-emerald-700'],
+                            ['label' => 'Emerald 600', 'css' => '--color-emerald-600', 'token' => '--color-emerald-600'],
                             ['label' => 'Emerald 500', 'css' => '--color-emerald-500', 'token' => '--color-emerald-500'],
                             ['label' => 'Emerald 100', 'css' => '--color-emerald-100', 'token' => '--color-emerald-100'],
 
