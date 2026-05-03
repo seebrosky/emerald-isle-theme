@@ -4,7 +4,7 @@
 
     <section class="hero relative text-site-text">
 
-        <div class="relative z-10 mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:flex lg:items-center lg:gap-12 lg:py-28">
+        <div class="relative z-10 mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:flex lg:items-center lg:gap-12 lg:py-22">
             
             <!-- Left Content -->
             <div class="flex-1">
@@ -26,7 +26,7 @@
                         View My Work
                     </a>
 
-                    <a href="/contact/" class="btn btn-outline-dark">
+                    <a href="/contact/" class="btn btn-outline">
                         Let's Work Together
                     </a>
                 </div>
@@ -410,7 +410,7 @@
                                 Have a project in mind?
                             </h3>
 
-                            <p class="text-base text-site-text-muted">
+                            <p class="text-base text-site-text">
                                 Let's build something great together.
                             </p>
                         </div>

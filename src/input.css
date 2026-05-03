@@ -51,8 +51,6 @@
     --color-tertiary: var(--color-green-light);
 
     --color-header-bg: #ffffff;
-
-    /* Light footer by default to avoid dark green walls */
     --color-footer-bg: #d6e4de;
 
     --color-surface-1: #f6faf8;
@@ -81,6 +79,10 @@
     --color-neutral-900: #1f2a26;
     --color-neutral-600: #5f6f68;
     --color-neutral-100: #f6faf8;
+
+    --color-accent-500: #c46a4a;
+    --color-accent-600: #a9563b;
+    --color-accent-100: #f3dfd7;   
 
     --color-brand-primary: var(--color-primary);
     --color-brand-secondary: var(--color-secondary);
@@ -145,89 +147,198 @@
 }
 
 @layer components {
+
     .btn {
-        @apply inline-flex items-center justify-center gap-2 rounded px-6 py-3 text-sm font-semibold leading-none transition cursor-pointer;
+        @apply inline-flex items-center justify-center gap-2 rounded px-6 py-3 text-sm !font-semibold leading-none transition;
         text-decoration: none;
-        color: inherit;
+        cursor: pointer;
+        transition:
+            color 220ms ease,
+            background-color 220ms ease,
+            border-color 220ms ease,
+            box-shadow 220ms ease,
+            transform 220ms ease;
     }
 
-    .btn-primary {
-        @apply bg-brand-primary text-white hover:bg-[var(--color-primary-hover)];
-    }
-
-    .btn-outline {
-        @apply border border-brand-primary bg-transparent text-brand-primary hover:bg-brand-primary hover:text-white;
-    }
-
-    .btn-outline-light {
-        @apply border border-white/70 bg-transparent text-white hover:bg-white hover:text-brand-primary;
-    }
-
-    .btn-light {
-        @apply bg-white text-brand-primary hover:bg-brand-tertiary;
-    }
-
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline,
+    .btn-light,
     .btn-soft {
-        @apply bg-brand-tertiary text-brand-primary hover:bg-brand-secondary hover:text-white;
+        box-shadow: 0 1px 2px rgb(31 42 38 / 0.08);
     }
 
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .btn-outline:hover,
+    .btn-light:hover,
+    .btn-soft:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgb(31 42 38 / 0.16);
+    }   
+
+    /* ============================= */
+    /* PRIMARY = ACTION (ACCENT)     */
+    /* ============================= */
+    .btn-primary {
+        @apply text-white;
+        background-color: var(--color-accent-500);
+    }
+
+    .btn-primary:hover {
+        background-color: var(--color-accent-600);
+    }
+
+    /* ============================= */
+    /* SECONDARY = BRAND (GREEN)     */
+    /* ============================= */
+    .btn-secondary {
+        @apply text-white;
+        background-color: var(--color-brand-primary);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--color-emerald-900);
+    }
+
+    /* ============================= */
+    /* OUTLINE (ACCENT)              */
+    /* ============================= */
+    .btn-outline {
+        @apply bg-transparent;
+        border: 1px solid var(--color-accent-500);
+        color: var(--color-accent-500);
+    }
+
+    .btn-outline:hover {
+        background-color: var(--color-accent-500);
+        color: #ffffff;
+    }
+
+    /* ============================= */
+    /* OUTLINE DARK (GREEN)          */
+    /* ============================= */
     .btn-outline-dark {
-        @apply border border-brand-primary text-site-text hover:bg-brand-primary hover:text-white;
+        @apply bg-transparent;
+        border: 1px solid var(--color-brand-primary);
+        color: var(--color-site-text);
     }
 
+    .btn-outline-dark:hover {
+        background-color: var(--color-brand-primary);
+        color: #ffffff;
+    }
+
+    /* ============================= */
+    /* LIGHT (FOR DARK BACKGROUNDS)  */
+    /* ============================= */
+    .btn-light {
+        background-color: #ffffff;
+        color: var(--color-brand-primary);
+    }
+
+    .btn-light:hover {
+        background-color: var(--color-emerald-100);
+        color: var(--color-emerald-900);
+    }
+
+    /* ============================= */
+    /* OUTLINE LIGHT                 */
+    /* ============================= */
+    .btn-outline-light {
+        @apply bg-transparent;
+        border: 1px solid rgba(255,255,255,0.75);
+        color: #ffffff;
+    }
+
+    .btn-outline-light:hover {
+        background-color: #ffffff;
+        color: var(--color-brand-primary);
+    }
+
+    /* ============================= */
+    /* SOFT (SUBTLE ACCENT)          */
+    /* ============================= */
+    .btn-soft {
+        background-color: var(--color-accent-100);
+        color: var(--color-accent-600);
+    }
+
+    .btn-soft:hover {
+        background-color: var(--color-accent-500);
+        color: #ffffff;
+    }
+
+    /* ============================= */
+    /* TEXT BUTTON                   */
+    /* ============================= */
     .btn-text {
-        @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-site-text transition hover:text-brand-primary;
+        @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] transition;
+        color: var(--color-accent-500);
+        position: relative;
+        text-decoration: none;
+
+        /* override base .btn padding */
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
-    button.btn {
-        cursor: pointer;
+    .btn-text::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 2px;
+        background-color: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    a.btn {
-        cursor: pointer;
+    .btn-text:hover {
+        color: var(--color-accent-600);
     }
 
+    .btn-text:hover::after {
+        transform: scaleX(1);
+    }
+
+    /* ============================= */
+    /* LINK SAFETY (KILL BLUE LINKS) */
+    /* ============================= */
     a.btn,
     a.btn:link,
-    a.btn:visited,
-    a.btn:hover,
-    a.btn:focus {
+    a.btn:visited {
         text-decoration: none !important;
     }
 
-    a.btn-primary,
-    a.btn-primary:link,
-    a.btn-primary:visited {
+    /* Force correct colors for link buttons */
+    a.btn-primary { color: #ffffff !important; }
+    a.btn-secondary { color: #ffffff !important; }
+    a.btn-outline { color: var(--color-accent-500) !important; }
+    a.btn-outline:hover { color: #ffffff !important; }
+    a.btn-light { color: var(--color-brand-primary) !important; }
+    a.btn-outline-light { color: #ffffff !important; }
+    a.btn-outline-light:hover { color: var(--color-brand-primary) !important; }
+
+    /* Force correct uniform text sizing for all buttons */
+    .btn,
+    button.btn,
+    a.btn,
+    a.btn:link,
+    a.btn:visited {
+        font-size: 16px !important;
+        font-weight: 700;
+        line-height: 1;
+    }
+    
+    a.btn-outline-dark:hover,
+    a.btn-outline-dark:focus-visible {
         color: #ffffff !important;
-    }
-
-    a.btn-outline,
-    a.btn-outline:link,
-    a.btn-outline:visited {
-        color: var(--color-primary) !important;
-    }
-
-    a.btn-outline:hover,
-    a.btn-outline:focus {
-        color: #ffffff !important;
-    }
-
-    a.btn-light,
-    a.btn-light:link,
-    a.btn-light:visited {
-        color: var(--color-primary) !important;
-    }
-
-    a.btn-outline-light,
-    a.btn-outline-light:link,
-    a.btn-outline-light:visited {
-        color: #ffffff !important;
-    }
-
-    a.btn-outline-light:hover,
-    a.btn-outline-light:focus {
-        color: var(--color-primary) !important;
-    }
+    }    
 }
 
 .hero {

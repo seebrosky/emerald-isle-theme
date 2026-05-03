@@ -98,6 +98,11 @@ function emerald_isle_render_styleguide_page() {
                             ['label' => 'Emerald 500', 'css' => '--color-emerald-500', 'token' => '--color-emerald-500'],
                             ['label' => 'Emerald 100', 'css' => '--color-emerald-100', 'token' => '--color-emerald-100'],
 
+                            // Accent (dark → light)
+                            ['label' => 'Accent 600', 'css' => '--color-accent-600', 'token' => '--color-accent-600'],
+                            ['label' => 'Accent 500', 'css' => '--color-accent-500', 'token' => '--color-accent-500'],
+                            ['label' => 'Accent 100', 'css' => '--color-accent-100', 'token' => '--color-accent-100'],                           
+
                             // Tan
                             ['label' => 'Tan 400', 'css' => '--color-neutral-tan-400', 'token' => '--color-neutral-tan-400'],
                             ['label' => 'Tan 300', 'css' => '--color-neutral-tan-300', 'token' => '--color-neutral-tan-300'],
@@ -307,7 +312,17 @@ function emerald_isle_render_styleguide_page() {
                         );
 
                         $render_light_tile(
-                            '<button type="button" class="btn btn-outline">Outline</button>',
+                            '<button type="button" class="btn btn-secondary">Secondary</button>',
+                            'btn btn-secondary'
+                        );
+
+                        $render_light_tile(
+                            '<a class="btn btn-secondary" href="#">Secondary Link</a>',
+                            'btn btn-secondary'
+                        );
+
+                        $render_light_tile(
+                            '<button type="button" class="btn btn-outline">Outline (Accent)</button>',
                             'btn btn-outline'
                         );
 
@@ -317,7 +332,7 @@ function emerald_isle_render_styleguide_page() {
                         );
 
                         $render_light_tile(
-                            '<button type="button" class="btn btn-outline-dark">Outline Dark</button>',
+                            '<button type="button" class="btn btn-outline-dark">Outline (Brand)</button>',
                             'btn btn-outline-dark'
                         );
 
