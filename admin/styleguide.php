@@ -99,10 +99,10 @@ function emerald_isle_render_styleguide_page() {
                             ['label' => 'Emerald 100', 'css' => '--color-emerald-100', 'token' => '--color-emerald-100'],
 
                             // Tan
-                            ['label' => 'Tan 100', 'css' => '--color-neutral-tan-100', 'token' => '--color-neutral-tan-100'],
-                            ['label' => 'Tan 200', 'css' => '--color-neutral-tan-200', 'token' => '--color-neutral-tan-200'],
-                            ['label' => 'Tan 300', 'css' => '--color-neutral-tan-300', 'token' => '--color-neutral-tan-300'],
                             ['label' => 'Tan 400', 'css' => '--color-neutral-tan-400', 'token' => '--color-neutral-tan-400'],
+                            ['label' => 'Tan 300', 'css' => '--color-neutral-tan-300', 'token' => '--color-neutral-tan-300'],
+                            ['label' => 'Tan 200', 'css' => '--color-neutral-tan-200', 'token' => '--color-neutral-tan-200'],
+                            ['label' => 'Tan 100', 'css' => '--color-neutral-tan-100', 'token' => '--color-neutral-tan-100'],
 
                             // Neutrals
                             ['label' => 'Neutral 900', 'css' => '--color-neutral-900', 'token' => '--color-neutral-900'],
