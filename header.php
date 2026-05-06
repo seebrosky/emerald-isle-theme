@@ -24,7 +24,7 @@
         <meta name="theme-color" content="#0f5c3f">
     </head>
 
-    <body <?php body_class(); ?>>
+    <body <?php body_class(); ?> id="top">
 
         <header data-site-header class="site-header sticky top-0 z-50 bg-site-header border-b border-black/20 lg:border-b-0">
             <div class="site-header-inner flex w-full items-center justify-between px-6 lg:mx-auto lg:max-w-6xl">

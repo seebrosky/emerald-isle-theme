@@ -23,20 +23,15 @@
                         </a>
 
                         <p class="mb-6 max-w-sm text-sm leading-7 text-site-text-muted">
-                            Professional Web Designer &amp; Developer building fast, modern WordPress websites that help businesses grow.
+                            Modern WordPress themes crafted for performance, scalability, and clean design.
                         </p>
 
                         <div class="flex gap-1 text-sm text-site-text-muted">
                             <!-- icons -->
-                            <a href="#" class="flex size-12 items-center justify-center text-site-text-muted hover:text-brand-primary transition">
+                            <a href="#" class="flex size-12 items-center justify-center text-site-text-muted transition hover:text-brand-primary">
                                 <!-- svg -->
                             </a>
-                            <!-- repeat for others -->
                         </div>
-
-                        <a href="#top" class="btn btn-outline-dark mt-8">
-                            Back to Top
-                        </a>
                     </div>
 
                     <!-- Navigation -->
@@ -74,12 +69,26 @@
                 </div>
             </div>
 
-            <!-- Bottom bar -->
             <div class="copyright bg-brand-primary py-3 text-center text-white">
                 &copy; <?php echo esc_html(date('Y')); ?> <?php bloginfo('name'); ?>. All rights reserved.
             </div>
 
-            <?php wp_footer(); ?>
         </footer>
+
+        <a href="#top" class="footer-scroll-top" id="scrollTopBtn" aria-label="Back to top">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.25"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="m18 15-6-6-6 6" />
+            </svg>
+        </a>
+
+        <?php wp_footer(); ?>
     </body>
 </html>

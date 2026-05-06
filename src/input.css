@@ -370,7 +370,62 @@
     a.btn-light:hover,
     a.btn-soft:hover {
         transform: translateY(-2px);
-    }   
+    }
+
+    .footer-scroll-top {
+        position: fixed;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        z-index: 100;
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        color: #ffffff;
+        background:
+            linear-gradient(
+                180deg,
+                var(--color-emerald-700),
+                var(--color-emerald-900)
+            );
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow:
+            0 8px 20px rgba(0,0,0,0.16);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+            opacity 220ms ease,
+            visibility 220ms ease,
+            background-color 220ms ease,
+            border-color 220ms ease,
+            box-shadow 220ms ease,
+            transform 220ms ease;
+    }
+
+    .footer-scroll-top.is-visible {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .footer-scroll-top:hover {
+        background:
+            linear-gradient(
+                180deg,
+                var(--color-accent-500),
+                var(--color-accent-600)
+            );
+        border-color: var(--color-accent-600);
+    }
+
+    .footer-scroll-top svg {
+        width: 26px;
+        height: 26px;
+    }    
+    
 }
 
 .hero {
