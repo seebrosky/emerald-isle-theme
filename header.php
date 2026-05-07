@@ -33,7 +33,7 @@
                         <img
                             src="/wp-content/uploads/logo-color-with-text_770x170.png"
                             alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-                            class="block h-17 w-auto shrink-0 object-contain"
+                            class="site-logo-img block w-auto shrink-0 object-contain"
                         >
                     </a>
                 </div>
