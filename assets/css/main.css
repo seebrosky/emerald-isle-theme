@@ -642,10 +642,6 @@
     border-style: var(--tw-border-style);
     border-width: 3px;
   }
-  .border-t {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 1px;
-  }
   .border-b {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
@@ -1922,7 +1918,7 @@
   .mobile-nav-menu {
     margin: 0 -1.25rem;
     padding: 1.25rem 1.25rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.09);
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
   }
   .mobile-menu {
     display: grid;
