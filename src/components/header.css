@@ -235,16 +235,17 @@
     .mobile-nav-toggle:active,
     .site-header.mobile-nav-open .mobile-nav-toggle {
         color: #ffffff;
-
         background:
             linear-gradient(
                 180deg,
-                rgba(8,119,100,0.96) 0%,
-                rgba(6,101,84,0.96) 100%
-            );
-        border-color: rgba(8,119,100,0.8);
+                var(--color-slate-900) 0%,
+                var(--color-slate-950) 100%
+            ) !important;
+        border-color: rgba(255,255,255,0.12) !important;
         box-shadow:
-            0 6px 16px rgba(8,119,100,0.22);
+            inset 0 1px 0 rgba(255,255,255,0.06),
+            0 4px 12px rgba(0,0,0,0.22) !important;
+        cursor: pointer;
     }
 
     .mobile-nav-toggle:focus {
