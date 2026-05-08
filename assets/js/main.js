@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const header         = document.querySelector('[data-site-header]');
     const scrollTopBtn   = document.getElementById('scrollTopBtn');
-    const searchToggle   = document.querySelector('.site-search-toggle');
+    const searchToggles  = document.querySelectorAll('.site-search-toggle');
     const searchPanel    = document.querySelector('.site-search-panel');
     const searchClose    = document.querySelector('.site-search-close');
     const searchBackdrop = document.querySelector('.site-search-backdrop');
@@ -70,7 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         searchPanel.classList.add('is-open');
-        searchToggle.setAttribute('aria-expanded', 'true');
+        searchToggles.forEach(function (toggle) {
+            toggle.setAttribute('aria-expanded', 'true');
+        });
 
         updateBackdrop();
 
@@ -90,15 +92,17 @@ document.addEventListener('DOMContentLoaded', function () {
             searchPanel.classList.remove('is-open');
         }
 
-        if (searchToggle) {
-            searchToggle.setAttribute('aria-expanded', 'false');
-        }
+        searchToggles.forEach(function (toggle) {
+            toggle.setAttribute('aria-expanded', 'false');
+        });
 
         updateBackdrop();
     }
 
-    if (searchToggle && searchPanel) {
-        searchToggle.addEventListener('click', openSearch);
+    if (searchToggles.length && searchPanel) {
+        searchToggles.forEach(function (toggle) {
+            toggle.addEventListener('click', openSearch);
+        });
 
         if (searchClose) {
             searchClose.addEventListener('click', closeSearch);
