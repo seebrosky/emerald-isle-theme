@@ -156,6 +156,10 @@
     .entry-content > * + * {
         @apply mt-3.5;
     }
+
+    a, button {
+        cursor: pointer;
+    }
 }
 
 @layer components {
@@ -466,22 +470,6 @@
             var(--color-slate-950) 0%,
             var(--color-slate-900) 100%
         );
-}
-
-.brand-stripes {
-    background:
-        linear-gradient(
-            165deg,
-            rgba(255,255,255,0.035) 0%,
-            rgba(255,255,255,0.035) 20%,
-            transparent 20%,
-            transparent 40%,
-            rgba(255,255,255,0.025) 40%,
-            rgba(255,255,255,0.025) 60%,
-            transparent 60%,
-            transparent 100%
-        ),
-        var(--color-slate-950);
 }
 
 .footer-gradient {

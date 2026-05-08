@@ -54,9 +54,6 @@
                 </div>
             </div>
 
-
-
-
             <div class="site-header-inner flex w-full items-center justify-between px-6 lg:mx-auto lg:max-w-6xl">
                 <div class="site-branding flex items-center">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="site-logo flex origin-left items-center no-underline">
@@ -77,8 +74,78 @@
                     </a>
                 </div>
 
-                <?php get_template_part('template-parts/navigation/primary-nav'); ?>
+                <div class="site-header-nav-wrap flex items-center">
+                    <?php get_template_part('template-parts/navigation/primary-nav'); ?>
+
+                    <div class="hidden items-center gap-1 border-l border-white/10 pl-4 ml-3 lg:flex">
+                        <button
+                            type="button"
+                            class="site-search-toggle relative inline-flex size-10.5 items-center justify-center text-white/80 transition hover:text-white"
+                            aria-label="Open search"
+                            aria-expanded="false"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                            </svg>
+                        </button>
+
+                        <a href="#" class="relative inline-flex size-10.5 items-center justify-center text-white/80 no-underline transition hover:text-white" aria-label="Cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                            </svg>
+                            <span class="site-header-cart-count absolute right-1 top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-orange-500 px-1 text-[10px] font-bold leading-none text-white">
+                                3
+                            </span>
+                        </a>
+
+                        <a href="<?php echo esc_url(home_url('/contact')); ?>" class="btn btn-primary ml-4 min-h-10.5 px-5">
+                            Get This Theme
+                        </a>
+                    </div>
+                </div>
             </div>
         </header>
+
+        <div class="site-search-panel">
+            <div class="mx-auto flex max-w-6xl items-center gap-2 px-6 py-6">
+
+                <form
+                    role="search"
+                    method="get"
+                    action="<?php echo esc_url(home_url('/')); ?>"
+                    class="w-full pr-2.5"
+                >
+                    <div class="relative w-full">
+                        <input
+                            type="search"
+                            name="s"
+                            placeholder="Search themes, plugins, docs..."
+                            class="h-10 w-full rounded-lg border border-white/10 bg-white/5 pl-4 pr-26 text-sm text-white placeholder:text-white/35 focus:border-emerald-600 focus:outline-none"
+                        >
+
+                        <button
+                            type="submit"
+                            class="absolute right-0 top-1/2 h-10 -translate-y-1/2 rounded-r-md rounded-l-none bg-emerald-600 px-4 text-sm font-bold text-white transition hover:bg-emerald-700"
+                        >
+                            Search
+                        </button>
+
+                    </div>
+                </form>
+
+                <button
+                    type="button"
+                    class="site-search-close inline-flex size-11 h-9 w-9 border rounded-full items-center justify-center text-white/70 transition hover:text-white"
+                    aria-label="Close search"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+        
+        <div class="site-search-backdrop"></div>       
 
         <?php get_template_part('template-parts/navigation/mobile-nav'); ?>

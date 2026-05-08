@@ -17,11 +17,7 @@
     .site-nav > .menu > .menu-item {
         @apply relative;
         padding: 0 1.25rem;
-    }
-
-    .site-nav > .menu > .menu-item:last-child {
-        padding-right: 0;
-    }    
+    }   
 
     .site-nav > .menu > .menu-item-has-children::after {
         content: "";
