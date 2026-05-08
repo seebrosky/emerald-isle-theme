@@ -135,7 +135,7 @@
 
                 <button
                     type="button"
-                    class="site-search-close inline-flex size-11 h-9 w-9 border rounded-full items-center justify-center text-white/70 transition hover:text-white"
+                    class="site-search-close inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-white/40 text-white/70 transition-colors duration-200 ease-out hover:text-white hover:border-white"
                     aria-label="Close search"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
