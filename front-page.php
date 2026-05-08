@@ -12,7 +12,7 @@
                     Design • Development • Performance
                 </p>
 
-                <h1 class="mb-5 max-w-[10ch] text-4xl font-bold leading-[0.95] text-site-text sm:text-5xl lg:max-w-none lg:text-7xl lg:leading-tight">
+                <h1 class="mb-5 max-w-[10ch] text-4xl font-bold leading-[0.95] text-white sm:text-5xl lg:max-w-none lg:text-7xl lg:leading-tight">
                     I build modern websites 
                     <span class="text-brand-primary">that drive results.</span>
                 </h1>

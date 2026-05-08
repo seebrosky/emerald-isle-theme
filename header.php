@@ -27,14 +27,53 @@
     <body <?php body_class(); ?> id="top">
 
         <header data-site-header class="site-header sticky top-0 z-50 bg-site-header border-b border-black/20 lg:border-b-0">
+            <div class="site-header-top">
+                <div class="mx-auto flex max-w-6xl items-center justify-between px-6">
+                    <p class="site-header-kicker">
+                        <span aria-hidden="true">✦</span>
+                        Premium WordPress Theme for Modern Businesses
+                    </p>
+
+                    <nav class="site-header-utility" aria-label="Utility navigation">
+                        <a href="#">Documentation</a>
+                        <a href="<?php echo esc_url(home_url('/style-guide')); ?>">Style Guide</a>
+                        <a href="#">Support</a>
+
+                        <span class="site-header-socials">
+                            <a href="#" aria-label="GitHub">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/github.svg" alt="">
+                            </a>
+                            <a href="#" aria-label="X">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/x.svg" alt="">
+                            </a>
+                            <a href="#" aria-label="LinkedIn">
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/linkedin.svg" alt="">
+                            </a>
+                        </span>
+                    </nav>
+                </div>
+            </div>
+
+
+
+
             <div class="site-header-inner flex w-full items-center justify-between px-6 lg:mx-auto lg:max-w-6xl">
                 <div class="site-branding flex items-center">
-                    <a href="<?php echo esc_url(home_url('/')); ?>" class="site-logo flex origin-left items-center gap-4 no-underline transition-transform duration-200 will-change-transform">
-                        <img
-                            src="/wp-content/uploads/logo-color-with-text_770x170.png"
-                            alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-                            class="site-logo-img block w-auto shrink-0 object-contain"
-                        >
+                    <a href="<?php echo esc_url(home_url('/')); ?>" class="site-logo flex origin-left items-center no-underline">
+                        <span class="site-logo-wrap">
+                            <img
+                                src="/wp-content/uploads/emerald-isle-logo-dark_570x120.png"
+                                alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+                                class="site-logo-img site-logo-default block w-auto shrink-0 object-contain"
+                            >
+
+                            <img
+                                src="/wp-content/uploads/emerald-isle-logo-dark_475x100.png"
+                                alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+                                class="site-logo-img site-logo-scrolled block w-auto shrink-0 object-contain"
+                                aria-hidden="true"
+                            >
+                        </span>
                     </a>
                 </div>
 

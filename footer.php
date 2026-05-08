@@ -26,12 +26,49 @@
                             Modern WordPress themes crafted for performance, scalability, and clean design.
                         </p>
 
-                        <div class="flex gap-1 text-sm text-site-text-muted">
-                            <!-- icons -->
-                            <a href="#" class="flex size-12 items-center justify-center text-site-text-muted transition hover:text-brand-primary">
-                                <!-- svg -->
-                            </a>
-                        </div>
+<div class="flex items-center gap-2 text-site-text-muted">
+
+    <a href="#" aria-label="GitHub" class="footer-social-link">
+        <img
+            src="<?php echo get_template_directory_uri(); ?>/assets/icons/github.svg"
+            alt=""
+            class="size-5"
+        >
+    </a>
+
+    <a href="#" aria-label="Instagram" class="footer-social-link">
+        <img
+            src="<?php echo get_template_directory_uri(); ?>/assets/icons/instagram.svg"
+            alt=""
+            class="size-5"
+        >
+    </a>
+
+    <a href="#" aria-label="LinkedIn" class="footer-social-link">
+        <img
+            src="<?php echo get_template_directory_uri(); ?>/assets/icons/linkedin.svg"
+            alt=""
+            class="size-5"
+        >
+    </a>
+
+    <a href="#" aria-label="X / Twitter" class="footer-social-link">
+        <img
+            src="<?php echo get_template_directory_uri(); ?>/assets/icons/x.svg"
+            alt=""
+            class="size-5"
+        >
+    </a>
+
+    <a href="#" aria-label="YouTube" class="footer-social-link">
+        <img
+            src="<?php echo get_template_directory_uri(); ?>/assets/icons/youtube.svg"
+            alt=""
+            class="size-5"
+        >
+    </a>
+
+</div>
                     </div>
 
                     <!-- Navigation -->
@@ -69,7 +106,7 @@
                 </div>
             </div>
 
-            <div class="copyright bg-brand-primary py-3 text-center text-white">
+            <div class="text-base bg-brand-primary py-3 text-center text-white">
                 &copy; <?php echo esc_html(date('Y')); ?> <?php bloginfo('name'); ?>. All rights reserved.
             </div>
 
