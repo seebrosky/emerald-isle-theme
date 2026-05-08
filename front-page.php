@@ -2,42 +2,159 @@
 
 <main>
 
-    <section class="hero relative text-site-text">
+    <section class="hero relative overflow-hidden text-site-text">
 
-        <div class="relative z-10 mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:flex lg:items-center lg:gap-12 lg:py-22">
+        <button
+            type="button"
+            class="absolute left-6 top-1/2 z-20 hidden size-11 -translate-y-1/2 items-center justify-center rounded-full bg-slate-950/45 text-white/80 backdrop-blur transition-colors duration-200 hover:bg-slate-950/70 hover:text-white lg:inline-flex"
+            aria-label="Previous slide"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 18 9 12l6-6" />
+            </svg>
+        </button>
+
+        <button
+            type="button"
+            class="absolute right-6 top-1/2 z-20 hidden size-11 -translate-y-1/2 items-center justify-center rounded-full bg-slate-950/45 text-white/80 backdrop-blur transition-colors duration-200 hover:bg-slate-950/70 hover:text-white lg:inline-flex"
+            aria-label="Next slide"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" />
+            </svg>
+        </button>
+
+        <div class="relative z-10 mx-auto flex min-h-[34rem] max-w-7xl items-center px-6 py-14 sm:py-16 lg:min-h-[42rem] lg:gap-12 lg:py-22">
             
-            <!-- Left Content -->
-            <div class="flex-1">
-                <p class="mb-3 text-[0.7rem] uppercase tracking-[0.14em] text-brand-primary sm:mb-4 sm:text-[0.8rem] sm:tracking-[0.18em] lg:text-sm">
-                    Design • Development • Performance
+            <div class="max-w-xl flex-1 lg:pl-16 xl:max-w-2xl xl:pl-20">
+                <p class="mb-4 inline-flex rounded-full bg-brand-primary/15 px-2.5 py-1 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-brand-primary ring-1 ring-brand-primary/20 sm:text-[0.68rem]">
+                    Built for WordPress
                 </p>
 
-                <h1 class="mb-5 max-w-[10ch] text-4xl font-bold leading-[0.95] text-white sm:text-5xl lg:max-w-none lg:text-7xl lg:leading-tight">
-                    I build modern websites 
-                    <span class="text-brand-primary">that drive results.</span>
+                <h1 class="mb-5 text-4xl font-bold leading-[0.98] text-white sm:text-5xl lg:text-6xl xl:text-7xl lg:leading-[0.98]">
+                    <span class="block">Build Beautiful</span>
+                    <span class="block whitespace-nowrap">
+                        Websites, <span class="text-brand-primary">Faster.</span>
+                    </span>
                 </h1>
 
-                <p class="mb-8 max-w-[22rem] text-base leading-8 text-site-text-muted sm:text-lg lg:max-w-xl">
-                    Custom WordPress themes, performance-first builds, and clean UI systems that scale.
+                <p class="mb-8 max-w-[31rem] text-base leading-7 text-white sm:text-lg sm:leading-8">
+                    Emerald Isle is a modern, flexible WordPress theme crafted with performance, design, and usability in mind. Build anything. Customize everything.
                 </p>
 
                 <div class="flex flex-wrap gap-3 sm:gap-4">
-                    <a href="#" class="btn btn-primary">
-                        View My Work
+                    <a href="#" class="btn btn-primary inline-flex items-center gap-2">
+                        View Demos
                     </a>
 
-                    <a href="/contact/" class="btn btn-outline">
-                        Let's Work Together
+                    <a href="/contact/" class="btn btn-outline-light">
+                        Explore Features
                     </a>
+                </div>
+
+                <div class="mt-9 flex items-center gap-2" aria-label="Hero slides">
+                    <button type="button" class="h-1.5 w-8 rounded-full bg-white" aria-label="Slide 1"></button>
+                    <button type="button" class="size-2 rounded-full bg-white/35" aria-label="Slide 2"></button>
+                    <button type="button" class="size-2 rounded-full bg-white/35" aria-label="Slide 3"></button>
+                    <button type="button" class="size-2 rounded-full bg-white/35" aria-label="Slide 4"></button>
                 </div>
             </div>
 
-            <!-- Right side stays empty (background image used) -->
-            <div class="hidden lg:block flex-1"></div>
+            <div class="hero-media hidden flex-1 items-center justify-end lg:flex">
+                <img
+                    src="/wp-content/uploads/hero-image-01-1.webp"
+                    alt=""
+                    class="hero-media-image"
+                    loading="eager"
+                    decoding="async"
+                >
+            </div>
 
         </div>
 
     </section>
+
+
+<section
+    class="border-y border-white/[0.08] bg-[linear-gradient(180deg,rgba(34,41,52,0.98)_0%,rgba(27,36,48,0.98)_100%)]"
+    aria-label="Theme highlights"
+>
+    <div class="mx-auto max-w-6xl px-6">
+        <div class="grid gap-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
+
+            <div class="flex items-center gap-4">
+                <span class="inline-flex size-15 shrink-0 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.07] text-brand-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                    </svg>
+                </span>
+
+                <div>
+                    <h2 class="mb-1 text-base text-white">
+                        Lightning Fast
+                    </h2>
+                    <p class="m-0 text-sm leading-6 text-white/70">
+                        Built for speed and performance.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <span class="inline-flex size-15 shrink-0 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.07] text-brand-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                    </svg>
+                </span>
+
+                <div>
+                    <h2 class="mb-1 text-base text-white">
+                        Fully Responsive
+                    </h2>
+                    <p class="m-0 text-sm leading-6 text-white/70">
+                        Looks perfect on all devices.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <span class="inline-flex size-15 shrink-0 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.07] text-brand-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z" />
+                    </svg>
+                </span>
+
+                <div>
+                    <h2 class="mb-1 text-base text-white">
+                        Gutenberg Ready
+                    </h2>
+                    <p class="m-0 text-sm leading-6 text-white/70">
+                        Designed for the block editor.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <span class="inline-flex size-15 shrink-0 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.07] text-brand-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                    </svg>
+                </span>
+
+                <div>
+                    <h2 class="mb-1 text-base text-white">
+                        Easy to Customize
+                    </h2>
+                    <p class="m-0 text-sm leading-6 text-white/70">
+                        Powerful options without code.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
 
     <?php
         $about_image       = get_field('about_image');

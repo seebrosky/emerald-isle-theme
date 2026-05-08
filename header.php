@@ -99,7 +99,7 @@
                         </a>
 
                         <a href="<?php echo esc_url(home_url('/contact')); ?>" class="btn btn-primary ml-4 min-h-10.5 px-5">
-                            Get This Theme
+                            Get In Touch
                         </a>
                     </div>
                 </div>
