@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>
+        <?php $theme_uri = get_template_directory_uri(); ?>
+
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <?php wp_head(); ?>
 
         <!-- SVG favicon (modern browsers) -->
-        <link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/favicon.svg">
+        <link rel="icon" type="image/svg+xml" href="<?php echo esc_url($theme_uri . '/assets/favicon/favicon.svg'); ?>">
 
         <!-- Standard PNG fallback -->
-        <link rel="icon" type="image/png" sizes="96x96" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="<?php echo esc_url($theme_uri . '/assets/favicon/favicon-96x96.png'); ?>">
 
         <!-- ICO fallback (older browsers) -->
-        <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/favicon.ico">
+        <link rel="shortcut icon" href="<?php echo esc_url($theme_uri . '/assets/favicon/favicon.ico'); ?>">
 
         <!-- Apple Touch Icon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url($theme_uri . '/assets/favicon/apple-touch-icon.png'); ?>">
 
         <!-- Web App Manifest -->
-        <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/site.webmanifest">
+        <link rel="manifest" href="<?php echo esc_url($theme_uri . '/assets/favicon/site.webmanifest'); ?>">
 
-        <!-- Theme color (optional but recommended) -->
+        <!-- Theme color -->
         <meta name="theme-color" content="#0f5c3f">
+
+        <?php wp_head(); ?>
     </head>
 
     <body <?php body_class(); ?> id="top">
@@ -83,6 +86,7 @@
                             class="site-search-toggle relative inline-flex size-10.5 items-center justify-center text-white/80 transition hover:text-white"
                             aria-label="Open search"
                             aria-expanded="false"
+                            aria-controls="site-search-panel"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
@@ -106,46 +110,9 @@
             </div>
         </header>
 
-        <div class="site-search-panel" class="site-search-panel">
-            <div class="mx-auto flex max-w-6xl items-center gap-2 px-6 py-6">
-
-                <form
-                    role="search"
-                    method="get"
-                    action="<?php echo esc_url(home_url('/')); ?>"
-                    class="w-full pr-2.5"
-                >
-                    <div class="relative w-full">
-                        <input
-                            type="search"
-                            name="s"
-                            placeholder="Search themes, plugins, docs..."
-                            class="h-10 w-full rounded-lg border border-white/10 bg-white/5 pl-4 pr-26 text-sm text-white placeholder:text-white/35 focus:border-emerald-600 focus:outline-none"
-                        >
-
-                        <button
-                            type="submit"
-                            class="absolute right-0 top-1/2 h-10 -translate-y-1/2 rounded-r-md rounded-l-none bg-emerald-600 px-4 text-sm font-bold text-white transition hover:bg-emerald-700"
-                        >
-                            Search
-                        </button>
-
-                    </div>
-                </form>
-
-                <button
-                    type="button"
-                    class="site-search-close inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-white/40 text-white/70 transition-colors duration-200 ease-out hover:text-white hover:border-white"
-                    aria-label="Close search"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                </button>
-
-            </div>
-        </div>
-        
+        <!-- Search Component -->
+        <?php get_template_part('template-parts/search/search'); ?>
         <div class="site-search-backdrop"></div>       
 
+        <!-- Mobile Nav -->
         <?php get_template_part('template-parts/navigation/mobile-nav'); ?>
