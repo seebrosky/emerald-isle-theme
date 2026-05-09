@@ -106,7 +106,7 @@
             </div>
         </header>
 
-        <div class="site-search-panel">
+        <div class="site-search-panel" class="site-search-panel">
             <div class="mx-auto flex max-w-6xl items-center gap-2 px-6 py-6">
 
                 <form
