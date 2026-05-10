@@ -91,32 +91,28 @@ function emerald_isle_render_styleguide_page() {
                          * Tailwind utility swatches (e.g. bg-*) are supported but not used here.
                          */
                         $colors = [
-                            // Emerald (dark → light)
-                            ['label' => 'Emerald 900', 'css' => '--color-emerald-900', 'token' => '--color-emerald-900'],
-                            ['label' => 'Emerald 700', 'css' => '--color-emerald-700', 'token' => '--color-emerald-700'],
-                            ['label' => 'Emerald 600', 'css' => '--color-emerald-600', 'token' => '--color-emerald-600'],
-                            ['label' => 'Emerald 500', 'css' => '--color-emerald-500', 'token' => '--color-emerald-500'],
-                            ['label' => 'Emerald 100', 'css' => '--color-emerald-100', 'token' => '--color-emerald-100'],
+                            // Slate
+                            ['label' => 'Slate 950', 'css' => '--color-slate-950', 'token' => '--color-slate-950'],
+                            ['label' => 'Slate 900', 'css' => '--color-slate-900', 'token' => '--color-slate-900'],
+                            ['label' => 'Slate 700', 'css' => '--color-slate-700', 'token' => '--color-slate-700'],
 
-                            // Accent (dark → light)
-                            ['label' => 'Accent 600', 'css' => '--color-accent-600', 'token' => '--color-accent-600'],
-                            ['label' => 'Accent 500', 'css' => '--color-accent-500', 'token' => '--color-accent-500'],
-                            ['label' => 'Accent 100', 'css' => '--color-accent-100', 'token' => '--color-accent-100'],                           
-
-                            // Tan
-                            ['label' => 'Tan 400', 'css' => '--color-neutral-tan-400', 'token' => '--color-neutral-tan-400'],
-                            ['label' => 'Tan 300', 'css' => '--color-neutral-tan-300', 'token' => '--color-neutral-tan-300'],
-                            ['label' => 'Tan 200', 'css' => '--color-neutral-tan-200', 'token' => '--color-neutral-tan-200'],
-                            ['label' => 'Tan 100', 'css' => '--color-neutral-tan-100', 'token' => '--color-neutral-tan-100'],
-
-                            // Neutrals
-                            ['label' => 'Neutral 900', 'css' => '--color-neutral-900', 'token' => '--color-neutral-900'],
-                            ['label' => 'Neutral 600', 'css' => '--color-neutral-600', 'token' => '--color-neutral-600'],
-                            ['label' => 'Neutral 100', 'css' => '--color-neutral-100', 'token' => '--color-neutral-100'],
-
-                            // Base
+                            // Surface / Base
+                            ['label' => 'Surface 50', 'css' => '--color-surface-50', 'token' => '--color-surface-50'],
                             ['label' => 'White', 'css' => '--color-white', 'token' => '--color-white'],
+
+                            // Emerald
+                            ['label' => 'Emerald 600', 'css' => '--color-emerald-600', 'token' => '--color-emerald-600'],
+                            ['label' => 'Emerald 700', 'css' => '--color-emerald-700', 'token' => '--color-emerald-700'],
+
+                            // Orange
+                            ['label' => 'Orange 500', 'css' => '--color-orange-500', 'token' => '--color-orange-500'],
+                            ['label' => 'Orange 600', 'css' => '--color-orange-600', 'token' => '--color-orange-600'],
+
+                            // Red
+                            ['label' => 'Red 500', 'css' => '--color-red-500', 'token' => '--color-red-500'],
+                            ['label' => 'Red 600', 'css' => '--color-red-600', 'token' => '--color-red-600'],
                         ];
+
                     ?>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
@@ -191,26 +187,32 @@ function emerald_isle_render_styleguide_page() {
 
                     <?php
                         $semantic_colors = [
-                            ['label' => 'Primary', 'css' => '--color-primary', 'token' => '--color-primary', 'use' => 'Primary buttons, links, brand accents'],
-                            ['label' => 'Primary Hover', 'css' => '--color-primary-hover', 'token' => '--color-primary-hover', 'use' => 'Button hover states'],
-                            ['label' => 'Primary Muted', 'css' => '--color-primary-muted', 'token' => '--color-primary-muted', 'use' => 'Secondary green accents'],
-                            ['label' => 'Primary Subtle', 'css' => '--color-primary-subtle', 'token' => '--color-primary-subtle', 'use' => 'Soft hover backgrounds'],
-
                             ['label' => 'Text', 'css' => '--color-text', 'token' => '--color-text', 'use' => 'Main body text'],
-                            ['label' => 'Text Muted', 'css' => '--color-text-muted', 'token' => '--color-text-muted', 'use' => 'Secondary text, descriptions'],
-                            ['label' => 'Text on Dark', 'css' => '--color-text-dark-bg', 'token' => '--color-text-dark-bg', 'use' => 'Text on dark green sections'],
+                            ['label' => 'Text Muted', 'css' => '--color-text-muted', 'token' => '--color-text-muted', 'use' => 'Secondary text and descriptions'],
+                            ['label' => 'Text on Dark', 'css' => '--color-text-dark-bg', 'token' => '--color-text-dark-bg', 'use' => 'Text on dark sections'],
+                            ['label' => 'Text Muted on Dark', 'css' => '--color-text-muted-dark', 'token' => '--color-text-muted-dark', 'use' => 'Muted text on dark sections'],
 
                             ['label' => 'Background', 'css' => '--color-background', 'token' => '--color-background', 'use' => 'Default page background'],
-                            ['label' => 'Background Soft', 'css' => '--color-background-soft', 'token' => '--color-background-soft', 'use' => 'Soft section backgrounds'],
+                            ['label' => 'Background Soft', 'css' => '--color-background-soft', 'token' => '--color-background-soft', 'use' => 'White / soft content backgrounds'],
 
-                            ['label' => 'Surface 1', 'css' => '--color-surface-1', 'token' => '--color-surface-1', 'use' => 'Light panels / cards'],
-                            ['label' => 'Surface 2', 'css' => '--color-surface-2', 'token' => '--color-surface-2', 'use' => 'Light green sections'],
-                            ['label' => 'Surface 3', 'css' => '--color-surface-3', 'token' => '--color-surface-3', 'use' => 'Tan section contrast'],
+                            ['label' => 'Primary', 'css' => '--color-primary', 'token' => '--color-primary', 'use' => 'Primary buttons, links, brand accents'],
+                            ['label' => 'Primary Hover', 'css' => '--color-primary-hover', 'token' => '--color-primary-hover', 'use' => 'Primary hover states'],
+
+                            ['label' => 'Secondary', 'css' => '--color-secondary', 'token' => '--color-secondary', 'use' => 'Orange accents and badges'],
+                            ['label' => 'Secondary Hover', 'css' => '--color-secondary-hover', 'token' => '--color-secondary-hover', 'use' => 'Secondary hover states'],
+
+                            ['label' => 'Danger', 'css' => '--color-danger', 'token' => '--color-danger', 'use' => 'Error and destructive states'],
+                            ['label' => 'Danger Hover', 'css' => '--color-danger-hover', 'token' => '--color-danger-hover', 'use' => 'Danger hover states'],
+
+                            ['label' => 'Header Background', 'css' => '--color-header-bg', 'token' => '--color-header-bg', 'use' => 'Site header background'],
+                            ['label' => 'Footer Background', 'css' => '--color-footer-bg', 'token' => '--color-footer-bg', 'use' => 'Site footer background'],
+
+                            ['label' => 'Surface 1', 'css' => '--color-surface-1', 'token' => '--color-surface-1', 'use' => 'White cards and panels'],
+                            ['label' => 'Surface 2', 'css' => '--color-surface-2', 'token' => '--color-surface-2', 'use' => 'Soft section backgrounds'],
+                            ['label' => 'Surface 3', 'css' => '--color-surface-3', 'token' => '--color-surface-3', 'use' => 'Subtle contrast surfaces'],
 
                             ['label' => 'Border Light', 'css' => '--color-border-light', 'token' => '--color-border-light', 'use' => 'Cards, dividers, subtle outlines'],
-
-                            ['label' => 'Accent', 'css' => '--color-accent', 'token' => '--color-accent', 'use' => 'Warm accent / contrast color'],
-                            ['label' => 'Accent Hover', 'css' => '--color-accent-hover', 'token' => '--color-accent-hover', 'use' => 'Accent hover states'],
+                            ['label' => 'Border Dark', 'css' => '--color-border-dark', 'token' => '--color-border-dark', 'use' => 'Borders on dark backgrounds'],
                         ];
                     ?>
 

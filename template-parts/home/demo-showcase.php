@@ -11,7 +11,7 @@
 defined('ABSPATH') || exit;
 ?>
 
-<section class="border-b border-slate-200 bg-[#f5f7f8] py-16 text-slate-950">
+<section class="border-b border-slate-200 bg-surface-50 py-16 text-slate-950">
     <div class="mx-auto max-w-6xl px-6">
 
         <div class="grid gap-10 lg:grid-cols-[0.72fr_1.8fr] lg:items-start">
