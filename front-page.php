@@ -10,6 +10,8 @@
     <!-- Demo Showcase Section -->
     <?php get_template_part('template-parts/home/demo-showcase'); ?> 
 
+    <!-- Component Showcase Section -->
+    <?php get_template_part('template-parts/home/component-showcase'); ?>
 
     <!-- Featured Projects Section -->
     <?php if (have_rows('featured_projects')) : ?>
