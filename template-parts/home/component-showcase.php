@@ -80,9 +80,9 @@ defined('ABSPATH') || exit;
 
                     <div class="space-y-4">
                         <div class="flex gap-3 rounded-md bg-emerald-100 p-4 text-emerald-700">
-                            <span class="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full border border-current">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3" aria-hidden="true" focusable="false">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            <span class="mt-0.5 inline-flex shrink-0 items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                 </svg>
                             </span>
                             <p class="m-0 text-xs leading-5">
@@ -92,9 +92,9 @@ defined('ABSPATH') || exit;
                         </div>
 
                         <div class="flex gap-3 rounded-md bg-orange-500/15 p-4 text-orange-600">
-                            <span class="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-5" aria-hidden="true" focusable="false">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0 3.75h.008v.008H12v-.008ZM10.29 3.86 1.82 18a1.5 1.5 0 0 0 1.29 2.25h17.78A1.5 1.5 0 0 0 22.18 18L13.71 3.86a1.5 1.5 0 0 0-2.42 0Z" />
+                            <span class="mt-0.5 inline-flex shrink-0 items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
                                 </svg>
                             </span>
                             <p class="m-0 text-xs leading-5">
@@ -104,9 +104,9 @@ defined('ABSPATH') || exit;
                         </div>
 
                         <div class="flex gap-3 rounded-md bg-red-500/15 p-4 text-red-600">
-                            <span class="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full border border-current">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3" aria-hidden="true" focusable="false">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            <span class="mt-0.5 inline-flex shrink-0 items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                 </svg>
                             </span>
                             <p class="m-0 text-xs leading-5">
