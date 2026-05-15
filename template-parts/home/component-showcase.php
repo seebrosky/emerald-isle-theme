@@ -42,7 +42,7 @@ defined('ABSPATH') || exit;
                             <img
                                 src="<?php echo esc_url(home_url('/wp-content/uploads/desk-with-plant-01.webp')); ?>"
                                 alt=""
-                                class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                                class="h-full w-full origin-center scale-100 object-cover will-change-transform transition-transform duration-300 ease-out group-hover:scale-105"
                                 loading="lazy"
                                 decoding="async"
                             >
@@ -59,9 +59,9 @@ defined('ABSPATH') || exit;
 
                             <a href="#" class="btn btn-text text-xs group-hover:text-primary-hover">
                                 <?php esc_html_e('Learn More', 'emerald-isle'); ?>
-                                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                </svg> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
                             </a>
                         </div>
                     </article>
