@@ -42,7 +42,7 @@ defined('ABSPATH') || exit;
                             <img
                                 src="<?php echo esc_url(home_url('/wp-content/uploads/desk-with-plant-01.webp')); ?>"
                                 alt=""
-                                class="h-full w-[calc(100%+2px)] max-w-none origin-center -translate-x-px scale-100 object-cover will-change-transform transition-transform duration-300 ease-out group-hover:scale-105"
+                                class="h-full w-[calc(100%+1px)] max-w-none origin-center -translate-x-px scale-100 object-cover will-change-transform transition-transform duration-300 ease-out group-hover:scale-105"
                                 loading="lazy"
                                 decoding="async"
                             >

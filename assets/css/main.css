@@ -539,6 +539,9 @@
   .w-\[64px\] {
     width: 64px;
   }
+  .w-\[calc\(100\%\+1px\)\] {
+    width: calc(100% + 1px);
+  }
   .w-\[calc\(100\%\+2px\)\] {
     width: calc(100% + 2px);
   }
