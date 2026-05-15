@@ -27,13 +27,6 @@ defined('ABSPATH') || exit;
                 <p class="mb-8 max-w-sm text-sm leading-6 text-slate-700">
                     <?php esc_html_e('Emerald Isle comes with a complete design system and a collection of components to help you build stunning, consistent websites.', 'emerald-isle'); ?>
                 </p>
-
-                <a href="<?php echo esc_url(home_url('/style-guide/')); ?>" class="btn btn-text">
-                    <?php esc_html_e('Explore Style Guide', 'emerald-isle'); ?>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4" aria-hidden="true" focusable="false">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                    </svg>
-                </a>
             </div>
 
             <div class="grid gap-8 md:grid-cols-3">
@@ -43,12 +36,13 @@ defined('ABSPATH') || exit;
                         <?php esc_html_e('Cards', 'emerald-isle'); ?>
                     </h3>
 
-                    <article class="overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm">
+                    <article class="group overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm transition-colors duration-[220ms] ease-out hover:border-emerald-600/30">
+
                         <div class="aspect-[16/9] overflow-hidden bg-surface-50">
                             <img
                                 src="<?php echo esc_url(home_url('/wp-content/uploads/desk-with-plant-01.webp')); ?>"
                                 alt=""
-                                class="h-full w-full object-cover"
+                                class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
                                 loading="lazy"
                                 decoding="async"
                             >
@@ -63,11 +57,11 @@ defined('ABSPATH') || exit;
                                 <?php esc_html_e('This is an example of a card component with an image, title, and description.', 'emerald-isle'); ?>
                             </p>
 
-                            <a href="#" class="btn btn-text text-xs">
+                            <a href="#" class="btn btn-text text-xs group-hover:text-primary-hover">
                                 <?php esc_html_e('Learn More', 'emerald-isle'); ?>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3.5" aria-hidden="true" focusable="false">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                                </svg>
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg> -->
                             </a>
                         </div>
                     </article>
@@ -75,69 +69,77 @@ defined('ABSPATH') || exit;
 
                 <div class="border-l border-slate-200 pl-6">
                     <h3 class="mb-6 text-sm font-bold text-slate-950">
-                        <?php esc_html_e('Alerts', 'emerald-isle'); ?>
+                        <?php esc_html_e('Buttons', 'emerald-isle'); ?>
                     </h3>
 
-                    <div class="space-y-4">
-                        <div class="flex gap-3 rounded-md bg-emerald-100 p-4 text-emerald-700">
-                            <span class="mt-0.5 inline-flex shrink-0 items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                </svg>
-                            </span>
-                            <p class="m-0 text-xs leading-5">
-                                <strong><?php esc_html_e('Success!', 'emerald-isle'); ?></strong>
-                                <?php esc_html_e('Your changes have been saved.', 'emerald-isle'); ?>
-                            </p>
-                        </div>
+                    <div class="flex flex-col items-start gap-4">
+                        <a href="#" class="btn btn-primary w-44 px-5 py-2.5 text-sm">
+                            <?php esc_html_e('Primary', 'emerald-isle'); ?>
+                        </a>
 
-                        <div class="flex gap-3 rounded-md bg-orange-500/15 p-4 text-orange-600">
-                            <span class="mt-0.5 inline-flex shrink-0 items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
-                                </svg>
-                            </span>
-                            <p class="m-0 text-xs leading-5">
-                                <strong><?php esc_html_e('Warning!', 'emerald-isle'); ?></strong>
-                                <?php esc_html_e('Please check your information.', 'emerald-isle'); ?>
-                            </p>
-                        </div>
+                        <a href="#" class="btn btn-secondary w-44 px-5 py-2.5 text-sm">
+                            <?php esc_html_e('Secondary', 'emerald-isle'); ?>
+                        </a>
 
-                        <div class="flex gap-3 rounded-md bg-red-500/15 p-4 text-red-600">
-                            <span class="mt-0.5 inline-flex shrink-0 items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                </svg>
-                            </span>
-                            <p class="m-0 text-xs leading-5">
-                                <strong><?php esc_html_e('Error!', 'emerald-isle'); ?></strong>
-                                <?php esc_html_e('Something went wrong. Please try again.', 'emerald-isle'); ?>
-                            </p>
-                        </div>
+                        <a href="#" class="btn btn-outline w-44 px-5 py-2.5 text-sm">
+                            <?php esc_html_e('Outline Accent', 'emerald-isle'); ?>
+                        </a>
+
+                        <a href="#" class="btn btn-outline-dark w-44 px-5 py-2.5 text-sm">
+                            <?php esc_html_e('Outline Brand', 'emerald-isle'); ?>
+                        </a>
+
+                        <a href="#" class="btn btn-soft w-44 px-5 py-2.5 text-sm">
+                            <?php esc_html_e('Soft', 'emerald-isle'); ?>
+                        </a>
                     </div>
                 </div>
 
                 <div class="border-l border-slate-200 pl-6">
                     <h3 class="mb-6 text-sm font-bold text-slate-950">
-                        <?php esc_html_e('Badges', 'emerald-isle'); ?>
+                        <?php esc_html_e('Color Palette', 'emerald-isle'); ?>
                     </h3>
 
-                    <div class="flex flex-col items-start gap-6">
-                        <span class="rounded-full border border-emerald-600 bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-700">
-                            <?php esc_html_e('New', 'emerald-isle'); ?>
-                        </span>
+                    <div class="grid gap-3">
+                        <div class="flex items-center gap-3">
+                            <span class="size-11 rounded-md border border-slate-200 bg-slate-950"></span>
+                            <div>
+                                <p class="m-0 text-xs font-bold text-slate-950">Slate 950</p>
+                                <p class="m-0 text-xs text-slate-600">#222934</p>
+                            </div>
+                        </div>
 
-                        <span class="rounded-full border border-orange-500 bg-orange-500/10 px-3 py-1 text-xs font-bold text-orange-600">
-                            <?php esc_html_e('Popular', 'emerald-isle'); ?>
-                        </span>
+                        <div class="flex items-center gap-3">
+                            <span class="size-11 rounded-md border border-slate-200 bg-slate-900"></span>
+                            <div>
+                                <p class="m-0 text-xs font-bold text-slate-950">Slate 900</p>
+                                <p class="m-0 text-xs text-slate-600">#333d4c</p>
+                            </div>
+                        </div>
 
-                        <span class="rounded-full border border-red-500 bg-red-500/10 px-3 py-1 text-xs font-bold text-red-600">
-                            <?php esc_html_e('Sale', 'emerald-isle'); ?>
-                        </span>
+                        <div class="flex items-center gap-3">
+                            <span class="size-11 rounded-md border border-slate-200 bg-emerald-600"></span>
+                            <div>
+                                <p class="m-0 text-xs font-bold text-slate-950">Emerald 600</p>
+                                <p class="m-0 text-xs text-slate-600">#0ba481</p>
+                            </div>
+                        </div>
 
-                        <span class="rounded-full bg-slate-700 px-3 py-1 text-xs font-bold text-white">
-                            <?php esc_html_e('Limited', 'emerald-isle'); ?>
-                        </span>
+                        <div class="flex items-center gap-3">
+                            <span class="size-11 rounded-md border border-slate-200 bg-orange-500"></span>
+                            <div>
+                                <p class="m-0 text-xs font-bold text-slate-950">Orange 500</p>
+                                <p class="m-0 text-xs text-slate-600">#fc9231</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <span class="size-11 rounded-md border border-slate-200 bg-surface-50"></span>
+                            <div>
+                                <p class="m-0 text-xs font-bold text-slate-950">Surface 50</p>
+                                <p class="m-0 text-xs text-slate-600">#f5f7fa</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

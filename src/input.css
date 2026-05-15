@@ -264,12 +264,16 @@
     }
 
     .btn-text {
-        @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em];
+        @apply inline-flex items-center gap-2 text-xs font-bold capitalize tracking-[0.18em];
         color: var(--color-primary);
         position: relative;
         text-decoration: none;
         padding: 0;
     }
+
+    .group:hover .btn-text {
+        color: var(--color-primary-hover);
+    }   
 
     .btn-text::after {
         content: "";
@@ -283,6 +287,10 @@
         transform-origin: left;
         transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
     }
+
+    .group:hover .btn-text::after {
+        transform: scaleX(1);
+    }    
 
     .btn-text:hover {
         color: var(--color-primary-hover);
