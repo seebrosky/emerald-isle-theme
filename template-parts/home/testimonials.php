@@ -43,7 +43,7 @@ if (empty($testimonials)) {
                 <?php endforeach; ?>
             </div>
 
-            <div class="relative min-h-16 min-w-0 lg:w-64">
+            <div class="relative min-h-36 w-full min-w-0 lg:min-h-16 lg:w-64">
                 <?php foreach ($testimonials as $index => $testimonial) : ?>
                     <?php
                     $name   = $testimonial['testimonial_name'] ?? '';
@@ -55,7 +55,7 @@ if (empty($testimonials)) {
                     ?>
 
                     <div
-                        class="<?php echo 0 === $index ? 'opacity-100' : 'pointer-events-none opacity-0'; ?> absolute inset-0 flex items-center gap-4 transition-opacity duration-300 ease-out"
+                        class="<?php echo 0 === $index ? 'opacity-100' : 'pointer-events-none opacity-0'; ?> absolute inset-0 flex flex-col items-center justify-center gap-3 text-center transition-opacity duration-300 ease-out lg:flex-row lg:justify-start lg:gap-4 lg:text-left"
                         data-testimonial-person
                     >
                         <div class="size-16 shrink-0 overflow-hidden rounded-full bg-surface-50">
@@ -74,8 +74,8 @@ if (empty($testimonials)) {
                             ?>
                         </div>
 
-                        <div>
-                            <p class="m-0 text-sm font-bold text-white">
+                        <div class="w-auto shrink-0">
+                            <p class="m-0 whitespace-nowrap text-sm font-bold text-white">
                                 <?php echo esc_html($name); ?>
                             </p>
 
@@ -85,7 +85,7 @@ if (empty($testimonials)) {
                                 </p>
                             <?php endif; ?>
 
-                            <div class="mt-1 flex gap-0.5 text-orange-500" aria-label="<?php echo esc_attr(sprintf(__('%d out of 5 stars', 'emerald-isle'), $rating)); ?>">
+                            <div class="mt-1 flex justify-center gap-0.5 text-orange-500 lg:justify-start" aria-label="<?php echo esc_attr(sprintf(__('%d out of 5 stars', 'emerald-isle'), $rating)); ?>">
                                 <?php for ($i = 1; $i <= 5; $i++) : ?>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ if (empty($testimonials)) {
             </div>
 
             <?php if (count($testimonials) > 1) : ?>
-                <div class="flex items-center gap-3">
+                <div class="flex items-center justify-center gap-3 lg:justify-start">
                     <button
                         type="button"
                         class="group inline-flex size-10 items-center justify-center rounded-full border border-white/25 text-white/75 transition-colors duration-200 hover:border-white/50 hover:text-white focus-visible:border-white/50 focus-visible:text-white"
