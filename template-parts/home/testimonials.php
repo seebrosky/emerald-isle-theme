@@ -34,10 +34,9 @@ if (empty($testimonials)) {
 
                     <blockquote
                         class="<?php echo 0 === $index ? 'opacity-100' : 'pointer-events-none opacity-0'; ?> absolute inset-0 flex items-center transition-opacity duration-300 ease-out"
-
                         data-testimonial-slide
                     >
-                        <p class="m-0 max-w-2xl text-lg leading-8 text-white">
+                        <p class="m-0 max-w-full text-lg italic leading-8 text-white lg:max-w-2xl">
                             <?php echo esc_html($quote); ?>
                         </p>
                     </blockquote>
@@ -109,23 +108,45 @@ if (empty($testimonials)) {
                 <div class="flex items-center gap-3">
                     <button
                         type="button"
-                        class="inline-flex size-10 items-center justify-center rounded-full border border-white/25 text-white/75 transition-colors duration-200 hover:border-white/50 hover:text-white"
+                        class="group inline-flex size-10 items-center justify-center rounded-full border border-white/25 text-white/75 transition-colors duration-200 hover:border-white/50 hover:text-white focus-visible:border-white/50 focus-visible:text-white"
                         aria-label="<?php esc_attr_e('Previous testimonial', 'emerald-isle'); ?>"
                         data-testimonial-prev
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6" aria-hidden="true" focusable="false">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 18 9 12l6-6" />
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.25"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="rotate-[-90deg] transition-transform duration-[180ms] ease-out group-hover:scale-[1.14] group-focus-visible:scale-[1.14]"
+                            aria-hidden="true"
+                            focusable="false">
+                            <path d="m18 15-6-6-6 6" />
                         </svg>
                     </button>
 
                     <button
                         type="button"
-                        class="inline-flex size-10 items-center justify-center rounded-full border border-white/25 text-white/75 transition-colors duration-200 hover:border-white/50 hover:text-white"
+                        class="group inline-flex size-10 items-center justify-center rounded-full border border-white/25 text-white/75 transition-colors duration-200 hover:border-white/50 hover:text-white focus-visible:border-white/50 focus-visible:text-white"
                         aria-label="<?php esc_attr_e('Next testimonial', 'emerald-isle'); ?>"
                         data-testimonial-next
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6" aria-hidden="true" focusable="false">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" />
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.25"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="rotate-90 transition-transform duration-[180ms] ease-out group-hover:scale-[1.10] group-focus-visible:scale-[1.10]"
+                            aria-hidden="true"
+                            focusable="false">
+                            <path d="m18 15-6-6-6 6" />
                         </svg>
                     </button>
                 </div>
