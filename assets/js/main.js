@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchBackdrop = document.querySelector('.site-search-backdrop');
     const mobileToggle   = document.querySelector('.mobile-nav-toggle');
     const mobilePanel    = document.querySelector('[data-mobile-nav-panel]');
+    const testimonialSlider = document.querySelector('[data-testimonial-slider]');
 
     let scrollTopTimeout;
 
@@ -138,6 +139,51 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         });
+    }
+
+    if (testimonialSlider) {
+        const slides = testimonialSlider.querySelectorAll('[data-testimonial-slide]');
+        const people = testimonialSlider.querySelectorAll('[data-testimonial-person]');
+        const prev = testimonialSlider.querySelector('[data-testimonial-prev]');
+        const next = testimonialSlider.querySelector('[data-testimonial-next]');
+
+        let current = 0;
+
+        function showTestimonial(index) {
+            if (!slides.length || !people.length) return;
+
+            current = (index + slides.length) % slides.length;
+
+            slides.forEach(function (slide, slideIndex) {
+                const isActive = slideIndex === current;
+
+                slide.classList.toggle('opacity-100', isActive);
+                slide.classList.toggle('opacity-0', !isActive);
+                slide.classList.toggle('pointer-events-none', !isActive);
+            });
+
+            people.forEach(function (person, personIndex) {
+                const isActive = personIndex === current;
+
+                person.classList.toggle('opacity-100', isActive);
+                person.classList.toggle('opacity-0', !isActive);
+                person.classList.toggle('pointer-events-none', !isActive);
+            });
+        }
+
+        if (slides.length > 1) {
+            if (prev) {
+                prev.addEventListener('click', function () {
+                    showTestimonial(current - 1);
+                });
+            }
+
+            if (next) {
+                next.addEventListener('click', function () {
+                    showTestimonial(current + 1);
+                });
+            }
+        }
     }
 
     function showScrollTopButton() {

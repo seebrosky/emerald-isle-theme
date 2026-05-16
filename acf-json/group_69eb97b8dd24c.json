@@ -1,53 +1,11 @@
 {
     "key": "group_69eb97b8dd24c",
-    "title": "Testimonials Section",
+    "title": "Homepage Testimonials",
     "fields": [
         {
-            "key": "field_69eb97b999770",
-            "label": "Testimonials Eyebrow",
-            "name": "testimonials_eyebrow",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_69eb9809673bf",
-            "label": "Testimonials Heading",
-            "name": "testimonials_heading",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_69eb981a673c0",
+            "key": "field_6a07bbf6f7615",
             "label": "Testimonials",
-            "name": "testimonials",
+            "name": "home_testimonials",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -58,22 +16,22 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "block",
             "pagination": 0,
-            "min": 0,
-            "max": 0,
+            "min": 1,
+            "max": 6,
             "collapsed": "",
-            "button_label": "Add Row",
+            "button_label": "Add Testimonial",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_69eb985f673c1",
+                    "key": "field_6a07bd69f7616",
                     "label": "Quote",
-                    "name": "quote",
+                    "name": "testimonial_quote",
                     "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -83,19 +41,19 @@
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
-                    "rows": "",
+                    "rows": 3,
                     "placeholder": "",
                     "new_lines": "",
-                    "parent_repeater": "field_69eb981a673c0"
+                    "parent_repeater": "field_6a07bbf6f7615"
                 },
                 {
-                    "key": "field_69eb986e673c2",
+                    "key": "field_6a07bdf1f7617",
                     "label": "Name",
-                    "name": "name",
+                    "name": "testimonial_name",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -108,12 +66,12 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_69eb981a673c0"
+                    "parent_repeater": "field_6a07bbf6f7615"
                 },
                 {
-                    "key": "field_69eb987f673c3",
-                    "label": "Company",
-                    "name": "company",
+                    "key": "field_6a07be17f7618",
+                    "label": "Role",
+                    "name": "testimonial_role",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -130,7 +88,58 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_69eb981a673c0"
+                    "parent_repeater": "field_6a07bbf6f7615"
+                },
+                {
+                    "key": "field_6a07be9df7619",
+                    "label": "Rating",
+                    "name": "testimonial_rating",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 5,
+                    "min": 1,
+                    "max": 5,
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "step": 1,
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6a07bbf6f7615"
+                },
+                {
+                    "key": "field_6a07bee7f761a",
+                    "label": "Image",
+                    "name": "testimonial_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_6a07bbf6f7615"
                 }
             ]
         }
@@ -156,5 +165,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1777052677
+    "modified": 1778892604
 }
