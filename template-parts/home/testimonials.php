@@ -20,15 +20,15 @@ if (empty($testimonials)) {
 
 <section class="bg-slate-950 text-white" data-testimonial-slider>
     <div class="mx-auto flex min-h-[11rem] max-w-6xl items-center px-6 py-8">
-        <div class="grid w-full items-center gap-8 md:grid-cols-[auto_minmax(0,1fr)_16rem_auto]">
+        <div class="grid w-full items-center gap-6 lg:grid-cols-[auto_minmax(0,1fr)_16rem_auto] lg:gap-8">
 
-            <div class="text-brand-primary" aria-hidden="true">
+            <div class="hidden text-brand-primary lg:block" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="size-20 fill-current">
                     <path d="M14.505 5.873C10.568 8.393 8.6 11.43 8.6 14.98c0 1.105.193 1.657.577 1.657l.396-.107c.312-.12.563-.18.756-.18c1.127 0 2.07.41 2.825 1.23c.756.82 1.134 1.83 1.134 3.036c0 1.157-.41 2.14-1.225 2.947c-.816.807-1.8 1.21-2.952 1.21c-1.608 0-2.935-.66-3.98-1.983c-1.043-1.32-1.564-2.98-1.564-4.977c0-2.26.442-4.327 1.33-6.203c.89-1.875 2.244-3.57 4.068-5.085c1.824-1.514 2.988-2.272 3.492-2.272c.336 0 .612.162.828.486c.216.323.324.605.324.845l-.107.288zm12.96 0c-3.937 2.52-5.904 5.556-5.904 9.108c0 1.105.193 1.657.577 1.657l.396-.107c.312-.12.563-.18.756-.18c1.103 0 2.04.41 2.807 1.23c.77.82 1.152 1.83 1.152 3.036c0 1.157-.41 2.14-1.225 2.947c-.816.807-1.8 1.21-2.952 1.21c-1.608 0-2.935-.66-3.98-1.983c-1.043-1.32-1.564-2.98-1.564-4.977c0-2.284.448-4.37 1.35-6.256c.9-1.887 2.255-3.577 4.067-5.067C24.76 5 25.917 4.254 26.42 4.254c.337 0 .613.162.83.486c.215.324.323.606.323.846l-.108.287z"/>
                 </svg>
             </div>
 
-            <div class="relative min-h-[4.5rem] min-w-0">
+            <div class="relative min-h-[8rem] min-w-0 sm:min-h-[6.5rem] lg:min-h-[4.5rem]">
                 <?php foreach ($testimonials as $index => $testimonial) : ?>
                     <?php $quote = $testimonial['testimonial_quote'] ?? ''; ?>
 
@@ -44,7 +44,7 @@ if (empty($testimonials)) {
                 <?php endforeach; ?>
             </div>
 
-            <div class="relative min-h-16 w-64 min-w-0">
+            <div class="relative min-h-16 min-w-0 lg:w-64">
                 <?php foreach ($testimonials as $index => $testimonial) : ?>
                     <?php
                     $name   = $testimonial['testimonial_name'] ?? '';
