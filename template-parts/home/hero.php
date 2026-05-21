@@ -74,6 +74,7 @@ defined('ABSPATH') || exit;
             <img
                 src="<?php echo esc_url(home_url('/wp-content/uploads/hero-image-01-1.webp')); ?>"
                 alt=""
+                width="1484" height="923"
                 class="hero-media-image"
                 loading="eager"
                 decoding="async"

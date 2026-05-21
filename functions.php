@@ -81,3 +81,40 @@ function emerald_isle_enqueue_assets() {
     );
 }
 add_action('wp_enqueue_scripts', 'emerald_isle_enqueue_assets');
+
+/**
+ * Outputs a basic meta description.
+ */
+/**
+ * Outputs a basic meta description.
+ */
+function emerald_isle_meta_description() {
+    if ( is_admin() ) {
+        return;
+    }
+
+    if ( is_front_page() ) {
+        $description = 'Emerald Isle - A fast, flexible WordPress theme for modern business websites.';
+    } elseif ( is_singular() ) {
+        $description = get_the_excerpt();
+
+        if ( empty( $description ) ) {
+            $description = get_bloginfo( 'description' );
+        }
+    } elseif ( is_archive() ) {
+        $description = get_the_archive_description();
+    } else {
+        $description = get_bloginfo( 'description' );
+    }
+
+    $description = wp_strip_all_tags( $description );
+    $description = trim( preg_replace( '/\s+/', ' ', $description ) );
+    $description = wp_trim_words( $description, 28, '' );
+
+    if ( empty( $description ) ) {
+        $description = get_bloginfo( 'name' ) . ' - A modern WordPress theme crafted for performance, scalability, and clean design.';
+    }
+
+    echo '<meta name="description" content="' . esc_attr( $description ) . '">' . "\n";
+}
+add_action( 'wp_head', 'emerald_isle_meta_description', 1 );

@@ -5,24 +5,13 @@
 
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- SVG favicon (modern browsers) -->
-        <link rel="icon" type="image/svg+xml" href="<?php echo esc_url($theme_uri . '/assets/favicon/favicon.svg'); ?>">
-
-        <!-- Standard PNG fallback -->
-        <link rel="icon" type="image/png" sizes="96x96" href="<?php echo esc_url($theme_uri . '/assets/favicon/favicon-96x96.png'); ?>">
-
-        <!-- ICO fallback (older browsers) -->
-        <link rel="shortcut icon" href="<?php echo esc_url($theme_uri . '/assets/favicon/favicon.ico'); ?>">
-
-        <!-- Apple Touch Icon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url($theme_uri . '/assets/favicon/apple-touch-icon.png'); ?>">
-
-        <!-- Web App Manifest -->
-        <link rel="manifest" href="<?php echo esc_url($theme_uri . '/assets/favicon/site.webmanifest'); ?>">
-
-        <!-- Theme color -->
         <meta name="theme-color" content="#0f5c3f">
+
+        <link rel="icon" type="image/svg+xml" href="<?php echo esc_url($theme_uri . '/assets/favicon/favicon.svg'); ?>">
+        <link rel="icon" type="image/png" sizes="96x96" href="<?php echo esc_url($theme_uri . '/assets/favicon/favicon-96x96.png'); ?>">
+        <link rel="shortcut icon" href="<?php echo esc_url($theme_uri . '/assets/favicon/favicon.ico'); ?>">
+        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url($theme_uri . '/assets/favicon/apple-touch-icon.png'); ?>">
+        <link rel="manifest" href="<?php echo esc_url($theme_uri . '/assets/favicon/site.webmanifest'); ?>">
 
         <?php wp_head(); ?>
     </head>
