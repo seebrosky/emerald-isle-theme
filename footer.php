@@ -41,26 +41,77 @@ $theme_uri = get_template_directory_uri();
                         </p>
 
                         <div class="flex items-center gap-3">
-                            <a href="#" aria-label="<?php esc_attr_e('GitHub', 'emerald-isle'); ?>" class="footer-social-link group">
-                                <img src="<?php echo esc_url($theme_uri . '/assets/icons/github.svg'); ?>" alt="GitHub" class="size-5 brightness-0 invert opacity-75 transition-opacity duration-200 group-hover:opacity-100" height="800" width="800">
+                            <a
+                                href="#"
+                                aria-label="<?php esc_attr_e('GitHub', 'emerald-isle'); ?>"
+                                class="inline-flex size-9 items-center justify-center rounded-full bg-white/[0.08] transition duration-200 ease-out hover:-translate-y-px hover:bg-white/[0.16] focus-visible:-translate-y-px focus-visible:bg-white/[0.16]"
+                            >
+                                <img
+                                    src="<?php echo esc_url($theme_uri . '/assets/icons/github.svg'); ?>"
+                                    alt=""
+                                    class="size-5 brightness-0 invert"
+                                    height="800"
+                                    width="800"
+                                >
                             </a>
 
-                            <a href="#" aria-label="<?php esc_attr_e('Instagram', 'emerald-isle'); ?>" class="footer-social-link group">
-                                <img src="<?php echo esc_url($theme_uri . '/assets/icons/instagram.svg'); ?>" alt="Instagram" class="size-6 brightness-0 invert opacity-75 transition-opacity duration-200 group-hover:opacity-100" height="800" width="800">
+                            <a
+                                href="#"
+                                aria-label="<?php esc_attr_e('Instagram', 'emerald-isle'); ?>"
+                                class="inline-flex size-9 items-center justify-center rounded-full bg-white/[0.08] transition duration-200 ease-out hover:-translate-y-px hover:bg-white/[0.16] focus-visible:-translate-y-px focus-visible:bg-white/[0.16]"
+                            >
+                                <img
+                                    src="<?php echo esc_url($theme_uri . '/assets/icons/instagram.svg'); ?>"
+                                    alt=""
+                                    class="size-5 brightness-0 invert"
+                                    height="800"
+                                    width="800"
+                                >
                             </a>
 
-                            <a href="#" aria-label="<?php esc_attr_e('LinkedIn', 'emerald-isle'); ?>" class="footer-social-link group">
-                                <img src="<?php echo esc_url($theme_uri . '/assets/icons/linkedin.svg'); ?>" alt="LinkedIn" class="size-5 brightness-0 invert opacity-75 transition-opacity duration-200 group-hover:opacity-100" height="800" width="800">
+                            <a
+                                href="#"
+                                aria-label="<?php esc_attr_e('LinkedIn', 'emerald-isle'); ?>"
+                                class="inline-flex size-9 items-center justify-center rounded-full bg-white/[0.08] transition duration-200 ease-out hover:-translate-y-px hover:bg-white/[0.16] focus-visible:-translate-y-px focus-visible:bg-white/[0.16]"
+                            >
+                                <img
+                                    src="<?php echo esc_url($theme_uri . '/assets/icons/linkedin.svg'); ?>"
+                                    alt=""
+                                    class="size-4 brightness-0 invert"
+                                    height="800"
+                                    width="800"
+                                >
                             </a>
 
-                            <a href="#" aria-label="<?php esc_attr_e('X / Twitter', 'emerald-isle'); ?>" class="footer-social-link group">
-                                <img src="<?php echo esc_url($theme_uri . '/assets/icons/x.svg'); ?>" alt="X" class="size-5 brightness-0 invert opacity-75 transition-opacity duration-200 group-hover:opacity-100" height="512" width="512">
+                            <a
+                                href="#"
+                                aria-label="<?php esc_attr_e('X / Twitter', 'emerald-isle'); ?>"
+                                class="inline-flex size-9 items-center justify-center rounded-full bg-white/[0.08] transition duration-200 ease-out hover:-translate-y-px hover:bg-white/[0.16] focus-visible:-translate-y-px focus-visible:bg-white/[0.16]"
+                            >
+                                <img
+                                    src="<?php echo esc_url($theme_uri . '/assets/icons/x.svg'); ?>"
+                                    alt=""
+                                    class="size-4 brightness-0 invert"
+                                    height="512"
+                                    width="512"
+                                >
                             </a>
 
-                            <a href="#" aria-label="<?php esc_attr_e('YouTube', 'emerald-isle'); ?>" class="footer-social-link group">
-                                <img src="<?php echo esc_url($theme_uri . '/assets/icons/youtube.svg'); ?>" alt="YouTube" class="size-6 brightness-0 invert opacity-75 transition-opacity duration-200 group-hover:opacity-100" height="800" width="800">
+                            <a
+                                href="#"
+                                aria-label="<?php esc_attr_e('YouTube', 'emerald-isle'); ?>"
+                                class="inline-flex size-9 items-center justify-center rounded-full bg-white/[0.08] transition duration-200 ease-out hover:-translate-y-px hover:bg-white/[0.16] focus-visible:-translate-y-px focus-visible:bg-white/[0.16]"
+                            >
+                                <img
+                                    src="<?php echo esc_url($theme_uri . '/assets/icons/youtube.svg'); ?>"
+                                    alt=""
+                                    class="size-5 brightness-0 invert"
+                                    height="800"
+                                    width="800"
+                                >
                             </a>
                         </div>
+
                     </div>
 
                     <div>
@@ -96,7 +147,7 @@ $theme_uri = get_template_directory_uri();
                 </div>
             </div>
 
-            <div class="bg-brand-primary py-3 text-center text-base text-white">
+            <div class="copyright-gradient py-3 text-center text-sm text-white">
                 &copy; <?php echo esc_html(wp_date('Y')); ?> <?php echo esc_html(get_bloginfo('name')); ?>. <?php esc_html_e('All rights reserved.', 'emerald-isle'); ?>
             </div>
 
