@@ -85,7 +85,10 @@ if (empty($testimonials)) {
                                 </p>
                             <?php endif; ?>
 
-                            <div class="mt-1 flex justify-center gap-0.5 text-orange-500 lg:justify-start" aria-label="<?php echo esc_attr(sprintf(__('%d out of 5 stars', 'emerald-isle'), $rating)); ?>">
+                            <div class="mt-1 flex justify-center gap-0.5 text-orange-500 lg:justify-start">
+                                <span class="sr-only">
+                                    <?php echo esc_html(sprintf(__('%d out of 5 stars', 'emerald-isle'), $rating)); ?>
+                                </span>
 
                                 <?php for ($i = 1; $i <= 5; $i++) : ?>
                                     <svg
@@ -100,6 +103,7 @@ if (empty($testimonials)) {
                                     </svg>
                                 <?php endfor; ?>
                             </div>
+
                         </div>
                     </div>
                 <?php endforeach; ?>
