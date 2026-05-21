@@ -31,6 +31,7 @@
     --h6-size: clamp(1rem, 1.2vw, 1.125rem);
 
     /* Core palette */
+    --color-slate-975: #171d25;
     --color-slate-950: #222934;
     --color-slate-900: #333d4c;
     --color-slate-700: #4f5561;
@@ -77,6 +78,7 @@
 }
 
 @theme {
+    --color-slate-975: #171d25;
     --color-slate-950: #222934;
     --color-slate-900: #333d4c;
     --color-slate-700: #4f5561;
@@ -551,8 +553,8 @@
 .copyright-gradient {
     background:
         linear-gradient(
-            90deg,
-            rgba(34, 41, 52, 0.98) 0%,
+            45deg,
+            rgba(33, 41, 54, 0.98) 30%,
             rgba(18, 24, 32, 0.98) 100%
         );
 }

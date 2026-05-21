@@ -13,7 +13,7 @@ defined('ABSPATH') || exit;
 $theme_uri = get_template_directory_uri();
 ?>
 
-        <footer class="mt-0 footer-gradient text-white">
+        <footer class="mt-0 footer-gradient text-white border-b border-black/[0.5]">
 
             <div class="mx-auto max-w-6xl px-6 py-16">
                 <div class="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
@@ -147,11 +147,11 @@ $theme_uri = get_template_directory_uri();
                 </div>
             </div>
 
-            <div class="copyright-gradient py-3 text-center text-sm text-white">
-                &copy; <?php echo esc_html(wp_date('Y')); ?> <?php echo esc_html(get_bloginfo('name')); ?>. <?php esc_html_e('All rights reserved.', 'emerald-isle'); ?>
-            </div>
-
         </footer>
+
+        <div class="bg-slate-975 py-3 text-center text-sm text-white border-t border-[rgb(46_54_65_/_78%)]">
+            &copy; <?php echo esc_html(wp_date('Y')); ?> <?php echo esc_html(get_bloginfo('name')); ?>. <?php esc_html_e('All rights reserved.', 'emerald-isle'); ?>
+        </div>       
 
         <a href="#top" class="footer-scroll-top" id="scrollTopBtn" aria-label="<?php esc_attr_e('Back to top', 'emerald-isle'); ?>">
             <svg xmlns="http://www.w3.org/2000/svg"
