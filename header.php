@@ -59,17 +59,23 @@
 
             <div class="site-header-inner flex w-full items-center justify-between px-6 lg:mx-auto lg:max-w-6xl">
                 <div class="site-branding flex items-center">
-                    <a href="<?php echo esc_url(home_url('/')); ?>" class="site-logo flex origin-left items-center no-underline">
+                    <a
+                        href="<?php echo esc_url(home_url('/')); ?>"
+                        class="site-logo flex origin-left items-center no-underline"
+                        aria-label="<?php echo esc_attr(sprintf(__('%s home', 'emerald-isle'), get_bloginfo('name'))); ?>"
+                    >
                         <span class="site-logo-wrap">
                             <img
-                                src="/wp-content/uploads/emerald-isle-logo-dark_570x120.png"
+                                src="<?php echo esc_url(home_url('/wp-content/uploads/emerald-isle-logo-dark_570x120.png')); ?>"
                                 alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+                                width="570" height="120"
                                 class="site-logo-img site-logo-default block w-auto shrink-0 object-contain"
                             >
 
                             <img
-                                src="/wp-content/uploads/emerald-isle-logo-dark_475x100.png"
-                                alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+                                src="<?php echo esc_url(home_url('/wp-content/uploads/emerald-isle-logo-dark_475x100.png')); ?>"
+                                alt=""
+                                width="475" height="100"
                                 class="site-logo-img site-logo-scrolled block w-auto shrink-0 object-contain"
                                 aria-hidden="true"
                             >
