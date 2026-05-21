@@ -176,32 +176,6 @@
         </div>
     </section>
 
-    <section class="brand-gradient py-20 text-center text-white">
-        <div class="mx-auto max-w-4xl px-6">
-            <h2 class="text-3xl font-bold sm:text-4xl">
-                Ready to build something great?
-            </h2>
-
-            <div class="mt-8">
-                <a href="#" class="btn btn-light">
-                    Start a Project
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <section class="py-16">
-            <div class="mx-auto max-w-6xl px-6">
-                <div class="prose max-w-none">
-                    <div class="entry-content">
-                        <?php the_content(); ?>
-                    </div>
-                </div>
-            </div>
-        </section>
-    <?php endwhile; endif; ?> -->
-
 </main>
 
 <?php get_footer(); ?>

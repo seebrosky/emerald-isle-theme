@@ -37,7 +37,7 @@ $theme_uri = get_template_directory_uri();
                         </a>
 
                         <p class="mb-6 max-w-sm text-sm leading-7 text-white/70">
-                            <?php esc_html_e('Modern WordPress themes crafted for performance, scalability, and clean design.', 'emerald-isle'); ?>
+                            <?php esc_html_e('A Modern WordPress theme crafted for performance, scalability, and clean design.', 'emerald-isle'); ?>
                         </p>
 
                         <div class="flex items-center gap-3">
