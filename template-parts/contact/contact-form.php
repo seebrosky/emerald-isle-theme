@@ -20,7 +20,7 @@
                 Fill out the form below and we’ll get back to you as soon as possible.
             </p>
 
-            <?php echo do_shortcode('[fluentform id="1"]'); ?>
+            <?php echo do_shortcode('[fluentform id="3"]'); ?>
         </div>
 
         <aside class="rounded-2xl border border-border-light bg-white p-8 shadow-sm lg:p-10">
