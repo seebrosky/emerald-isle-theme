@@ -92,6 +92,7 @@ function emerald_isle_render_styleguide_page() {
                          */
                         $colors = [
                             // Slate
+                            ['label' => 'Slate 975', 'css' => '--color-slate-975', 'token' => '--color-slate-975'],
                             ['label' => 'Slate 950', 'css' => '--color-slate-950', 'token' => '--color-slate-950'],
                             ['label' => 'Slate 900', 'css' => '--color-slate-900', 'token' => '--color-slate-900'],
                             ['label' => 'Slate 700', 'css' => '--color-slate-700', 'token' => '--color-slate-700'],
