@@ -36,38 +36,48 @@ defined('ABSPATH') || exit;
             <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 <?php
                 $demos = array(
-                    __('Corporate', 'emerald-isle'),
-                    __('Agency', 'emerald-isle'),
-                    __('SaaS', 'emerald-isle'),
-                    __('Shop', 'emerald-isle'),
+                    array(
+                        'title' => __('Corporate', 'emerald-isle'),
+                        'subtitle' => __('Business Website', 'emerald-isle'),
+                        'image' => '/wp-content/uploads/corporate-demo-01.webp',
+                    ),
+                    array(
+                        'title' => __('Agency', 'emerald-isle'),
+                        'subtitle' => __('Creative Portfolio', 'emerald-isle'),
+                        'image' => '/wp-content/uploads/agency-demo-01.webp',
+                    ),
+                    array(
+                        'title' => __('SaaS', 'emerald-isle'),
+                        'subtitle' => __('Software Platform', 'emerald-isle'),
+                        'image' => '/wp-content/uploads/saas-demo-01.webp',
+                    ),
+                    array(
+                        'title' => __('Shop', 'emerald-isle'),
+                        'subtitle' => __('Online Store', 'emerald-isle'),
+                        'image' => '/wp-content/uploads/shop-demo-01.webp',
+                    ),
                 );
 
                 foreach ($demos as $demo) :
-                    ?>
-                    <article class="flex flex-col overflow-hidden rounded-md border border-slate-200 bg-white">
-                        <div class="aspect-[4/3] bg-slate-100 p-3">
-                            <div class="h-full rounded-sm border border-slate-200 bg-white p-3">
-                                <div class="mb-3 flex items-center gap-1.5">
-                                    <span class="size-1.5 rounded-full bg-slate-300"></span>
-                                    <span class="size-1.5 rounded-full bg-slate-300"></span>
-                                    <span class="size-1.5 rounded-full bg-slate-300"></span>
-                                </div>
-
-                                <div class="mb-4 h-16 rounded-sm bg-gradient-to-br from-slate-200 to-slate-100"></div>
-                                <div class="mb-2 h-2 w-2/3 rounded-full bg-slate-300"></div>
-                                <div class="mb-4 h-2 w-1/2 rounded-full bg-slate-200"></div>
-                                <div class="grid grid-cols-3 gap-2">
-                                    <span class="h-8 rounded-sm bg-emerald-100"></span>
-                                    <span class="h-8 rounded-sm bg-slate-100"></span>
-                                    <span class="h-8 rounded-sm bg-slate-100"></span>
-                                </div>
-                            </div>
+                ?>
+                    <article class="flex flex-col overflow-hidden rounded-md border border-slate-200 bg-white transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
+                        <div class="aspect-[2/3] overflow-hidden bg-slate-100">
+                            <img
+                                src="<?php echo esc_url($demo['image']); ?>"
+                                alt="<?php echo esc_attr($demo['title']); ?> Demo"
+                                class="h-full w-full object-cover object-top"
+                                loading="lazy"
+                            >
                         </div>
 
-                        <div class="relative z-10 border-t border-slate-200 bg-white px-3 py-3">
+                        <div class="border-t border-slate-200 bg-white px-4 py-3">
                             <h3 class="m-0 text-sm font-bold text-slate-950">
-                                <?php echo esc_html($demo); ?>
+                                <?php echo esc_html($demo['title']); ?>
                             </h3>
+
+                            <p class="mt-1 text-xs leading-5 text-slate-500">
+                                <?php echo esc_html($demo['subtitle']); ?>
+                            </p>
                         </div>
                     </article>
                 <?php endforeach; ?>
