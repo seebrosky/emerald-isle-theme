@@ -23,7 +23,7 @@
             <?php echo do_shortcode('[fluentform id="3"]'); ?>
         </div>
 
-        <aside class="rounded-xl border border-border-light bg-white p-8 pb-9 lg:pb-5">
+        <aside class="rounded-xl border border-border-light bg-white p-8 pb-9 lg:pb-8">
             <h2 class="mb-3 text-3xl font-extrabold tracking-[-0.04em] text-site-text">
                 Contact Information
             </h2>
