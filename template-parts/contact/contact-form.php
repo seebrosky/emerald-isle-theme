@@ -8,22 +8,22 @@
  */
 ?>
 
-<section class="bg-site-bg py-16 lg:py-20">
+<section class="bg-site-bg py-10">
     <div class="mx-auto grid max-w-6xl gap-8 px-6 lg:grid-cols-[1.35fr_0.95fr]">
 
-        <div class="rounded-2xl border border-border-light bg-white p-8 shadow-sm lg:p-10">
+        <div class="rounded-2xl border border-border-light bg-white p-8 lg:p-10">
             <h2 class="mb-3 text-3xl font-extrabold tracking-[-0.04em] text-site-text">
                 Send Us A Message
             </h2>
 
             <p class="mb-8 max-w-md text-base leading-7 text-site-text-muted">
-                Fill out the form below and we’ll get back to you as soon as possible.
+                Fill out the form below and we'll get back to you as soon as possible.
             </p>
 
             <?php echo do_shortcode('[fluentform id="3"]'); ?>
         </div>
 
-        <aside class="rounded-2xl border border-border-light bg-white p-8 shadow-sm lg:p-10">
+        <aside class="rounded-2xl border border-border-light bg-white p-8 lg:p-10">
             <h2 class="mb-3 text-3xl font-extrabold tracking-[-0.04em] text-site-text">
                 Contact Information
             </h2>
@@ -82,7 +82,7 @@
 
                 <div class="flex gap-5">
                     <div class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-emerald-600/10 text-emerald-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-7">
                             <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z" clip-rule="evenodd" />
                         </svg>
                     </div>
