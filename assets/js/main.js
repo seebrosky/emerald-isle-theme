@@ -213,13 +213,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (header && !header.classList.contains('mobile-nav-open')) {
 
-if (scrollY > 120) {
-    header.classList.add('is-scrolled');
-}
+            if (scrollY > 120) {
+                header.classList.add('is-scrolled');
+            }
 
-if (scrollY < 40) {
-    header.classList.remove('is-scrolled');
-}
+            if (scrollY < 40) {
+                header.classList.remove('is-scrolled');
+            }
 
         }
 
