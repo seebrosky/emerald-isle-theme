@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    const header         = document.querySelector('[data-site-header]');
-    const scrollTopBtn   = document.getElementById('scrollTopBtn');
-    const searchToggles  = document.querySelectorAll('.site-search-toggle');
-    const searchPanel    = document.querySelector('.site-search-panel');
-    const searchClose    = document.querySelector('.site-search-close');
-    const searchBackdrop = document.querySelector('.site-search-backdrop');
-    const mobileToggle   = document.querySelector('.mobile-nav-toggle');
-    const mobilePanel    = document.querySelector('[data-mobile-nav-panel]');
+    const heroSlider        = document.querySelector('.hero-slider');    
+    const header            = document.querySelector('[data-site-header]');
+    const scrollTopBtn      = document.getElementById('scrollTopBtn');
+    const searchToggles     = document.querySelectorAll('.site-search-toggle');
+    const searchPanel       = document.querySelector('.site-search-panel');
+    const searchClose       = document.querySelector('.site-search-close');
+    const searchBackdrop    = document.querySelector('.site-search-backdrop');
+    const mobileToggle      = document.querySelector('.mobile-nav-toggle');
+    const mobilePanel       = document.querySelector('[data-mobile-nav-panel]');
     const testimonialSlider = document.querySelector('[data-testimonial-slider]');
 
     let scrollTopTimeout;
@@ -184,6 +185,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         }
+    }
+
+    // Hero Slider
+    if (heroSlider && window.Splide) {
+        const slideCount = heroSlider.querySelectorAll('.splide__slide').length;
+        const hasMultipleSlides = slideCount > 1;
+
+        new Splide(heroSlider, {
+            type: hasMultipleSlides ? 'loop' : 'slide',
+            perPage: 1,
+            arrows: hasMultipleSlides,
+            pagination: hasMultipleSlides,
+            autoplay: hasMultipleSlides,
+            drag: hasMultipleSlides,
+            interval: 6000,
+            pauseOnHover: true,
+            speed: 800,
+        }).mount();
     }
 
     function showScrollTopButton() {

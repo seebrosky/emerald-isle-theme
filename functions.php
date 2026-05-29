@@ -48,18 +48,35 @@ function emerald_isle_enqueue_assets() {
     $main_js_file        = get_template_directory() . '/assets/js/main.js';
     $desktop_js_file     = get_template_directory() . '/assets/js/navigation-desktop.js';
     $mobile_js_file      = get_template_directory() . '/assets/js/navigation-mobile.js';
+    $splide_css_file     = get_template_directory() . '/assets/vendor/splide/splide.min.css';
+    $splide_js_file      = get_template_directory() . '/assets/vendor/splide/splide.min.js';
+
+    wp_enqueue_style(
+        'splide',
+        get_template_directory_uri() . '/assets/vendor/splide/splide.min.css',
+        array(),
+        file_exists($splide_css_file) ? filemtime($splide_css_file) : '4.1.4'
+    );
 
     wp_enqueue_style(
         'emerald-isle-style',
         get_template_directory_uri() . '/assets/css/main.css',
-        array(),
+        array('splide'),
         file_exists($css_file) ? filemtime($css_file) : '1.0'
+    );
+
+    wp_enqueue_script(
+        'splide',
+        get_template_directory_uri() . '/assets/vendor/splide/splide.min.js',
+        array(),
+        file_exists($splide_js_file) ? filemtime($splide_js_file) : '4.1.4',
+        true
     );
 
     wp_enqueue_script(
         'emerald-isle-main',
         get_template_directory_uri() . '/assets/js/main.js',
-        array(),
+        array('splide'),
         file_exists($main_js_file) ? filemtime($main_js_file) : '1.0',
         true
     );
@@ -82,9 +99,6 @@ function emerald_isle_enqueue_assets() {
 }
 add_action('wp_enqueue_scripts', 'emerald_isle_enqueue_assets');
 
-/**
- * Outputs a basic meta description.
- */
 /**
  * Outputs a basic meta description.
  */
