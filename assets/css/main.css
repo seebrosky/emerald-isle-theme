@@ -1054,6 +1054,9 @@
   .bg-cover {
     background-size: cover;
   }
+  .bg-\[center_18\%\] {
+    background-position: center 18%;
+  }
   .bg-center {
     background-position: center;
   }
@@ -1718,6 +1721,11 @@
       grid-template-columns: 1.4fr 1fr 1fr;
     }
   }
+  .md\:bg-\[center_12\%\] {
+    @media (width >= 48rem) {
+      background-position: center 12%;
+    }
+  }
   .lg\:mx-auto {
     @media (width >= 64rem) {
       margin-inline: auto;
@@ -1868,6 +1876,11 @@
     @media (width >= 64rem) {
       border-bottom-style: var(--tw-border-style);
       border-bottom-width: 0px;
+    }
+  }
+  .lg\:bg-center {
+    @media (width >= 64rem) {
+      background-position: center;
     }
   }
   .lg\:p-10 {

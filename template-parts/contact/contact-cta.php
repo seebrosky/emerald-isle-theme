@@ -13,13 +13,12 @@
 
         <div class="overflow-hidden rounded-xl border border-border-light bg-white">
             <div class="grid min-h-[300px] lg:grid-cols-[42%_58%]">
-
                 <div
-                    class="relative min-h-[260px] bg-cover bg-center lg:min-h-[300px]"
+                    class="relative min-h-[300px] bg-cover bg-[center_18%] md:bg-[center_12%] lg:min-h-[300px] lg:bg-center"
                     style="background-image: url('/wp-content/uploads/contact-cta-image-01.webp');"
                 >
-                    <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-r from-transparent to-white"></div>
-                </div>
+                    <div class="hidden lg:block absolute inset-y-0 right-0 w-32 bg-gradient-to-r from-transparent to-white"></div>
+                </div>                
 
                 <div class="flex items-center px-8 py-10 lg:px-12">
                     <div class="max-w-xl">
