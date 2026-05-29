@@ -36,7 +36,7 @@ defined('ABSPATH') || exit;
                         <?php esc_html_e('Cards', 'emerald-isle'); ?>
                     </h3>
 
-                    <article class="group overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm transition-colors duration-[220ms] ease-out hover:border-emerald-600/30">
+                    <article class="group overflow-hidden rounded-md border border-slate-200 bg-white transition-colors duration-[220ms] ease-out">
 
                         <div class="aspect-[16/9] overflow-hidden bg-surface-50">
                             <img

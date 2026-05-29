@@ -44,7 +44,7 @@ defined('ABSPATH') || exit;
 
                 foreach ($demos as $demo) :
                     ?>
-                    <article class="flex flex-col overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm">
+                    <article class="flex flex-col overflow-hidden rounded-md border border-slate-200 bg-white">
                         <div class="aspect-[4/3] bg-slate-100 p-3">
                             <div class="h-full rounded-sm border border-slate-200 bg-white p-3">
                                 <div class="mb-3 flex items-center gap-1.5">
@@ -89,7 +89,7 @@ defined('ABSPATH') || exit;
 
             <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
-                <article class="flex gap-4 rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+                <article class="flex gap-4 rounded-md border border-slate-200 bg-white p-5">
                     <span class="inline-flex size-11 shrink-0 items-center justify-center rounded-md bg-emerald-100 text-brand-primary">
                         <!-- Custom Components icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -107,7 +107,7 @@ defined('ABSPATH') || exit;
                     </div>
                 </article>
 
-                <article class="flex gap-4 rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+                <article class="flex gap-4 rounded-md border border-slate-200 bg-white p-5">
                     <span class="inline-flex size-11 shrink-0 items-center justify-center rounded-md bg-emerald-100 text-brand-primary">
                         <!-- Advanced Options icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -125,7 +125,7 @@ defined('ABSPATH') || exit;
                     </div>
                 </article>
 
-                <article class="flex gap-4 rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+                <article class="flex gap-4 rounded-md border border-slate-200 bg-white p-5">
                     <span class="inline-flex size-11 shrink-0 items-center justify-center rounded-md bg-emerald-100 text-brand-primary">
                         <!-- Performance Focused icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -143,7 +143,7 @@ defined('ABSPATH') || exit;
                     </div>
                 </article>
 
-                <article class="flex gap-4 rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+                <article class="flex gap-4 rounded-md border border-slate-200 bg-white p-5">
                     <span class="inline-flex size-11 shrink-0 items-center justify-center rounded-md bg-emerald-100 text-brand-primary">
                         <!-- SEO Friendly icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -161,7 +161,7 @@ defined('ABSPATH') || exit;
                     </div>
                 </article>
 
-                <article class="flex gap-4 rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+                <article class="flex gap-4 rounded-md border border-slate-200 bg-white p-5">
                     <span class="inline-flex size-11 shrink-0 items-center justify-center rounded-md bg-emerald-100 text-brand-primary">
                         <!-- WooCommerce Ready icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -179,7 +179,7 @@ defined('ABSPATH') || exit;
                     </div>
                 </article>
 
-                <article class="flex gap-4 rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+                <article class="flex gap-4 rounded-md border border-slate-200 bg-white p-5">
                     <span class="inline-flex size-11 shrink-0 items-center justify-center rounded-md bg-emerald-100 text-brand-primary">
                         <!-- Regular Updates icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -198,7 +198,5 @@ defined('ABSPATH') || exit;
                 </article>
 
             </div>
-
-
     </div>
 </section>
