@@ -268,6 +268,9 @@
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
+  .inset-y-0 {
+    inset-block: calc(var(--spacing) * 0);
+  }
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
@@ -285,6 +288,9 @@
   }
   .right-6 {
     right: calc(var(--spacing) * 6);
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
   }
   .left-6 {
     left: calc(var(--spacing) * 6);
@@ -348,6 +354,9 @@
   }
   .mt-7 {
     margin-top: calc(var(--spacing) * 7);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
   }
   .mt-9 {
     margin-top: calc(var(--spacing) * 9);
@@ -442,6 +451,10 @@
     width: calc(var(--spacing) * 6);
     height: calc(var(--spacing) * 6);
   }
+  .size-7 {
+    width: calc(var(--spacing) * 7);
+    height: calc(var(--spacing) * 7);
+  }
   .size-9 {
     width: calc(var(--spacing) * 9);
     height: calc(var(--spacing) * 9);
@@ -461,6 +474,10 @@
   .size-12 {
     width: calc(var(--spacing) * 12);
     height: calc(var(--spacing) * 12);
+  }
+  .size-14 {
+    width: calc(var(--spacing) * 14);
+    height: calc(var(--spacing) * 14);
   }
   .size-15 {
     width: calc(var(--spacing) * 15);
@@ -536,6 +553,9 @@
   }
   .w-44 {
     width: calc(var(--spacing) * 44);
+  }
+  .w-\[58\%\] {
+    width: 58%;
   }
   .w-\[64px\] {
     width: 64px;
@@ -906,6 +926,12 @@
       background-color: color-mix(in oklab, var(--color-white) 35%, transparent);
     }
   }
+  .bg-white\/80 {
+    background-color: color-mix(in srgb, #ffffff 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 80%, transparent);
+    }
+  }
   .bg-white\/\[0\.07\] {
     background-color: color-mix(in srgb, #ffffff 7.000000000000001%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1057,6 +1083,9 @@
   .pr-26 {
     padding-right: calc(var(--spacing) * 26);
   }
+  .pb-16 {
+    padding-bottom: calc(var(--spacing) * 16);
+  }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
   }
@@ -1076,6 +1105,10 @@
   .\!text-4xl {
     font-size: var(--text-4xl) !important;
     line-height: var(--tw-leading, var(--text-4xl--line-height)) !important;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
   .text-3xl {
     font-size: var(--text-3xl);
@@ -1112,6 +1145,9 @@
   }
   .text-\[12px\] {
     font-size: 12px;
+  }
+  .text-\[clamp\(2\.5rem\,4vw\,4rem\)\] {
+    font-size: clamp(2.5rem, 4vw, 4rem);
   }
   .text-\[clamp\(3rem\,5vw\,4\.75rem\)\] {
     font-size: clamp(3rem, 5vw, 4.75rem);
@@ -1673,9 +1709,19 @@
       flex-direction: row;
     }
   }
+  .lg\:items-center {
+    @media (width >= 64rem) {
+      align-items: center;
+    }
+  }
   .lg\:items-start {
     @media (width >= 64rem) {
       align-items: flex-start;
+    }
+  }
+  .lg\:justify-between {
+    @media (width >= 64rem) {
+      justify-content: space-between;
     }
   }
   .lg\:justify-start {
@@ -1717,6 +1763,11 @@
   .lg\:py-22 {
     @media (width >= 64rem) {
       padding-block: calc(var(--spacing) * 22);
+    }
+  }
+  .lg\:pb-20 {
+    @media (width >= 64rem) {
+      padding-bottom: calc(var(--spacing) * 20);
     }
   }
   .lg\:pl-16 {
