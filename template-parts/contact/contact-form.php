@@ -79,6 +79,22 @@
                         </p>
                     </div>
                 </div>
+
+                <div class="flex gap-5">
+                    <div class="flex size-12 shrink-0 items-center justify-center rounded-xl bg-emerald-600/10 text-emerald-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm font-bold text-site-text">Support Hours</h3>
+                        <p class="mt-1 text-sm leading-6 text-site-text-muted">
+                            Mon – Fri: 9am – 6pm PST<br>
+                            Sat – Sun: Closed
+                        </p>
+                    </div>
+                </div>
             </div>
         </aside>
 
