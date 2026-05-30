@@ -61,26 +61,61 @@ defined('ABSPATH') || exit;
                 foreach ($demos as $demo) :
                 ?>
                     <article class="flex flex-col overflow-hidden rounded-md border border-slate-200 bg-white transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
-                        <div class="aspect-[2/3] overflow-hidden bg-slate-100">
-                            <img
-                                src="<?php echo esc_url($demo['image']); ?>"
-                                alt="<?php echo esc_attr($demo['title']); ?> Demo"
-                                class="h-full w-full object-cover object-top"
-                                loading="lazy"
-                            >
-                        </div>
+                        <button
+                            type="button"
+                            class="demo-modal-trigger group block w-full text-left"
+                            data-demo-image="<?php echo esc_url($demo['image']); ?>"
+                            data-demo-title="<?php echo esc_attr($demo['title']); ?>"
+                        >
+                            <div class="aspect-[2/3] overflow-hidden bg-slate-100">
+                                <img
+                                    src="<?php echo esc_url($demo['image']); ?>"
+                                    alt="<?php echo esc_attr($demo['title']); ?> Demo"
+                                    class="h-full w-full object-cover object-top"
+                                    loading="lazy"
+                                >
+                            </div>
 
-                        <div class="border-t border-slate-200 bg-white px-4 py-3">
-                            <h3 class="m-0 text-sm font-bold text-slate-950">
-                                <?php echo esc_html($demo['title']); ?>
-                            </h3>
+                            <div class="border-t border-slate-200 bg-white px-4 py-3">
+                                <h3 class="m-0 text-sm font-bold text-slate-950">
+                                    <?php echo esc_html($demo['title']); ?>
+                                </h3>
 
-                            <p class="mt-1 text-xs leading-5 text-slate-500">
-                                <?php echo esc_html($demo['subtitle']); ?>
-                            </p>
-                        </div>
+                                <p class="mt-1 text-xs leading-5 text-slate-500">
+                                    <?php echo esc_html($demo['subtitle']); ?>
+                                </p>
+                            </div>
+                        </button>
                     </article>
                 <?php endforeach; ?>
+            </div>
+
+            <div class="demo-modal fixed inset-0 z-[1000] hidden bg-slate-950/85 p-4 backdrop-blur-sm">
+                <div class="mx-auto flex h-full max-w-5xl flex-col">
+                    <div class="mb-4 flex items-center justify-between text-white">
+                        <h2 class="demo-modal-title text-lg font-bold"></h2>
+
+                        <button
+                            type="button"
+                            class="demo-modal-close inline-flex size-10 items-center justify-center rounded-md bg-white/10 text-white transition hover:bg-white/20"
+                            aria-label="Close preview"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                                <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="overflow-hidden rounded-xl bg-white">
+                        <div class="max-h-[85vh] overflow-y-auto overflow-x-hidden p-3">
+                            <img
+                                src=""
+                                alt=""
+                                class="demo-modal-image mx-auto h-auto w-full max-w-[700px]"
+                            >
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
