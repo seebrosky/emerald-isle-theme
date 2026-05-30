@@ -68,12 +68,33 @@ defined('ABSPATH') || exit;
                             data-demo-title="<?php echo esc_attr($demo['title']); ?>"
                         >
                             <div class="aspect-[2/3] overflow-hidden bg-slate-100">
-                                <img
-                                    src="<?php echo esc_url($demo['image']); ?>"
-                                    alt="<?php echo esc_attr($demo['title']); ?> Demo"
-                                    class="h-full w-full object-cover object-top"
-                                    loading="lazy"
-                                >
+                                <?php
+                                $image_id = attachment_url_to_postid(
+                                    home_url( $demo['image'] )
+                                );
+
+                                if ( $image_id ) {
+                                    echo wp_get_attachment_image(
+                                        $image_id,
+                                        'medium_large',
+                                        false,
+                                        array(
+                                            'class'   => 'h-full w-full object-cover object-top',
+                                            'loading' => 'lazy',
+                                            'sizes'   => '(min-width: 1024px) 173px, (min-width: 640px) 50vw, 100vw',
+                                        )
+                                    );
+                                } else {
+                                ?>
+                                    <img
+                                        src="<?php echo esc_url( $demo['image'] ); ?>"
+                                        alt="<?php echo esc_attr( $demo['title'] ); ?> Demo"
+                                        class="h-full w-full object-cover object-top"
+                                        loading="lazy"
+                                    >
+                                <?php
+                                }
+                                ?>
                             </div>
 
                             <div class="border-t border-slate-200 bg-white px-4 py-3">

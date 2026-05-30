@@ -92,13 +92,19 @@ defined( 'ABSPATH' ) || exit;
 
                                 <?php if ($image) : ?>
                                     <div class="overflow-hidden rounded-xl shadow-2xl shadow-black/30">
-                                        <img
-                                            src="<?php echo esc_url($image['url']); ?>"
-                                            alt="<?php echo esc_attr($image['alt']); ?>"
-                                            class="h-auto w-full"
-                                            loading="<?php echo 1 === $slide_index ? 'eager' : 'lazy'; ?>"
-                                            fetchpriority="<?php echo 1 === $slide_index ? 'high' : 'auto'; ?>"
-                                        >
+                                        <?php
+                                        echo wp_get_attachment_image(
+                                            $image['ID'],
+                                            'large',
+                                            false,
+                                            array(
+                                                'class'         => 'h-auto w-full',
+                                                'loading'       => 1 === $slide_index ? 'eager' : 'lazy',
+                                                'fetchpriority' => 1 === $slide_index ? 'high' : 'auto',
+                                                'sizes'         => '(min-width: 1024px) 50vw, 100vw',
+                                            )
+                                        );
+                                        ?>
                                     </div>
                                 <?php endif; ?>
 
