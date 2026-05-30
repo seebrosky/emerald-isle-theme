@@ -52,61 +52,89 @@ function emerald_isle_enqueue_assets() {
     $splide_css_file       = get_template_directory() . '/assets/vendor/splide/splide.min.css';
     $splide_js_file        = get_template_directory() . '/assets/vendor/splide/splide.min.js';
 
-    wp_enqueue_style(
-        'splide',
-        get_template_directory_uri() . '/assets/vendor/splide/splide.min.css',
-        array(),
-        file_exists($splide_css_file) ? filemtime($splide_css_file) : '4.1.4'
-    );
+    if ( is_front_page() ) {
+        wp_enqueue_style(
+            'splide',
+            get_template_directory_uri() . '/assets/vendor/splide/splide.min.css',
+            array(),
+            file_exists( $splide_css_file ) ? filemtime( $splide_css_file ) : '4.1.4'
+        );
+    }
 
     wp_enqueue_style(
         'emerald-isle-style',
         get_template_directory_uri() . '/assets/css/main.css',
-        array('splide'),
-        file_exists($css_file) ? filemtime($css_file) : '1.0'
+        is_front_page() ? array( 'splide' ) : array(),
+        file_exists( $css_file ) ? filemtime( $css_file ) : '1.0'
     );
 
-    wp_enqueue_script(
-        'splide',
-        get_template_directory_uri() . '/assets/vendor/splide/splide.min.js',
-        array(),
-        file_exists($splide_js_file) ? filemtime($splide_js_file) : '4.1.4',
-        true
-    );
+    if ( is_front_page() ) {
+        wp_enqueue_script(
+            'splide',
+            get_template_directory_uri() . '/assets/vendor/splide/splide.min.js',
+            array(),
+            file_exists( $splide_js_file ) ? filemtime( $splide_js_file ) : '4.1.4',
+            true
+        );
+    }
 
     wp_enqueue_script(
         'emerald-isle-main',
         get_template_directory_uri() . '/assets/js/main.js',
-        array('splide'),
-        file_exists($main_js_file) ? filemtime($main_js_file) : '1.0',
+        is_front_page() ? array( 'splide' ) : array(),
+        file_exists( $main_js_file ) ? filemtime( $main_js_file ) : '1.0',
         true
     );
 
     wp_enqueue_script(
         'emerald-isle-navigation-desktop',
         get_template_directory_uri() . '/assets/js/navigation-desktop.js',
-        array('emerald-isle-main'),
-        file_exists($desktop_js_file) ? filemtime($desktop_js_file) : '1.0',
+        array( 'emerald-isle-main' ),
+        file_exists( $desktop_js_file ) ? filemtime( $desktop_js_file ) : '1.0',
         true
     );
 
     wp_enqueue_script(
         'emerald-isle-navigation-mobile',
         get_template_directory_uri() . '/assets/js/navigation-mobile.js',
-        array('emerald-isle-main'),
-        file_exists($mobile_js_file) ? filemtime($mobile_js_file) : '1.0',
+        array( 'emerald-isle-main' ),
+        file_exists( $mobile_js_file ) ? filemtime( $mobile_js_file ) : '1.0',
         true
     );
 
-    wp_enqueue_script(
-        'emerald-isle-demo-showcase',
-        get_template_directory_uri() . '/assets/js/demo-showcase.js',
-        array('emerald-isle-main'),
-        file_exists($demo_showcase_js_file) ? filemtime($demo_showcase_js_file) : '1.0',
-        true
-    );    
+    if ( is_front_page() ) {
+        wp_enqueue_script(
+            'emerald-isle-demo-showcase',
+            get_template_directory_uri() . '/assets/js/demo-showcase.js',
+            array( 'emerald-isle-main' ),
+            file_exists( $demo_showcase_js_file ) ? filemtime( $demo_showcase_js_file ) : '1.0',
+            true
+        );
+    }
 }
-add_action('wp_enqueue_scripts', 'emerald_isle_enqueue_assets');
+add_action( 'wp_enqueue_scripts', 'emerald_isle_enqueue_assets' );
+
+/**
+ * Preloads the first homepage hero slider image.
+ */
+function emerald_isle_preload_hero_image() {
+    if ( ! is_front_page() || ! function_exists( 'have_rows' ) ) {
+        return;
+    }
+
+    if ( have_rows( 'hero_slides' ) ) {
+        the_row();
+
+        $image = get_sub_field( 'image' );
+
+        if ( $image && ! empty( $image['url'] ) ) {
+            echo '<link rel="preload" as="image" href="' . esc_url( $image['url'] ) . '" fetchpriority="high">' . "\n";
+        }
+
+        reset_rows();
+    }
+}
+add_action( 'wp_head', 'emerald_isle_preload_hero_image', 2 );
 
 /**
  * Outputs a basic meta description.

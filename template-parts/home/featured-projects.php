@@ -49,6 +49,7 @@ defined('ABSPATH') || exit;
                                         [
                                             'class' => 'aspect-[16/9] h-full w-full object-cover transition duration-300 group-hover:scale-105',
                                             'sizes' => '(min-width: 768px) 33vw, 100vw',
+                                            'loading' => 'lazy',
                                         ]
                                     );
                                     ?>

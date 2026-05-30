@@ -22,8 +22,12 @@ defined( 'ABSPATH' ) || exit;
             <div class="splide__track">
                 <ul class="splide__list">
 
+                    <?php $slide_index = 0; ?>
+
                     <?php while (have_rows('hero_slides')) : the_row(); ?>
                         <?php
+                        $slide_index++;
+
                         $eyebrow        = get_sub_field('eyebrow');
                         $heading        = get_sub_field('heading');
                         $highlighted    = get_sub_field('highlighted_text');
@@ -92,6 +96,8 @@ defined( 'ABSPATH' ) || exit;
                                             src="<?php echo esc_url($image['url']); ?>"
                                             alt="<?php echo esc_attr($image['alt']); ?>"
                                             class="h-auto w-full"
+                                            loading="<?php echo 1 === $slide_index ? 'eager' : 'lazy'; ?>"
+                                            fetchpriority="<?php echo 1 === $slide_index ? 'high' : 'auto'; ?>"
                                         >
                                     </div>
                                 <?php endif; ?>
