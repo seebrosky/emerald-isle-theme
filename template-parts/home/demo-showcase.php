@@ -11,7 +11,7 @@
 defined('ABSPATH') || exit;
 ?>
 
-<section class="border-b border-slate-200 bg-surface-50 py-16 text-slate-950">
+<section id="demos-section" class="scroll-mt-22 border-b border-slate-200 bg-surface-50 py-16 text-slate-950">
     <div class="mx-auto max-w-6xl px-6">
 
         <div class="grid gap-10 lg:grid-cols-[0.72fr_1.8fr] lg:items-start">
@@ -86,7 +86,7 @@ defined('ABSPATH') || exit;
 
         <div class="my-14 h-px bg-slate-200"></div>
 
-        <div class="grid gap-10 lg:grid-cols-[0.72fr_1.8fr] lg:items-start">
+        <div id="features-section" class="scroll-mt-45 grid gap-10 lg:grid-cols-[0.72fr_1.8fr] lg:items-start">
             <div>
                 <p class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">
                     <?php esc_html_e('Theme Features', 'emerald-isle'); ?>
