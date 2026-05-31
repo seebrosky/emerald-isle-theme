@@ -28,16 +28,18 @@
 
                     <nav class="site-header-utility" aria-label="Utility navigation">
                         <a href="#">Documentation</a>
-                        <a href="<?php echo esc_url(home_url('/style-guide')); ?>">Style Guide</a>
+                        <a href="#">Style Guide</a>
                         <a href="#">Support</a>
 
                         <span class="site-header-socials">
                             <a href="#" aria-label="GitHub">
                                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/github.svg" alt="">
                             </a>
+
                             <a href="#" aria-label="X">
                                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/x.svg" alt="">
                             </a>
+
                             <a href="#" aria-label="LinkedIn">
                                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/linkedin.svg" alt="">
                             </a>
