@@ -13,17 +13,21 @@
     <div class="relative min-h-[420px] overflow-hidden lg:min-h-[460px]">
 
         <?php
-        echo wp_get_attachment_image(
-            127,
-            'full',
-            false,
-            [
-                'class'         => 'absolute inset-y-0 right-0 h-full w-[58%] object-cover object-left sm:w-[56%] lg:w-[55%]',
-                'loading'       => 'eager',
-                'fetchpriority' => 'high',
-                'sizes'         => '(min-width: 1024px) 55vw, 58vw',
-            ]
-        );
+        $contact_hero_image = get_field( 'contact_hero_image' );
+
+        if ( $contact_hero_image ) {
+            echo wp_get_attachment_image(
+                $contact_hero_image['ID'],
+                'full',
+                false,
+                [
+                    'class'         => 'absolute inset-y-0 right-0 h-full w-[58%] object-cover object-left sm:w-[56%] lg:w-[55%]',
+                    'loading'       => 'eager',
+                    'fetchpriority' => 'high',
+                    'sizes'         => '(min-width: 1024px) 55vw, 58vw',
+                ]
+            );
+        }
         ?>
 
         <div class="absolute inset-0 bg-gradient-to-r from-[#f7f7f9] via-[#ffffff]/92 via-45% to-transparent"></div>
