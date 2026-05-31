@@ -14,7 +14,7 @@
 
         <?php
         echo wp_get_attachment_image(
-            131,
+            127,
             'full',
             false,
             [
