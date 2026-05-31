@@ -1,3 +1,15 @@
+/**
+ * Demo Showcase Modal
+ *
+ * Handles opening and closing the demo preview modal from the
+ * homepage demo showcase section. Updates modal content dynamically,
+ * prevents background scrolling while active, and supports dismissal
+ * via the close button, backdrop click, and Escape key.
+ *
+ * @package Emerald_Isle
+ * @since 1.0.0
+ */
+
 document.addEventListener('DOMContentLoaded', function () {
     const demoModalTriggers = document.querySelectorAll('.demo-modal-trigger');
     const demoModal = document.querySelector('.demo-modal');
