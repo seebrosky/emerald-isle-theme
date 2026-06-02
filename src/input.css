@@ -479,6 +479,84 @@
     filter: drop-shadow(0 30px 50px rgba(0,0,0,0.34));
 }
 
+/* ========================================
+   Hero Slide Themes
+======================================== */
+
+.hero-slide--dark {
+    background:
+        radial-gradient(
+            1000px 600px at 20% 15%,
+            rgba(255, 255, 255, 0.08),
+            transparent 70%
+        ),
+        linear-gradient(
+            135deg,
+            var(--color-slate-950) 0%,
+            var(--color-slate-900) 100%
+        );
+    border-bottom: 1px solid rgba(22, 38, 52, 0.55);
+}
+
+.hero-slide--light {
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(16, 185, 129, 0.08),
+            transparent 35%
+        ),
+        #ffffff;
+    color: var(--color-slate-950);
+}
+
+.hero-slide--cream {
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(16, 185, 129, 0.08),
+            transparent 35%
+        ),
+        #f8f5f0;
+    color: var(--color-slate-950);
+}
+
+.hero-slide--emerald {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 255, 255, 0.08),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #143b38 0%,
+            #0f2528 100%
+        );
+    color: #ffffff;
+}
+
+.hero-slide--light h1,
+.hero-slide--cream h1 {
+    color: var(--color-slate-950) !important;
+}
+
+.hero-slide--light p:not(.text-brand-primary),
+.hero-slide--cream p:not(.text-brand-primary) {
+    color: var(--color-slate-700) !important;
+}
+
+.hero-slide--light .btn-outline-light,
+.hero-slide--cream .btn-outline-light {
+    border-color: var(--color-slate-950);
+    color: var(--color-slate-950) !important;
+}
+
+.hero-slide--light .btn-outline-light:hover,
+.hero-slide--cream .btn-outline-light:hover {
+    background-color: var(--color-slate-950);
+    color: #ffffff !important;
+}
+
 .section-soft {
     background-color: var(--color-surface-50);
 }

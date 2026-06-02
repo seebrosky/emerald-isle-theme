@@ -28,6 +28,7 @@ defined( 'ABSPATH' ) || exit;
                         <?php
                         $slide_index++;
 
+                        $slide_theme    = get_sub_field('slide_theme') ?: 'dark';
                         $eyebrow        = get_sub_field('eyebrow');
                         $heading        = get_sub_field('heading');
                         $highlighted    = get_sub_field('highlighted_text');
@@ -39,7 +40,7 @@ defined( 'ABSPATH' ) || exit;
                         $image          = get_sub_field('image');
                         ?>
 
-                        <li class="splide__slide">
+                        <li class="splide__slide hero-slide hero-slide--<?php echo esc_attr( $slide_theme ); ?>">
                             <div class="mx-auto grid min-h-[620px] max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
 
                                 <div>
