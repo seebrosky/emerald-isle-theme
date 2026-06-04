@@ -15,8 +15,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 
 <?php if ( have_rows( 'hero_slides' ) ) : ?>
-    <section class="hero-slider splide relative overflow-hidden bg-site-header text-white" aria-label="<?php esc_attr_e('Homepage hero slider', 'emerald-isle'); ?>">
-        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+    <section class="hero-slider splide relative overflow-hidden" aria-label="<?php esc_attr_e('Homepage hero slider', 'emerald-isle'); ?>">
 
         <div class="relative">
             <div class="splide__track">
@@ -38,6 +37,8 @@ defined( 'ABSPATH' ) || exit;
                         $secondary_text = get_sub_field('secondary_button_text');
                         $secondary_link = get_sub_field('secondary_button_url');
                         $image          = get_sub_field('image');
+                        $is_light_slide = in_array($slide_theme, array('light', 'cream'), true);
+                        $secondary_button_class = $is_light_slide ? 'btn btn-outline-dark' : 'btn btn-outline-light';                        
                         ?>
 
                         <li class="splide__slide hero-slide hero-slide--<?php echo esc_attr( $slide_theme ); ?>">
@@ -83,7 +84,7 @@ defined( 'ABSPATH' ) || exit;
                                             <a
                                                 href="<?php echo esc_url($secondary_link['url']); ?>"
                                                 target="<?php echo esc_attr($secondary_link['target'] ?: '_self'); ?>"
-                                                class="btn btn-outline-light"
+                                                class="<?php echo esc_attr($secondary_button_class); ?>"
                                             >
                                                 <?php echo esc_html($secondary_text); ?>
                                             </a>
@@ -115,6 +116,25 @@ defined( 'ABSPATH' ) || exit;
 
                 </ul>
             </div>
+
+            <div class="hero-slider-controls">
+                <div class="splide__arrows">
+                    <button class="splide__arrow splide__arrow--prev" type="button" aria-label="Previous slide">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                    <ul class="splide__pagination"></ul>
+
+                    <button class="splide__arrow splide__arrow--next" type="button" aria-label="Next slide">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
         </div>
     </section>
 <?php endif; ?>
