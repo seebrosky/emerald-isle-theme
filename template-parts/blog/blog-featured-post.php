@@ -43,9 +43,9 @@ $categories = get_categories(
             <article class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                 <div class="grid md:grid-cols-[320px_1fr]">
 
-                    <div>
+                    <div class="h-[422px]">
                         <img
-                            src="https://placehold.co/640x480"
+                            src="https://placehold.co/640x853"
                             alt=""
                             class="h-full w-full object-cover"
                         >

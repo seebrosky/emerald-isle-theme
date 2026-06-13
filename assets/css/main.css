@@ -426,6 +426,9 @@
   .aspect-\[2\/3\] {
     aspect-ratio: 2/3;
   }
+  .aspect-\[4\/3\] {
+    aspect-ratio: 4/3;
+  }
   .aspect-\[16\/9\] {
     aspect-ratio: 16/9;
   }
@@ -493,6 +496,9 @@
   }
   .h-20 {
     height: calc(var(--spacing) * 20);
+  }
+  .h-\[422px\] {
+    height: 422px;
   }
   .h-auto {
     height: auto;
