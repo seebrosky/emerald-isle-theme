@@ -17,8 +17,6 @@ get_header();
 
     <?php get_template_part( 'template-parts/blog/blog-featured-post' ); ?>
 
-    <?php get_template_part( 'template-parts/blog/blog-post-grid' ); ?>
-
 </main>
 
 <?php get_footer(); ?>
