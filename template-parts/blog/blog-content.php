@@ -41,11 +41,11 @@ $categories = get_categories(
             </nav>
 
             <article class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-                <div class="grid md:grid-cols-[320px_1fr]">
+                <div class="grid md:min-h-[422px] md:grid-cols-[320px_1fr]">
 
-                    <div class="h-[422px]">
+                    <div class="h-full">
                         <img
-                            src="https://placehold.co/640x853"
+                            src="https://placehold.co/640x845"
                             alt=""
                             class="h-full w-full object-cover"
                         >

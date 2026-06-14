@@ -15,7 +15,7 @@ get_header();
 
     <?php get_template_part( 'template-parts/blog/blog-hero' ); ?>
 
-    <?php get_template_part( 'template-parts/blog/blog-featured-post' ); ?>
+    <?php get_template_part( 'template-parts/blog/blog-content' ); ?>
 
 </main>
 

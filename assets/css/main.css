@@ -1643,6 +1643,11 @@
       line-height: var(--tw-leading, var(--text-5xl--line-height));
     }
   }
+  .md\:min-h-\[422px\] {
+    @media (width >= 48rem) {
+      min-height: 422px;
+    }
+  }
   .md\:grid-cols-3 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
