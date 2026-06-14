@@ -40,14 +40,14 @@ $categories = get_categories(
                 <?php endforeach; ?>
             </nav>
 
-            <article class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+            <article class="group cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                 <div class="grid md:min-h-[422px] md:grid-cols-[320px_1fr]">
 
-                    <div class="h-full">
+                    <div class="aspect-video overflow-hidden md:aspect-auto md:h-full">
                         <img
                             src="https://placehold.co/640x845"
                             alt=""
-                            class="h-full w-full object-cover"
+                            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                         >
                     </div>
 
@@ -61,7 +61,9 @@ $categories = get_categories(
                         </p>
 
                         <h2 class="mb-4 text-2xl font-bold leading-tight text-site-text lg:text-3xl">
-                            How to Build a High-Performing WordPress Website in 2026
+                            <span class="bg-gradient-to-r from-current to-current bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-all duration-300 group-hover:bg-[length:100%_2px]">
+                                How to Build a High-Performing WordPress Website in 2026
+                            </span>
                         </h2>
 
                         <p class="mb-5 text-xs font-bold uppercase tracking-wide text-site-text-muted">
@@ -73,14 +75,13 @@ $categories = get_categories(
                             and launching a fast, secure, and SEO-friendly
                             WordPress website.
                         </p>
-
-                        <a href="#" class="btn-text">
-                            Read More →
-                        </a>
                     </div>
 
                 </div>
             </article>
+            
+            <?php get_template_part( 'template-parts/blog/blog-post-grid' ); ?>
+
         </div>
 
         <aside class="hidden lg:block">
