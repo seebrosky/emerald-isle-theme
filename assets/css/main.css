@@ -2773,12 +2773,12 @@
 }
 :root {
   --base-font-size: 16px;
-  --h1-size: clamp(2.65rem, 5vw, 4.65rem);
-  --h2-size: clamp(2rem, 4vw, 3.25rem);
-  --h3-size: clamp(1.5rem, 3vw, 2.25rem);
-  --h4-size: clamp(1.25rem, 2vw, 1.75rem);
-  --h5-size: clamp(1.125rem, 1.5vw, 1.35rem);
-  --h6-size: clamp(1rem, 1.2vw, 1.125rem);
+  --h1-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  --h2-size: clamp(1.5rem, 2vw, 2rem);
+  --h3-size: clamp(1.25rem, 1.75vw, 1.75rem);
+  --h4-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  --h5-size: clamp(1rem, 1.25vw, 1.25rem);
+  --h6-size: clamp(0.9375rem, 1vw, 1.125rem);
   --color-slate-975: #171d25;
   --color-slate-950: #222934;
   --color-slate-900: #333d4c;
