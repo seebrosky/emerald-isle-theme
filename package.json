@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/main.css --watch",
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/main.css --minify",
+    "block:start": "wp-scripts start blocks/featured-article-card/index.js --output-path=blocks/featured-article-card/build",
+    "block:build": "wp-scripts build blocks/featured-article-card/index.js --output-path=blocks/featured-article-card/build",    
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +19,7 @@
   "description": "",
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.2",
+    "@wordpress/scripts": "^32.4.1",
     "tailwindcss": "^4.2.2"
   },
   "dependencies": {

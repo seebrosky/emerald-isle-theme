@@ -169,3 +169,13 @@ function emerald_isle_meta_description() {
     echo '<meta name="description" content="' . esc_attr( $description ) . '">' . "\n";
 }
 add_action( 'wp_head', 'emerald_isle_meta_description', 1 );
+
+/**
+ * Registers custom Gutenberg blocks.
+ *
+ * @return void
+ */
+function emerald_isle_register_blocks() {
+	register_block_type( get_template_directory() . '/blocks/featured-article-card' );
+}
+add_action( 'init', 'emerald_isle_register_blocks' );
