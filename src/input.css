@@ -690,6 +690,18 @@
     width: 1.75rem !important;
 }
 
+.single-post .entry-content .wp-block-heading:not(:first-child) {
+    margin-top: 1.75rem;
+}
+
+.single-post .entry-content .wp-block-heading {
+    margin-bottom: 0.25rem;
+}
+
+.single-post .entry-content .wp-block-heading + .wp-block-paragraph {
+    margin-top: 0;
+}
+
 .hero-slider-controls .splide__arrows {
     display: grid;
     grid-template-columns: 2.75rem 3rem 2.75rem;

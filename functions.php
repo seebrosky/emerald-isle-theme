@@ -204,6 +204,41 @@ function emerald_isle_testimonials_shortcode() {
 }
 add_shortcode( 'emerald_testimonials', 'emerald_isle_testimonials_shortcode' );
 
+function emerald_isle_blog_cards_shortcode() {
+	$blog_cards_query = new WP_Query(
+		array(
+			'post_type'           => 'post',
+			'post_status'         => 'publish',
+			'posts_per_page'      => 3,
+			'ignore_sticky_posts' => true,
+			'no_found_rows'       => true,
+		)
+	);
+
+	if ( ! $blog_cards_query->have_posts() ) {
+		return '';
+	}
+
+	ob_start();
+	?>
+
+	<div class="grid gap-6">
+		<?php
+		while ( $blog_cards_query->have_posts() ) :
+			$blog_cards_query->the_post();
+
+			get_template_part( 'template-parts/blog/blog-card' );
+		endwhile;
+		?>
+	</div>
+
+	<?php
+	wp_reset_postdata();
+
+	return ob_get_clean();
+}
+add_shortcode( 'emerald_blog_cards', 'emerald_isle_blog_cards_shortcode' );
+
 
 /**
  * Registers custom Gutenberg blocks.
