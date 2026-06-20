@@ -52,7 +52,9 @@ function emerald_isle_enqueue_assets() {
     $splide_css_file       = get_template_directory() . '/assets/vendor/splide/splide.min.css';
     $splide_js_file        = get_template_directory() . '/assets/vendor/splide/splide.min.js';
 
-    if ( is_front_page() ) {
+    $should_load_splide    = is_front_page() || is_page( 'components-showcase' );
+
+    if ( $should_load_splide ) {
         wp_enqueue_style(
             'splide',
             get_template_directory_uri() . '/assets/vendor/splide/splide.min.css',
@@ -64,11 +66,11 @@ function emerald_isle_enqueue_assets() {
     wp_enqueue_style(
         'emerald-isle-style',
         get_template_directory_uri() . '/assets/css/main.css',
-        is_front_page() ? array( 'splide' ) : array(),
+        $should_load_splide ? array( 'splide' ) : array(),
         file_exists( $css_file ) ? filemtime( $css_file ) : '1.0'
     );
 
-    if ( is_front_page() ) {
+    if ( $should_load_splide ) {
         wp_enqueue_script(
             'splide',
             get_template_directory_uri() . '/assets/vendor/splide/splide.min.js',
@@ -81,7 +83,7 @@ function emerald_isle_enqueue_assets() {
     wp_enqueue_script(
         'emerald-isle-main',
         get_template_directory_uri() . '/assets/js/main.js',
-        is_front_page() ? array( 'splide' ) : array(),
+        $should_load_splide ? array( 'splide' ) : array(),
         file_exists( $main_js_file ) ? filemtime( $main_js_file ) : '1.0',
         true
     );
@@ -102,7 +104,7 @@ function emerald_isle_enqueue_assets() {
         true
     );
 
-    if ( is_front_page() ) {
+    if ( $should_load_splide ) {
         wp_enqueue_script(
             'emerald-isle-demo-showcase',
             get_template_directory_uri() . '/assets/js/demo-showcase.js',
@@ -169,6 +171,39 @@ function emerald_isle_meta_description() {
     echo '<meta name="description" content="' . esc_attr( $description ) . '">' . "\n";
 }
 add_action( 'wp_head', 'emerald_isle_meta_description', 1 );
+
+/**
+ * ==========================================================================
+ * Component Showcase Shortcodes
+ * ==========================================================================
+ */
+
+function emerald_isle_home_hero_shortcode() {
+	$front_page_id = get_option( 'page_on_front' );
+
+	ob_start();
+
+	set_query_var( 'emerald_showcase_source_page_id', $front_page_id );
+	get_template_part( 'template-parts/home/hero-slider' );
+	set_query_var( 'emerald_showcase_source_page_id', null );
+
+	return ob_get_clean();
+}
+add_shortcode( 'emerald_hero_slider', 'emerald_isle_home_hero_shortcode' );
+
+function emerald_isle_testimonials_shortcode() {
+	$front_page_id = get_option( 'page_on_front' );
+
+	ob_start();
+
+	set_query_var( 'emerald_showcase_source_page_id', $front_page_id );
+	get_template_part( 'template-parts/home/testimonials' );
+	set_query_var( 'emerald_showcase_source_page_id', null );
+
+	return ob_get_clean();
+}
+add_shortcode( 'emerald_testimonials', 'emerald_isle_testimonials_shortcode' );
+
 
 /**
  * Registers custom Gutenberg blocks.

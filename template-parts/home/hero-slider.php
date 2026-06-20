@@ -12,9 +12,12 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+$source_page_id = get_query_var( 'emerald_showcase_source_page_id' );
+$source_page_id = $source_page_id ? absint( $source_page_id ) : false;
 ?>
 
-<?php if ( have_rows( 'hero_slides' ) ) : ?>
+<?php if ( have_rows( 'hero_slides', $source_page_id ) ) : ?>
     <section class="hero-slider splide relative overflow-hidden" aria-label="<?php esc_attr_e('Homepage hero slider', 'emerald-isle'); ?>">
 
         <div class="relative">
@@ -23,7 +26,7 @@ defined( 'ABSPATH' ) || exit;
 
                     <?php $slide_index = 0; ?>
 
-                    <?php while (have_rows('hero_slides')) : the_row(); ?>
+                    <?php while ( have_rows( 'hero_slides', $source_page_id ) ) : the_row(); ?>
                         <?php
                         $slide_index++;
 
@@ -119,17 +122,41 @@ defined( 'ABSPATH' ) || exit;
 
             <div class="hero-slider-controls">
                 <div class="splide__arrows">
-                    <button class="splide__arrow splide__arrow--prev" type="button" aria-label="Previous slide">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+                    <button class="splide__arrow splide__arrow--prev group" type="button" aria-label="Previous slide">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.25"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="rotate-[-90deg] transition-transform duration-200 ease-out group-hover:scale-[1.14] group-focus-visible:scale-[1.14]"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <path d="m18 15-6-6-6 6" />
                         </svg>
                     </button>
 
                     <ul class="splide__pagination"></ul>
 
-                    <button class="splide__arrow splide__arrow--next" type="button" aria-label="Next slide">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+                    <button class="splide__arrow splide__arrow--next group" type="button" aria-label="Next slide">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.25"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="rotate-90 transition-transform duration-[180ms] ease-out group-hover:scale-[1.14] group-focus-visible:scale-[1.14]"
+                            aria-hidden="true"
+                            focusable="false">
+                            <path d="m18 15-6-6-6 6" />
                         </svg>
                     </button>
                 </div>

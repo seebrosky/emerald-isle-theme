@@ -10,8 +10,10 @@
 
 defined('ABSPATH') || exit;
 
-$page_id      = get_queried_object_id();
-$testimonials = function_exists('get_field') ? get_field('home_testimonials', $page_id) : array();
+$source_page_id = get_query_var( 'emerald_showcase_source_page_id' );
+$page_id        = $source_page_id ? absint( $source_page_id ) : get_queried_object_id();
+
+$testimonials = function_exists( 'get_field' ) ? get_field( 'home_testimonials', $page_id ) : array();
 
 if (empty($testimonials)) {
     return;
