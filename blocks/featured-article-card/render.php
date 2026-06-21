@@ -17,7 +17,7 @@ $image_id    = ! empty( $attributes['imageId'] ) ? absint( $attributes['imageId'
 $image_url   = $attributes['imageUrl'] ?? '';
 
 $image_sizes = 'horizontal' === $layout
-	? '(max-width: 950px) 240px, 300px'
+	? '(max-width: 950px) 360px, 450px'
 	: '(max-width: 700px) calc(100vw - 3rem), 510px';
 
 $wrapper_attributes = get_block_wrapper_attributes(
@@ -34,7 +34,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 			if ( $image_id ) {
 				echo wp_get_attachment_image(
 					$image_id,
-					'large',
+					'full',
 					false,
 					array(
 						'class'         => 'featured-article-card__image',

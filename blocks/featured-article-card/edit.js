@@ -57,6 +57,31 @@ export default function Edit({ attributes, setAttributes }) {
 						onChange={(value) => setAttributes({ layout: value })}
 					/>
 
+					<MediaUploadCheck>
+						<MediaUpload
+							onSelect={onSelectImage}
+							allowedTypes={['image']}
+							value={imageId}
+							render={({ open }) => (
+								<Button variant="secondary" onClick={open}>
+									{imageId
+										? __('Replace Image', 'emerald-isle')
+										: __('Select Image', 'emerald-isle')}
+								</Button>
+							)}
+						/>
+					</MediaUploadCheck>
+
+					{imageId && (
+						<Button
+							variant="secondary"
+							isDestructive
+							onClick={removeImage}
+						>
+							{__('Remove Image', 'emerald-isle')}
+						</Button>
+					)}
+
 					<TextControl
 						label={__('Button Text', 'emerald-isle')}
 						value={buttonText || ''}
@@ -76,36 +101,11 @@ export default function Edit({ attributes, setAttributes }) {
 			<article {...blockProps}>
 				<div className="featured-article-card__media">
 					{imageUrl ? (
-						<>
-							<img
-								src={imageUrl}
-								alt=""
-								className="featured-article-card__image"
-							/>
-
-							<MediaUploadCheck>
-								<div className="featured-article-card__image-actions">
-									<MediaUpload
-										onSelect={onSelectImage}
-										allowedTypes={['image']}
-										value={imageId}
-										render={({ open }) => (
-											<Button variant="secondary" onClick={open}>
-												{__('Replace Image', 'emerald-isle')}
-											</Button>
-										)}
-									/>
-
-									<Button
-										variant="secondary"
-										isDestructive
-										onClick={removeImage}
-									>
-										{__('Remove Image', 'emerald-isle')}
-									</Button>
-								</div>
-							</MediaUploadCheck>
-						</>
+						<img
+							src={imageUrl}
+							alt=""
+							className="featured-article-card__image"
+						/>
 					) : (
 						<MediaUploadCheck>
 							<MediaUpload
