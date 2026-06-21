@@ -20,13 +20,19 @@
 	color: var(--color-text-muted);
 	font-weight: 600;
 	cursor: pointer;
-	transition: all 0.2s ease;
+	transition:
+		border-color 0.2s ease,
 }
 
 .content-tabs__tab.is-active {
 	border-color: var(--color-primary);
 	background: rgba(11, 164, 129, 0.1);
 	color: var(--color-primary);
+}
+
+.content-tabs__tab:hover:not(.is-active),
+.content-tabs__tab:focus-visible:not(.is-active) {
+	border-color: var(--color-primary);
 }
 
 .content-tabs__panel {
