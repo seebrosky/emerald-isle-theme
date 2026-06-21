@@ -40,6 +40,7 @@
 .content-tabs__panel h3 {
 	margin: 0 0 0.75rem;
 	font-size: 1.75rem;
+    font-weight: 600;
 	line-height: 1.1;
 }
 
@@ -75,6 +76,15 @@
 	color: #ffffff !important;
 	box-shadow: 0 8px 18px rgb(34 41 52 / 0.16);
 	transform: translateY(-2px);
+}
+
+.component-demo-heading {
+	margin: 2rem 0 0.75rem;
+	color: var(--color-text-muted);
+	font-size: 0.875rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
 }
 
 /* Vertical Tab Styles */
