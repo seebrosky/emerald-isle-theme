@@ -154,14 +154,14 @@ export default function Edit({ attributes, setAttributes }) {
 							onChange={(value) => updateTab(activeTab, 'description', value)}
 						/>
 
-						<RichText
-							tagName="span"
-							className="content-tabs__button"
-							value={currentTab.buttonText}
-							placeholder={__('Button text...', 'emerald-isle')}
-							onChange={(value) => updateTab(activeTab, 'buttonText', value)}
-							allowedFormats={[]}
-						/>
+                        <RichText
+                            tagName="span"
+                            className="content-tabs__button"
+                            value={currentTab.buttonText}
+                            placeholder={__('Button text...', 'emerald-isle')}
+                            onChange={(value) => updateTab(activeTab, 'buttonText', value)}
+                            allowedFormats={[]}
+                        />
 					</div>
 				)}
 			</div>
