@@ -13,31 +13,18 @@ const activateContentTab = (block, activeIndex = 0) => {
 		const isActive = index === activeIndex;
 
 		panel.classList.toggle('is-active', isActive);
-
-		if (isActive) {
-			panel.removeAttribute('hidden');
-		} else {
-			panel.setAttribute('hidden', '');
-		}
+		panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+		panel.removeAttribute('hidden');
 	});
 };
 
-// Initialize all tab blocks on page load.
 document.querySelectorAll('.content-tabs').forEach((block) => {
 	const tabs = Array.from(block.querySelectorAll('.content-tabs__tab'));
+	const activeIndex = tabs.findIndex((tab) => tab.classList.contains('is-active'));
 
-	let activeIndex = tabs.findIndex((tab) =>
-		tab.classList.contains('is-active')
-	);
-
-	if (activeIndex < 0) {
-		activeIndex = 0;
-	}
-
-	activateContentTab(block, activeIndex);
+	activateContentTab(block, activeIndex >= 0 ? activeIndex : 0);
 });
 
-// Handle clicks via event delegation.
 document.addEventListener('click', (event) => {
 	const tab = event.target.closest('.content-tabs__tab');
 

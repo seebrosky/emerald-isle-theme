@@ -35,7 +35,7 @@ export default function Save({ attributes }) {
                     role="tabpanel"
                     aria-labelledby={`content-tab-${index}`}
                     data-tab-panel={index}
-                    hidden={index !== 0}
+                    aria-hidden={index === 0 ? 'false' : 'true'}
                 >
 					<RichText.Content tagName="h3" value={tab.heading} />
 					<RichText.Content tagName="p" value={tab.description} />
