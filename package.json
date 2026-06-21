@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/main.css --watch",
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/main.css --minify",
-    "block:start": "wp-scripts start blocks/featured-article-card/index.js --output-path=blocks/featured-article-card/build",
-    "block:build": "wp-scripts build blocks/featured-article-card/index.js --output-path=blocks/featured-article-card/build",    
+    "block:start:featured": "wp-scripts start blocks/featured-article-card/index.js --output-path=blocks/featured-article-card/build",
+    "block:build:featured": "wp-scripts build blocks/featured-article-card/index.js --output-path=blocks/featured-article-card/build",
+    "block:start:tabs": "wp-scripts start blocks/content-tabs/index.js --output-path=blocks/content-tabs/build",
+    "block:build:tabs": "wp-scripts build blocks/content-tabs/index.js --output-path=blocks/content-tabs/build",
+    "block:build": "npm run block:build:featured && npm run block:build:tabs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

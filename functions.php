@@ -247,5 +247,6 @@ add_shortcode( 'emerald_blog_cards', 'emerald_isle_blog_cards_shortcode' );
  */
 function emerald_isle_register_blocks() {
 	register_block_type( get_template_directory() . '/blocks/featured-article-card' );
+    register_block_type( get_template_directory() . '/blocks/content-tabs' );
 }
 add_action( 'init', 'emerald_isle_register_blocks' );
