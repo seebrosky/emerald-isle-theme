@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				panels.forEach((panel) => {
 					panel.classList.remove('is-active');
+					panel.setAttribute('hidden', '');
 				});
 
 				tab.classList.add('is-active');
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				if (panels[index]) {
 					panels[index].classList.add('is-active');
+					panels[index].removeAttribute('hidden');
 				}
 			});
 		});

@@ -10,26 +10,33 @@ export default function Save({ attributes }) {
 
 	return (
 		<div {...blockProps}>
-			<div className="content-tabs__tabs" role="tablist">
-				{tabs.map((tab, index) => (
-					<button
-						key={index}
-						type="button"
-						className={`content-tabs__tab ${index === 0 ? 'is-active' : ''}`}
-						aria-selected={index === 0 ? 'true' : 'false'}
-						data-tab-index={index}
-					>
-						{tab.label}
-					</button>
-				))}
-			</div>
+            <div className="content-tabs__tabs" role="tablist">
+                {tabs.map((tab, index) => (
+                    <button
+                        key={index}
+                        type="button"
+                        id={`content-tab-${index}`}
+                        className={`content-tabs__tab ${index === 0 ? 'is-active' : ''}`}
+                        role="tab"
+                        aria-selected={index === 0 ? 'true' : 'false'}
+                        aria-controls={`content-panel-${index}`}
+                        data-tab-index={index}
+                    >
+                        {tab.label}
+                    </button>
+                ))}
+            </div>
 
 			{tabs.map((tab, index) => (
-				<div
-					key={index}
-					className={`content-tabs__panel ${index === 0 ? 'is-active' : ''}`}
-					data-tab-panel={index}
-				>
+                <div
+                    key={index}
+                    id={`content-panel-${index}`}
+                    className={`content-tabs__panel ${index === 0 ? 'is-active' : ''}`}
+                    role="tabpanel"
+                    aria-labelledby={`content-tab-${index}`}
+                    data-tab-panel={index}
+                    hidden={index !== 0}
+                >
 					<RichText.Content tagName="h3" value={tab.heading} />
 					<RichText.Content tagName="p" value={tab.description} />
 
