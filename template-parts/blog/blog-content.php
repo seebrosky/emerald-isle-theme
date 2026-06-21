@@ -40,7 +40,7 @@ $categories = get_categories(
                 <?php endforeach; ?>
             </nav>
 
-            <article class="group cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+            <article class="group cursor-pointer overflow-hidden rounded-lg border border-slate-200 bg-white">
                 <div class="grid md:min-h-[422px] md:grid-cols-[320px_1fr]">
 
                     <div class="aspect-video overflow-hidden md:aspect-auto md:h-full">

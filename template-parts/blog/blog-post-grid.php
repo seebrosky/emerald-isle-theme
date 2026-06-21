@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 
     <?php for ( $i = 1; $i <= 6; $i++ ) : ?>
 
-        <article class="group cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+        <article class="group cursor-pointer overflow-hidden rounded-lg border border-slate-200 bg-white">
             <div class="grid grid-cols-[96px_1fr] sm:grid-cols-[140px_1fr] md:grid-cols-[180px_1fr]">
 
                 <div class="h-full overflow-hidden">

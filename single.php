@@ -31,7 +31,7 @@
 						the_post_thumbnail(
 							'large',
 							array(
-								'class' => 'w-full aspect-[16/9] object-cover',
+								'class' => 'w-full h-auto object-contain',
 								'alt'   => '',
 							)
 						);
@@ -97,11 +97,11 @@
 								$recent_posts->the_post();
 								?>
 								<a href="<?php the_permalink(); ?>" class="group block no-underline">
-									<p class="mb-1 text-xs font-bold uppercase tracking-wide text-brand-primary">
+									<p class="mb-1 text-xs font-semibold uppercase tracking-wide text-brand-primary">
 										<?php echo esc_html( get_the_date( 'M j, Y' ) ); ?>
 									</p>
 
-									<h3 class="text-base font-bold leading-snug text-site-text transition group-hover:text-brand-primary">
+									<h3 class="text-base font-semibold leading-snug text-site-text transition group-hover:text-brand-primary">
 										<?php the_title(); ?>
 									</h3>
 								</a>

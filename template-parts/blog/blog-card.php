@@ -15,7 +15,7 @@ $categories = get_the_category();
 $category   = ! empty( $categories ) ? $categories[0]->name : __( 'Article', 'emerald-isle' );
 ?>
 
-<article class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+<article class="group overflow-hidden rounded-lg border border-slate-200 bg-white">
 	<a href="<?php the_permalink(); ?>" class="block h-full no-underline">
 		<div class="grid grid-cols-[96px_1fr] sm:grid-cols-[140px_1fr] md:grid-cols-[180px_1fr]">
 
@@ -48,7 +48,7 @@ $category   = ! empty( $categories ) ? $categories[0]->name : __( 'Article', 'em
 					</span>
 				</h3>
 
-				<p class="mb-2 text-[10px] font-bold uppercase tracking-wide text-site-text-muted sm:mb-3 sm:text-xs">
+				<p class="mb-2 text-[10px] font-normal uppercase tracking-wide text-site-text-muted sm:mb-3 sm:text-xs">
 					<?php echo esc_html( get_the_date( 'F j, Y' ) ); ?>
 				</p>
 
