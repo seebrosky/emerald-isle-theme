@@ -1,28 +1,35 @@
-document.addEventListener('DOMContentLoaded', () => {
-	document.querySelectorAll('.content-tabs').forEach((block) => {
-		const tabs = block.querySelectorAll('.content-tabs__tab');
-		const panels = block.querySelectorAll('.content-tabs__panel');
+document.addEventListener('click', (event) => {
+	const tab = event.target.closest('.content-tabs__tab');
 
-		tabs.forEach((tab, index) => {
-			tab.addEventListener('click', () => {
-				tabs.forEach((item) => {
-					item.classList.remove('is-active');
-					item.setAttribute('aria-selected', 'false');
-				});
+	if (!tab) {
+		return;
+	}
 
-				panels.forEach((panel) => {
-					panel.classList.remove('is-active');
-					panel.setAttribute('hidden', '');
-				});
+	const block = tab.closest('.content-tabs');
 
-				tab.classList.add('is-active');
-				tab.setAttribute('aria-selected', 'true');
+	if (!block) {
+		return;
+	}
 
-				if (panels[index]) {
-					panels[index].classList.add('is-active');
-					panels[index].removeAttribute('hidden');
-				}
-			});
-		});
+	const tabs = Array.from(block.querySelectorAll('.content-tabs__tab'));
+	const panels = Array.from(block.querySelectorAll('.content-tabs__panel'));
+	const activeIndex = tabs.indexOf(tab);
+
+	tabs.forEach((item) => {
+		item.classList.remove('is-active');
+		item.setAttribute('aria-selected', 'false');
 	});
+
+	panels.forEach((panel) => {
+		panel.classList.remove('is-active');
+		panel.setAttribute('hidden', '');
+	});
+
+	tab.classList.add('is-active');
+	tab.setAttribute('aria-selected', 'true');
+
+	if (panels[activeIndex]) {
+		panels[activeIndex].classList.add('is-active');
+		panels[activeIndex].removeAttribute('hidden');
+	}
 });
