@@ -16,6 +16,10 @@ $button_url  = $attributes['buttonUrl'] ?? '#';
 $image_id    = ! empty( $attributes['imageId'] ) ? absint( $attributes['imageId'] ) : 0;
 $image_url   = $attributes['imageUrl'] ?? '';
 
+$image_sizes = 'horizontal' === $layout
+	? '(max-width: 950px) 240px, 300px'
+	: '(max-width: 700px) calc(100vw - 3rem), 510px';
+
 $wrapper_attributes = get_block_wrapper_attributes(
 	array(
 		'class' => 'featured-article-card featured-article-card--' . sanitize_html_class( $layout ),
@@ -33,9 +37,10 @@ $wrapper_attributes = get_block_wrapper_attributes(
 					'large',
 					false,
 					array(
-						'class' => 'featured-article-card__image',
-						'alt'   => '',
-						'sizes' => '(max-width: 950px) 120px, (max-width: 700px) 100vw, 510px',
+						'class'         => 'featured-article-card__image',
+						'alt'           => '',
+						'sizes'         => $image_sizes,
+						'fetchpriority' => 'high',
 					)
 				);
 			} elseif ( $image_url ) {
