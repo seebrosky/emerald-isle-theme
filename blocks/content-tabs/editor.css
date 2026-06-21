@@ -77,6 +77,31 @@
 	transform: translateY(-2px);
 }
 
+.content-tabs-editor__settings-group {
+	padding-bottom: 1rem;
+	margin-bottom: 1.5rem;
+	border-bottom: 1px solid #ddd;
+}
+
+.content-tabs-editor__settings-group:last-child {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	border-bottom: 0;
+}
+
+.content-tabs-editor__tab-heading {
+	margin: 0 0 0.75rem;
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #757575;
+}
+
+.content-tabs-editor__settings-group .components-button.is-destructive {
+	margin-bottom: 1rem;
+}
+
 /* Vertical Tab Styles */
 .content-tabs--vertical {
 	display: grid;

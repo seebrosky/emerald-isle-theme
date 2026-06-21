@@ -57,30 +57,32 @@ export default function Edit({ attributes, setAttributes }) {
 						onChange={(value) => setAttributes({ layout: value })}
 					/>
 
-					<MediaUploadCheck>
-						<MediaUpload
-							onSelect={onSelectImage}
-							allowedTypes={['image']}
-							value={imageId}
-							render={({ open }) => (
-								<Button variant="secondary" onClick={open}>
-									{imageId
-										? __('Replace Image', 'emerald-isle')
-										: __('Select Image', 'emerald-isle')}
-								</Button>
-							)}
-						/>
-					</MediaUploadCheck>
+					<div className="featured-article-card__image-controls">
+						<MediaUploadCheck>
+							<MediaUpload
+								onSelect={onSelectImage}
+								allowedTypes={['image']}
+								value={imageId}
+								render={({ open }) => (
+									<Button variant="secondary" onClick={open}>
+										{imageId
+											? __('Replace Image', 'emerald-isle')
+											: __('Select Image', 'emerald-isle')}
+									</Button>
+								)}
+							/>
+						</MediaUploadCheck>
 
-					{imageId && (
-						<Button
-							variant="secondary"
-							isDestructive
-							onClick={removeImage}
-						>
-							{__('Remove Image', 'emerald-isle')}
-						</Button>
-					)}
+						{imageId && (
+							<Button
+								variant="secondary"
+								isDestructive
+								onClick={removeImage}
+							>
+								{__('Remove Image', 'emerald-isle')}
+							</Button>
+						)}
+					</div>
 
 					<TextControl
 						label={__('Button Text', 'emerald-isle')}

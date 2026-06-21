@@ -82,6 +82,10 @@ export default function Edit({ attributes, setAttributes }) {
 				<PanelBody title={__('Tab Management', 'emerald-isle')} initialOpen={true}>
 					{tabs.map((tab, index) => (
 						<div className="content-tabs-editor__settings-group" key={index}>
+							<h4 className="content-tabs-editor__tab-heading">
+								{`Tab ${index + 1}`}
+							</h4>
+														
 							<TextControl
 								label={__('Tab Label', 'emerald-isle')}
 								value={tab.label}

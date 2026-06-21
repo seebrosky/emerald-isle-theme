@@ -137,3 +137,10 @@
 .featured-article-card__button-preview {
 	white-space: nowrap;
 }
+
+.featured-article-card__image-controls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+}
