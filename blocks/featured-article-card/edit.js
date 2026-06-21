@@ -22,7 +22,7 @@ export default function Edit({ attributes, setAttributes }) {
 		buttonUrl,
 		imageUrl,
 		imageId,
-		layout,
+		layout = 'stacked',
 	} = attributes;
 
 	const blockProps = useBlockProps({
@@ -51,31 +51,25 @@ export default function Edit({ attributes, setAttributes }) {
 						label={__('Layout', 'emerald-isle')}
 						value={layout}
 						options={[
-							{
-								label: __('Stacked', 'emerald-isle'),
-								value: 'stacked',
-							},
-							{
-								label: __('Horizontal', 'emerald-isle'),
-								value: 'horizontal',
-							},
+							{ label: __('Stacked', 'emerald-isle'), value: 'stacked' },
+							{ label: __('Horizontal', 'emerald-isle'), value: 'horizontal' },
 						]}
 						onChange={(value) => setAttributes({ layout: value })}
 					/>
 
-                    <TextControl
-                        label={__('Button Text', 'emerald-isle')}
-                        value={buttonText}
-                        onChange={(value) => setAttributes({ buttonText: value })}
-                        placeholder="Read More"
-                    />                         
+					<TextControl
+						label={__('Button Text', 'emerald-isle')}
+						value={buttonText || ''}
+						onChange={(value) => setAttributes({ buttonText: value })}
+						placeholder="Read More"
+					/>
 
 					<TextControl
 						label={__('Button URL', 'emerald-isle')}
-						value={buttonUrl}
+						value={buttonUrl || ''}
 						onChange={(value) => setAttributes({ buttonUrl: value })}
 						placeholder="https://example.com/article"
-					/>              
+					/>
 				</PanelBody>
 			</InspectorControls>
 
@@ -160,11 +154,11 @@ export default function Edit({ attributes, setAttributes }) {
 						allowedFormats={['core/bold', 'core/italic']}
 					/>
 
-                    <div className="featured-article-card__cta-row">
-                        <span className="featured-article-card__button">
-                            {buttonText || 'Read More'}
-                        </span>
-                    </div>
+					<div className="featured-article-card__cta-row">
+						<span className="featured-article-card__button">
+							{buttonText || __('Read More', 'emerald-isle')}
+						</span>
+					</div>
 				</div>
 			</article>
 		</>
