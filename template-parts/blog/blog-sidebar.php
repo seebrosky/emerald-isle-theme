@@ -33,7 +33,9 @@
 							class="flex items-center justify-between text-sm font-semibold text-site-text-muted no-underline transition hover:text-brand-primary"
 						>
 							<span><?php echo esc_html( $category->name ); ?></span>
-							<span><?php echo esc_html( $category->count ); ?></span>
+                            <span class="inline-flex min-w-6 items-center justify-center rounded-full bg-emerald-50 px-2 py-1 text-xs font-bold text-brand-primary">
+                                <?php echo esc_html( $category->count ); ?>
+                            </span>
 						</a>
 					</li>
 				<?php endforeach; ?>
