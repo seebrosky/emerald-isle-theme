@@ -9,7 +9,7 @@
  */
 ?>
 
-<aside class="space-y-6">
+<aside class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1">
 	<section class="overflow-hidden rounded-lg border border-slate-200 bg-white">
 		<h2 class="bg-site-header px-4 py-2 text-lg font-semibold text-site-text-dark">
 			<?php esc_html_e( 'Categories', 'emerald-isle' ); ?>

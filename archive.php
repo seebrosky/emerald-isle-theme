@@ -30,7 +30,7 @@ get_header();
 		<?php endif; ?>
 	</header>
 
-	<div class="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
+	<div class="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
 		<div class="min-w-0">
 			<?php if ( have_posts() ) : ?>
 				<div class="grid gap-6">
