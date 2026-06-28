@@ -3003,7 +3003,7 @@
   }
   .entry-content ul ul, .entry-content ul ol, .entry-content ol ul, .entry-content ol ol {
     margin: 0.25rem 0;
-    padding-left: 1.15rem;
+    padding-left: 1.2rem;
   }
 }
 @layer components {
