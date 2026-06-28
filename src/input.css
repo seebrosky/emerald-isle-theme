@@ -208,7 +208,11 @@
 
     .entry-content ul ul ul {
         list-style: square;
-    }    
+    }
+
+    .entry-content .wp-block-table {
+        margin: 1.25rem 0 !important;
+    }
 }
 
 @layer components {
@@ -477,7 +481,7 @@
     .footer-scroll-top:hover svg,
     .footer-scroll-top:focus-visible svg {
         transform: scale(1.12);
-    }
+    } 
 }
 
 .hero {

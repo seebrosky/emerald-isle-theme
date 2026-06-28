@@ -2986,6 +2986,9 @@
   .entry-content ul ul ul {
     list-style: square;
   }
+  .entry-content .wp-block-table {
+    margin: 1.25rem 0 !important;
+  }
 }
 @layer components {
   .btn {
