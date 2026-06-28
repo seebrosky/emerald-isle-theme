@@ -17,7 +17,6 @@
     --color-emerald-600: #0ba481;
     --color-emerald-700: #066554;
     --color-emerald-900: oklch(37.8% 0.077 168.94);
-    --color-slate-50: oklch(98.4% 0.003 247.858);
     --color-slate-100: oklch(96.8% 0.007 247.896);
     --color-slate-200: oklch(92.9% 0.013 255.508);
     --color-slate-300: oklch(86.9% 0.022 252.894);
@@ -3041,7 +3040,7 @@
     border-left: 1px solid var(--color-slate-200);
   }
   .entry-content .wp-block-table tbody tr:nth-child(even) {
-    background: var(--color-slate-50);
+    background: var(--color-slate-100);
   }
   .entry-content .wp-block-table tr:last-child td {
     border-bottom: 0;

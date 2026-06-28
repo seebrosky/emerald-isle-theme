@@ -280,7 +280,7 @@
     }
 
     .entry-content .wp-block-table tbody tr:nth-child(even) {
-        background: var(--color-slate-50);
+        background: var(--color-slate-100);
     }
 
     .entry-content .wp-block-table tr:last-child td {
