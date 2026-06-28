@@ -213,6 +213,30 @@
     .entry-content .wp-block-table {
         margin: 1.25rem 0 !important;
     }
+
+    .entry-content ol {
+        list-style-type: decimal;
+    }
+
+    .entry-content ol ol {
+        list-style-type: lower-alpha;
+    }
+
+    .entry-content ol ol ol {
+        list-style-type: lower-roman;
+    }
+
+    .entry-content ol ol ol ol {
+        list-style-type: decimal;
+    }
+
+    .entry-content ul ul,
+    .entry-content ul ol,
+    .entry-content ol ul,
+    .entry-content ol ol {
+        margin: 0.25rem 0;
+        padding-left: 1.15rem;
+    }
 }
 
 @layer components {
