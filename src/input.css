@@ -159,9 +159,30 @@
         @apply mt-3.5;
     }
 
+    .entry-content .wp-block-image img {
+        display: block;
+        margin-top: 1.25rem;
+    }
+
     a, button {
         cursor: pointer;
     }
+
+    .entry-content a {
+        color: var(--color-emerald-700);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        font-weight: 600;
+        transition:
+            color 220ms ease,
+            text-decoration-thickness 220ms ease;
+    }
+
+    .entry-content a:hover,
+    .entry-content a:focus-visible {
+        color: var(--color-emerald-600);
+        text-decoration-thickness: 2px;
+    }  
 }
 
 @layer components {
