@@ -3005,6 +3005,15 @@
     margin: 0.25rem 0;
     padding-left: 1.2rem;
   }
+  .entry-content hr.wp-block-separator, .entry-content .wp-block-separator {
+    height: 1px;
+    margin: 3rem 0;
+    border: 0 !important;
+    border-top: 0 !important;
+    background-color: var(--color-slate-200);
+    color: var(--color-slate-200);
+    opacity: 1;
+  }
 }
 @layer components {
   .btn {
