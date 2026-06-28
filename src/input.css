@@ -214,6 +214,14 @@
         margin: 1.25rem 0 !important;
     }
 
+    .entry-content .wp-block-table table {
+        table-layout: auto;
+    }
+
+    .entry-content .wp-block-table th {
+        white-space: nowrap;
+    }    
+
     .entry-content ol {
         list-style-type: decimal;
     }
