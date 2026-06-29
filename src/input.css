@@ -264,6 +264,10 @@
         border-bottom: 2px solid !important;
         
     }
+    
+    .entry-content .wp-block-table th strong {
+        font-weight: 800 !important;
+    }
 
     .entry-content .wp-block-table th,
     .entry-content .wp-block-table td {
